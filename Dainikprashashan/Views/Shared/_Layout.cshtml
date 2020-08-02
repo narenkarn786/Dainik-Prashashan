@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="~/Content/sidebar/style5.css">
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h4>दैनिक प्रशासन</h4>
+            </div>
+            <ul class="list-unstyled components">
+                @*गृह (Dashboard)*@
+                <li>
+                    <a href="~/Dashboard/Home"> <i class="fas fa-tachometer-alt"></i>&nbsp;&nbsp;<b>गृह (Dashboard)</b></a>
+                </li>
+
+                @*घर सम्बन्धित*@
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-home"></i>
+                        &nbsp; <b>घर सम्बन्धित</b>
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#"><b>घर कायमको सिफारिस</b></a>
+                        </li>
+                        <li>
+                            <a href="#"><b>घर बाटो प्रमाणित</b></a>
+                        </li>
+                        <li>
+                            <a href="#"><b>घर जग्गा नामसारी</b></a>
+                        </li>
+                        <li>
+                            <a href="#"><b>कित्ताकाट सिफारिश</b> </a>
+                        </li>
+                    </ul>
+                </li>
+
+                @*संस्था/व्यवसाय सम्बन्धित*@
+
+                <li>
+                    <a href="#organization" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-briefcase"></i>
+                        &nbsp;<b> संस्था/व्यवसाय सम्बन्धित</b>
+                    </a>
+                    <ul class="collapse list-unstyled" id="organization">
+                        <li>
+                            <a href="#">गैर नाफामुलक संस्था दर्ता प्रमाणपत्र</a>
+                        </li>
+                        <li>
+                            <a href="#">व्यवसाय दर्ता प्रमाणपत्र</a>
+                        </li>
+                        <li>
+                            <a href="#">व्यवसाय बन्द बारे </a>
+                        </li>
+                        <li>
+                            <a href="#">संस्था दर्ता सिफारिस  </a>
+                        </li>
+                        <li>
+                            <a href="#">संस्था नविकरण  सिफारिस  </a>
+                        </li>
+                    </ul>
+                </li>
+
+                @*सम्पत्ती सम्बन्धित*@
+                <li>
+                    <a href="#assets" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-coins"></i>
+                        &nbsp; <b>सम्पत्ती सम्बन्धित</b>
+                    </a>
+                    <ul class="collapse list-unstyled" id="assets">
+                        <li>
+                            <a href="#"><b>वार्षिक आय प्रमाणिकरण</b></a>
+                        </li>
+                        <li>
+                            <a href="#"><b>सम्पत्ती मुल्याङ्कन</b></a>
+                        </li>
+                        <li>
+                            <a href="#"><b>कर सावधानि प्रमाणपत्र</b></a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                @*जग्गा सम्बन्धित*@
+                <li>
+                    <a href="#land" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-map"></i>
+                        &nbsp; <b>जग्गा सम्बन्धित</b>
+                    </a>
+                    <ul class="collapse list-unstyled" id="land">
+                        <li>
+                            <a href="#">जग्गाधनी लालपुर्जा प्रतिलिपि</a>
+                        </li>
+                        <li>
+                            <a href="#">बाटो कयाम </a>
+                        </li>
+                        <li>
+                            <a href="#"> जग्गाधनी पुर्जामा घर कयाम</a>
+                        </li>
+                        <li>
+                            <a href="#">  चार किल्ला सम्बन्धमा</a>
+                        </li>
+                        <li>
+                            <a href="#"> मोही लागत कट्टा </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                @*बसोबास सम्बन्धित*@
+                <li>
+                    <a href="#residence" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-map-marker-alt"></i>
+                        &nbsp; &nbsp; <b>बसोबास सम्बन्धित</b>
+                    </a>
+                    <ul class="collapse list-unstyled" id="residence">
+                        <li>
+                            <a href="#"><b>स्थायी बसोबास</b></a>
+                        </li>
+                        <li>
+                            <a href="#"><b>अस्थायी बसोबास</b></a>
+                        </li>
+                        <li>
+                            <a href="#"><b>आन्तरिक बसाई सराइ </b></a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                @*नागरिकता सम्बन्धित*@
+                <li>
+                    <a href="#citizenship" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-id-card"></i>
+                        &nbsp; <b>नागरिकता सम्बन्धित</b>
+                    </a>
+                    <ul class="collapse list-unstyled" id="citizenship">
+                        <li>
+                            <a href="#"><b>नागरिकता प्रमाणपत्र</b></a>
+                        </li>
+                        <li>
+                            <a href="#"><b>नागरिकता प्रमाणपत्रको प्रतिलिपि</b></a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                @*अन्य*@
+                <li>
+                    <a href="#others" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-ellipsis-h"></i>
+                        &nbsp;<b>अन्य</b>
+                    </a>
+                    <ul class="collapse list-unstyled" id="others">
+                        <li>
+                            <a href="#"><b>विवाह प्रमाणपत्र</b></a>
+                        </li>
+                        <li>
+                            <a href="#"><b>खानेपानी जडान</b> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <b>बिधुत् जडान</b></a>
+                        </li>
+                        <li>
+                            <a href="#"> <b>अबिवाहित प्रमाणपत्र</b> </a>
+                        </li>
+                        <li>
+                            <a href="#"><b>जन्ममिती प्रमाणित</b> </a>
+                        </li>
+                        <li>
+                            <a href="#"><b>जेट मेशिन</b></a>
+                        </li>
+                        <li>
+                            <a href="#"><b>फरक नामथर् सिफारिस</b> </a>
+                        </li>
+                        <li>
+                            <a href="#"><b>सडक खन्ने स्विकृति</b> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <b>हकदार प्रमाणित</b> </a>
+                        </li>
+                        <li>
+                            <a href="#"><b>नाबालक परिचयपत्र </b> </a>
+                        </li>
+                        <li>
+                            <a href="#"><b>अदालत शुल्क मिनाह </b></a>
+                        </li>
+                        <li>
+                            <a href="#"> <b>कोठा खाली सुचना </b></a>
+                        </li>
+                        <li>
+                            <a href="#"><b>नाता प्रमाणित</b> </a>
+                        </li>
+                        <li>
+                            <a href="#"><b>छात्रव्रीत्ति सिफारिस </b>  </a>
+                        </li>
+                        <li>
+                            <a href="#"><b>प्राविधिक मुल्याङ्कन </b> </a>
+                        </li>
+                        <li>
+                            <a href="#"><b>आर्थिक सहायता</b></a>
+                        </li>
+                        <li>
+                            <a href="#"><b>घर पाताल भएको </b> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <b>कक्षा कोठा थप</b></a>
+                        </li>
+                        <li>
+                            <a href="#"><b>अपाङ्ग प्रमाणपत्र </b>  </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="#"> <i class="fas fa-sticky-note"></i>&nbsp;&nbsp;<b>अन्य सिफारिस </b></a>
+                </li>
+            </ul>
+
+            <footer>
+                <p style="color:white">&copy; @DateTime.Now.Year -All Right Reserved - Dainik Prashashan</p>
+            </footer>
+        </nav>
+        @*Nav bar*@
+        <div id="content">
+            <nav class="navbar navbar-expand-lg fixed-top">
+
+                <button type="button" id="sidebarCollapse" class="navbar-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="btn d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+
+                <a class="navbar-brand" href="#"><img src="~/Content/sidebar/bootstrap-3/Logo.png" /><b>दैनिक प्रशासन</b></a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+
+            </nav>
+            <br /><br /><br /><br /><br />
+            <div class="card-deck">
+                
+                <div class="card" style="background-color:dodgerblue; height:150px; width:20%">
+                    <a href="#">
+                    <div class="card-body ">
+                        <h3 style="color:white; padding:30px 20px"> <b>घर सम्बन्धित</b></h3>
+                       
+                        <h6 style="color:white;padding:0px 25px"><b>अगाडि बड्नुहोस्</b></h6>    
+                        
+                    </div>
+                    </a>
+                </div>
+
+                <div class="card" style="background-color:limegreen; height:150px; width:20%">
+                    <div class="card-body">
+                        <h5 style="color:white; padding:20px 0px"> <b>संस्था/व्यवसाय<br /> सम्बन्धित</b> </h5>
+                        <h6 style="color:white;padding:0px 25px"><b>अगाडि बड्नुहोस्</b></h6>
+                    </div>
+                </div>
+
+                <div class="card" style="background-color:yellow; height:150px; width:20%">
+                    <div class="card-body">
+                        <h3 style="color:white; padding:30px 0px"> <b>सम्पत्ती सम्बन्धित</b></h3>
+                        <h6 style="color:white;padding:0px 25px"><b>अगाडि बड्नुहोस्</b></h6>
+                    </div>
+                </div>
+
+                <div class="card" style="background-color:indianred; height:150px; width:20%">
+                    <div class="card-body">
+                        <h3 style="color:white; padding:30px 10px"><b>जग्गा सम्बन्धित</b> </h3>
+                        <h6 style="color:white;padding:0px 25px"><b>अगाडि बड्नुहोस्</b></h6>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="card-deck">
+
+                <div class="card" style="background-color:slategray; height:150px; width:20%">
+                    <div class="card-body ">
+                        <h3 style="color:white; padding:30px 30px"> <b>बसोबास सम्बन्धित</b></h3>
+                        <h6 style="color:white;padding:0px 30px"><b>अगाडि बड्नुहोस्</b></h6>
+                    </div>
+                </div>
+
+                <div class="card" style="background-color:sandybrown; height:150px; width:20%">
+                    <div class="card-body">
+                        <h3 style="color:white; padding:30px 20px"><b>नागरिकता सम्बन्धित</b> </h3>
+                        <h6 style="color:white;padding:0px 25px"><b>अगाडि बड्नुहोस्</b></h6>
+                    </div>
+                </div>
+
+                <div class="card" style="background-color:rebeccapurple; height:150px; width:20%">
+                    <div class="card-body">
+                        <h3 style="color:white; padding:30px 90px"> <b>अन्य</b></h3>
+                        <h6 style="color:white;padding:0px 80px"><b>अगाडि बड्नुहोस्</b></h6>
+                    </div>
+                </div>
+
+                
+            </div>
+
+        </div>
+
+        <!-- Page Content Holder -->
+
+
+    </div>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+    </div>
+
+
+</body>
+</html>
