@@ -1,4 +1,5 @@
 ﻿
+using Dainikprashashan.Models;
 using Dainikprashashan.Service;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,7 @@ namespace Dainikprashashan.Controllers
             Session["LoginId"] = response.Item2;
             if (response.Item1 == "true")
             {
-                return RedirectToAction("Index", "Dashboard");
+                return RedirectToAction("Home", "Dashboard");
             }
             else
             {

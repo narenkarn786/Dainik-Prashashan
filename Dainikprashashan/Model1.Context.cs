@@ -13,10 +13,10 @@ namespace Dainikprashashan
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities1 : DbContext
+    public partial class Entities : DbContext
     {
-        public Entities1()
-            : base("name=Entities1")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -25,6 +25,13 @@ namespace Dainikprashashan
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Antarik_Basai_Sarai> Antarik_Basai_Sarai { get; set; }
+        public virtual DbSet<Asthayi_Basobas> Asthayi_Basobas { get; set; }
+        public virtual DbSet<Ghar_Bato_Pramanit> Ghar_Bato_Pramanit { get; set; }
+        public virtual DbSet<Ghar_Jagga_Naamsari> Ghar_Jagga_Naamsari { get; set; }
+        public virtual DbSet<Ghar_kayamko_sifaris> Ghar_kayamko_sifaris { get; set; }
+        public virtual DbSet<Kittakat_Sifaris> Kittakat_Sifaris { get; set; }
+        public virtual DbSet<Sthayi_Basobas> Sthayi_Basobas { get; set; }
         public virtual DbSet<Login> Logins { get; set; }
     }
 }

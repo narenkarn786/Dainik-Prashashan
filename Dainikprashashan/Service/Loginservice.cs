@@ -1,8 +1,9 @@
-﻿
+﻿using Dainikprashashan.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+
 
 namespace Dainikprashashan.Service
 {
@@ -12,7 +13,7 @@ namespace Dainikprashashan.Service
         public string SaveRegister(Login ml)
         {
             var message = "";
-            using (var Context = new Entities1())
+            using (var Context = new Entities())
             {
                 var user = new Login()
                 {
@@ -32,7 +33,7 @@ namespace Dainikprashashan.Service
         public Tuple<string, int> SaveLogin(Login ll)
         {
             var message = "";
-            using (var Context=new Entities1())
+            using (var Context=new Entities())
             {
                 var loginData = Context.Logins
                           .Where(lg => lg.Username == ll.Username && lg.Password == ll.Password)
@@ -50,3 +51,5 @@ namespace Dainikprashashan.Service
         }
     }
 }
+
+

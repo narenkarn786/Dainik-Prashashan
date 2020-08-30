@@ -1,0 +1,116 @@
+﻿@model Dainikprashashan.Models.GharkayamList
+@{
+    ViewBag.Title = "Editabedanniwaran";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html lang="en">
+<head>
+    <title>Ghar_kayamko_sifaris</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <!-- Nepali Datepicker -->
+    <link href="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v3.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="col-lg-12" style="padding:5px 180px">
+
+        <div class="content">
+            <h2><u>घर कायम सिफारिस</u></h2>
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <form>
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label><b></b></label>
+                            @Html.HiddenFor(modelItem => Model.FormId, new { @class = "form-control" })
+
+                        </div>
+                        <div class="form-group row ">
+                            <label style="color:black;font-family:Arial">
+                                आवेदन गरिएको मिति:
+                            </label>
+                            <div class="col-lg-4">
+                                @Html.TextBoxFor(modelItem => Model.Aabedan_miti, "", new { @id = "nepali-datepicker", @name = "nepali-datepicker", @class = "form-control" })
+                            </div>
+
+                            <script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v3.min.js" type="text/javascript"></script>
+                            <script type="text/javascript">
+                                window.onload = function () {
+                                    var mainInput = document.getElementById("nepali-datepicker");
+                                    mainInput.nepaliDatePicker();
+                                };
+                            </script>
+                        </div>
+
+                        <div class="custom-control form-group row">
+                            <label style="color:black">कार्यलय</label>
+                            <div class="col-lg-4">
+                                @Html.DropDownListFor(modelItem => Model.karyalaya, new SelectList(ViewBag.Karyalaya), "* छान्नुहोस्  *")
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <h3><b><u>घर कायम सिफारिस विवरण</u></b></h3>
+
+                    <div class="col-lg-5">
+                        <label><b>आवेदकको नाम</b></label>
+                        @Html.EditorFor(modelItem => Model.Aabedak_name, new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-lg-12">
+                        <label><b>जग्गाको ठेगाना </b></label>
+                        <br />
+                        @Html.DropDownListFor(modelItem => Model.Pradesh, new SelectList(ViewBag.Pradesh), "* प्रदेश छान्नुहोस्  *")
+                        @Html.DropDownListFor(modelItem => Model.Jilla, new SelectList(ViewBag.District), "*जिल्ला छान्नुहोस्  *")
+                        @Html.DropDownListFor(modelItem => Model.Gabisa, new SelectList(ViewBag.Ward), "*गा.बि.स/न.प. छान्नुहोस्  *")
+                        @Html.DropDownListFor(modelItem => Model.Ward, new SelectList(ViewBag.Ward), "*वडा छान्नुहोस्  *")
+                    </div>
+
+                    <div class="col-lg-5">
+                        <label><b>जग्गाको साबिक ठेगाना </b></label>
+                        @Html.EditorFor(modelItem => Model.Gajjako_sabikthegana, new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-lg-5">
+                        <label><b>नक्सा सिट नं</b></label>
+                        @Html.EditorFor(modelItem => Model.Naksa_sheetno, new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-lg-5">
+                        <label><b>कित्ता नं</b></label>
+                        @Html.EditorFor(modelItem => Model.Kitta_no, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group row">
+                        <label><b>क्षेत्रफल</b></label>
+                        <div class="col-lg-4">
+                            @Html.EditorFor(modelItem => Model.Bigga, new { @class = "form-control", @placeholder = "बिग्गा" })
+                            @Html.EditorFor(modelItem => Model.Kattha, new { @class = "form-control", @placeholder = "कटठा" })
+                            @Html.EditorFor(modelItem => Model.Dhur, new { @class = "form-control", @placeholder = "धुर" })
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-5">
+                        <label><b>घर नं</b></label>
+                        @Html.EditorFor(modelItem => Model.Ghar_no, new { @class = "form-control" })
+                    </div>
+                    <div class="col-lg-5">
+                        <label><b>घरको प्रकार </b></label>
+                        @Html.DropDownListFor(modelItem => Model.Gharko_prakaar, new SelectList(ViewBag.Gharprakar), "*छान्नुहोस्  *")
+                    </div>
+                    <div class="col-lg-5">
+                        <label><b>घर निर्माण भएको/अनुमति लिएको साल</b></label>
+                        @Html.EditorFor(modelItem => Model.Gharnirmaan_saal, new { @class = "form-control" })
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-success">पेश गर्नुहोस् </button>
+                </form>
+            }
+        </div>
+    </div>
+</body>
+</html>
+

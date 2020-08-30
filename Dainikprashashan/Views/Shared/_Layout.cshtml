@@ -2,352 +2,590 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dashboard</title>
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="~/Content/sidebar/style5.css">
-    <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/Content/Dainik/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="/Content/Dainik/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="/Content/Dainik/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="/Content/Dainik/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/Content/Dainik/dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="/Content/Dainik/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="/Content/Dainik/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="/Content/Dainik/plugins/summernote/summernote-bs4.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body>
+<body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-        <!-- Sidebar Holder -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h4>दैनिक प्रशासन</h4>
-            </div>
-            <ul class="list-unstyled components">
-                @*गृह (Dashboard)*@
-                <li>
-                    <a href="~/Dashboard/Home"> <i class="fas fa-tachometer-alt"></i>&nbsp;&nbsp;<b>गृह (Dashboard)</b></a>
-                </li>
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-dark  navbar-light">
 
-                @*घर सम्बन्धित*@
-                <li>
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-home"></i>
-                        &nbsp; <b>घर सम्बन्धित</b>
-                    </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#"><b>घर कायमको सिफारिस</b></a>
-                        </li>
-                        <li>
-                            <a href="#"><b>घर बाटो प्रमाणित</b></a>
-                        </li>
-                        <li>
-                            <a href="#"><b>घर जग्गा नामसारी</b></a>
-                        </li>
-                        <li>
-                            <a href="#"><b>कित्ताकाट सिफारिश</b> </a>
-                        </li>
-                    </ul>
-                </li>
-
-                @*संस्था/व्यवसाय सम्बन्धित*@
-
-                <li>
-                    <a href="#organization" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-briefcase"></i>
-                        &nbsp;<b> संस्था/व्यवसाय सम्बन्धित</b>
-                    </a>
-                    <ul class="collapse list-unstyled" id="organization">
-                        <li>
-                            <a href="#">गैर नाफामुलक संस्था दर्ता प्रमाणपत्र</a>
-                        </li>
-                        <li>
-                            <a href="#">व्यवसाय दर्ता प्रमाणपत्र</a>
-                        </li>
-                        <li>
-                            <a href="#">व्यवसाय बन्द बारे </a>
-                        </li>
-                        <li>
-                            <a href="#">संस्था दर्ता सिफारिस  </a>
-                        </li>
-                        <li>
-                            <a href="#">संस्था नविकरण  सिफारिस  </a>
-                        </li>
-                    </ul>
-                </li>
-
-                @*सम्पत्ती सम्बन्धित*@
-                <li>
-                    <a href="#assets" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-coins"></i>
-                        &nbsp; <b>सम्पत्ती सम्बन्धित</b>
-                    </a>
-                    <ul class="collapse list-unstyled" id="assets">
-                        <li>
-                            <a href="#"><b>वार्षिक आय प्रमाणिकरण</b></a>
-                        </li>
-                        <li>
-                            <a href="#"><b>सम्पत्ती मुल्याङ्कन</b></a>
-                        </li>
-                        <li>
-                            <a href="#"><b>कर सावधानि प्रमाणपत्र</b></a>
-                        </li>
-
-                    </ul>
-                </li>
-
-                @*जग्गा सम्बन्धित*@
-                <li>
-                    <a href="#land" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-map"></i>
-                        &nbsp; <b>जग्गा सम्बन्धित</b>
-                    </a>
-                    <ul class="collapse list-unstyled" id="land">
-                        <li>
-                            <a href="#">जग्गाधनी लालपुर्जा प्रतिलिपि</a>
-                        </li>
-                        <li>
-                            <a href="#">बाटो कयाम </a>
-                        </li>
-                        <li>
-                            <a href="#"> जग्गाधनी पुर्जामा घर कयाम</a>
-                        </li>
-                        <li>
-                            <a href="#">  चार किल्ला सम्बन्धमा</a>
-                        </li>
-                        <li>
-                            <a href="#"> मोही लागत कट्टा </a>
-                        </li>
-                    </ul>
-                </li>
-
-
-                @*बसोबास सम्बन्धित*@
-                <li>
-                    <a href="#residence" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-map-marker-alt"></i>
-                        &nbsp; &nbsp; <b>बसोबास सम्बन्धित</b>
-                    </a>
-                    <ul class="collapse list-unstyled" id="residence">
-                        <li>
-                            <a href="#"><b>स्थायी बसोबास</b></a>
-                        </li>
-                        <li>
-                            <a href="#"><b>अस्थायी बसोबास</b></a>
-                        </li>
-                        <li>
-                            <a href="#"><b>आन्तरिक बसाई सराइ </b></a>
-                        </li>
-
-                    </ul>
-                </li>
-
-                @*नागरिकता सम्बन्धित*@
-                <li>
-                    <a href="#citizenship" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-id-card"></i>
-                        &nbsp; <b>नागरिकता सम्बन्धित</b>
-                    </a>
-                    <ul class="collapse list-unstyled" id="citizenship">
-                        <li>
-                            <a href="#"><b>नागरिकता प्रमाणपत्र</b></a>
-                        </li>
-                        <li>
-                            <a href="#"><b>नागरिकता प्रमाणपत्रको प्रतिलिपि</b></a>
-                        </li>
-
-                    </ul>
-                </li>
-
-                @*अन्य*@
-                <li>
-                    <a href="#others" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-ellipsis-h"></i>
-                        &nbsp;<b>अन्य</b>
-                    </a>
-                    <ul class="collapse list-unstyled" id="others">
-                        <li>
-                            <a href="#"><b>विवाह प्रमाणपत्र</b></a>
-                        </li>
-                        <li>
-                            <a href="#"><b>खानेपानी जडान</b> </a>
-                        </li>
-                        <li>
-                            <a href="#"> <b>बिधुत् जडान</b></a>
-                        </li>
-                        <li>
-                            <a href="#"> <b>अबिवाहित प्रमाणपत्र</b> </a>
-                        </li>
-                        <li>
-                            <a href="#"><b>जन्ममिती प्रमाणित</b> </a>
-                        </li>
-                        <li>
-                            <a href="#"><b>जेट मेशिन</b></a>
-                        </li>
-                        <li>
-                            <a href="#"><b>फरक नामथर् सिफारिस</b> </a>
-                        </li>
-                        <li>
-                            <a href="#"><b>सडक खन्ने स्विकृति</b> </a>
-                        </li>
-                        <li>
-                            <a href="#"> <b>हकदार प्रमाणित</b> </a>
-                        </li>
-                        <li>
-                            <a href="#"><b>नाबालक परिचयपत्र </b> </a>
-                        </li>
-                        <li>
-                            <a href="#"><b>अदालत शुल्क मिनाह </b></a>
-                        </li>
-                        <li>
-                            <a href="#"> <b>कोठा खाली सुचना </b></a>
-                        </li>
-                        <li>
-                            <a href="#"><b>नाता प्रमाणित</b> </a>
-                        </li>
-                        <li>
-                            <a href="#"><b>छात्रव्रीत्ति सिफारिस </b>  </a>
-                        </li>
-                        <li>
-                            <a href="#"><b>प्राविधिक मुल्याङ्कन </b> </a>
-                        </li>
-                        <li>
-                            <a href="#"><b>आर्थिक सहायता</b></a>
-                        </li>
-                        <li>
-                            <a href="#"><b>घर पाताल भएको </b> </a>
-                        </li>
-                        <li>
-                            <a href="#"> <b>कक्षा कोठा थप</b></a>
-                        </li>
-                        <li>
-                            <a href="#"><b>अपाङ्ग प्रमाणपत्र </b>  </a>
-                        </li>
-                    </ul>
-                </li>
-
-
-                <li>
-                    <a href="#"> <i class="fas fa-sticky-note"></i>&nbsp;&nbsp;<b>अन्य सिफारिस </b></a>
-                </li>
+          
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Messages Dropdown Menu -->
+                
             </ul>
-
-            <footer>
-                <p style="color:white">&copy; @DateTime.Now.Year -All Right Reserved - Dainik Prashashan</p>
-            </footer>
         </nav>
-        @*Nav bar*@
-        <div id="content">
-            <nav class="navbar navbar-expand-lg fixed-top">
+        <!-- /.navbar -->
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="/Dashboard/Home" class="brand-link">
+                <img src="~/Content/sidebar/bootstrap-3/Logo.png" alt="Logo" class="brand-image img-circle elevation-3"
+                     style="opacity: .8">
+                <span class="brand-text font-weight-light"><h4><b>दैनिक प्रशासन</b></h4> </span>
+            </a>
+            <!-- Sidebar -->
+            <div class="sidebar">
 
-                <button type="button" id="sidebarCollapse" class="navbar-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <button class="btn d-lg-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-align-justify"></i>
-                </button>
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+    with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a href="/Dashboard/Home" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
 
-                <a class="navbar-brand" href="#"><img src="~/Content/sidebar/bootstrap-3/Logo.png" /><b>दैनिक प्रशासन</b></a>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                </ul>
+                                </p>
+                            </a>
 
-            </nav>
-            <br /><br /><br /><br /><br />
-            <div class="card-deck">
-                
-                <div class="card" style="background-color:dodgerblue; height:150px; width:20%">
-                    <a href="#">
-                    <div class="card-body ">
-                        <h3 style="color:white; padding:30px 20px"> <b>घर सम्बन्धित</b></h3>
-                       
-                        <h6 style="color:white;padding:0px 25px"><b>अगाडि बड्नुहोस्</b></h6>    
-                        
-                    </div>
-                    </a>
-                </div>
+                        </li>
 
-                <div class="card" style="background-color:limegreen; height:150px; width:20%">
-                    <div class="card-body">
-                        <h5 style="color:white; padding:20px 0px"> <b>संस्था/व्यवसाय<br /> सम्बन्धित</b> </h5>
-                        <h6 style="color:white;padding:0px 25px"><b>अगाडि बड्नुहोस्</b></h6>
-                    </div>
-                </div>
+                        @*घर सम्बन्धित*@
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-home"></i>
+                                <p>
+                                    घर सम्बन्धित
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="Gharkayamkosifaris" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>घर कायमको सिफारिस</b></p>
+                                    </a>
+                                </li>
 
-                <div class="card" style="background-color:yellow; height:150px; width:20%">
-                    <div class="card-body">
-                        <h3 style="color:white; padding:30px 0px"> <b>सम्पत्ती सम्बन्धित</b></h3>
-                        <h6 style="color:white;padding:0px 25px"><b>अगाडि बड्नुहोस्</b></h6>
-                    </div>
-                </div>
+                                <li class="nav-item">
+                                    <a href="Gharbatopramanit" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>घर बाटो प्रमाणित</b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="Gharjagganaamsari" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>घर जग्गा नामसारी</b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="Kittakatsifaris" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b><b>कित्ताकाट सिफारिश</b></b></p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-                <div class="card" style="background-color:indianred; height:150px; width:20%">
-                    <div class="card-body">
-                        <h3 style="color:white; padding:30px 10px"><b>जग्गा सम्बन्धित</b> </h3>
-                        <h6 style="color:white;padding:0px 25px"><b>अगाडि बड्नुहोस्</b></h6>
-                    </div>
-                </div>
+                        @*संस्था/व्यवसाय सम्बन्धित*@
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-briefcase"></i>
+                                <p>
+                                    संस्था/व्यवसाय सम्बन्धित
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+                                                गैर नाफामुलक संस्था दर्ता प्रमाणपत्र
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="pages/charts/flot.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+
+                                                व्यवसाय दर्ता प्रमाणपत्र
+
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+
+                                                व्यवसाय बन्द बारे
+
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+                                                <b>
+
+                                                    संस्था दर्ता सिफारिस
+
+                                                </b>
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+                                                <b>
+
+
+
+                                                    संस्था नविकरण  सिफारिस
+                                                </b>
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        @*सम्पत्ती सम्बन्धित*@
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-coins"></i>
+                                <p>
+                                    सम्पत्ती सम्बन्धित
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+                                                वार्षिक आय प्रमाणिकरण
+
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="pages/charts/flot.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+
+                                                सम्पत्ती मुल्याङ्कन
+
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+
+                                                कर सावधानि प्रमाणपत्र
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        @*जग्गा सम्बन्धित*@
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-map"></i>
+                                <p>
+                                    जग्गा सम्बन्धित
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+                                                जग्गाधनी लालपुर्जा प्रतिलिपि
+
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="pages/charts/flot.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+
+                                                बाटो कयाम
+
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+
+                                                जग्गाधनी पुर्जामा घर कयाम
+
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+                                                <b>
+
+                                                    चार किल्ला सम्बन्धमा
+
+                                                </b>
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+                                                <b>
+
+
+                                                    मोही लागत कट्टा
+                                                </b>
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        @*बसोबास सम्बन्धित*@
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-map-marker-alt"></i>
+                                <p>
+                                    बसोबास सम्बन्धित
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="Sthayibasobas" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+                                                स्थायी बसोबास
+
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="Asthayibasobas" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+
+                                                अस्थायी बसोबास
+
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="Antarikbasaisarai" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+
+                                                आन्तरिक बसाई सराइ
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        @*नागरिकता सम्बन्धित*@
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-id-card"></i>
+                                <p>
+                                    नागरिकता सम्बन्धित
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+                                                नागरिकता प्रमाणपत्र
+
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="pages/charts/flot.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            <b>
+
+                                                नागरिकता प्रमाणपत्रको प्रतिलिपि
+                                            </b>
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        @*अन्य*@
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-ellipsis-h"></i>
+                                <p>
+                                    अन्य
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>विवाह प्रमाणपत्र</b></p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="pages/charts/flot.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>खानेपानी जडान</b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>बिधुत् जडान</b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b><b></b>अबिवाहित प्रमाणपत्र</b></p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b><b>जन्ममिती प्रमाणित</b></b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b><b> जेट मेशिन</b></b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b><b>फरक नामथर् सिफारिस</b></b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b><b> सडक खन्ने स्विकृति</b></b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>हकदार प्रमाणित</b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>नाबालक परिचयपत्र</b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>अदालत शुल्क मिनाह</b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>कोठा खाली सुचना</b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b> नाता प्रमाणित</b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>छात्रव्रीत्ति सिफारिस</b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>प्राविधिक मुल्याङ्कन</b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>आर्थिक सहायता</b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>घर पाताल भएको</b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>कक्षा कोठा थप</b></p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/charts/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p><b>अपाङ्ग प्रमाणपत्र</b></p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-sticky-note"></i>
+                                <p>
+                                    अन्य सिफारिस
+                                    
+                                </p>
+                            </a>
+                            </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
             </div>
-            <br />
-            <div class="card-deck">
-
-                <div class="card" style="background-color:slategray; height:150px; width:20%">
-                    <div class="card-body ">
-                        <h3 style="color:white; padding:30px 30px"> <b>बसोबास सम्बन्धित</b></h3>
-                        <h6 style="color:white;padding:0px 30px"><b>अगाडि बड्नुहोस्</b></h6>
-                    </div>
-                </div>
-
-                <div class="card" style="background-color:sandybrown; height:150px; width:20%">
-                    <div class="card-body">
-                        <h3 style="color:white; padding:30px 20px"><b>नागरिकता सम्बन्धित</b> </h3>
-                        <h6 style="color:white;padding:0px 25px"><b>अगाडि बड्नुहोस्</b></h6>
-                    </div>
-                </div>
-
-                <div class="card" style="background-color:rebeccapurple; height:150px; width:20%">
-                    <div class="card-body">
-                        <h3 style="color:white; padding:30px 90px"> <b>अन्य</b></h3>
-                        <h6 style="color:white;padding:0px 80px"><b>अगाडि बड्नुहोस्</b></h6>
-                    </div>
-                </div>
-
-                
-            </div>
-
-        </div>
-
-        <!-- Page Content Holder -->
-
-
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        
+        <!-- /.content-wrapper -->
+        
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
     </div>
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-                $(this).toggleClass('active');
-            });
-        });
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="/Content/Dainik/plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="/Content/Dainik/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
     </script>
-
-
+    <!-- Bootstrap 4 -->
+    <script src="/Content/Dainik/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="/Content/Dainik/plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="/Content/Dainik/plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="/Content/Dainik/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="/Content/Dainik/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="/Content/Dainik/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="/Content/Dainik/plugins/moment/moment.min.js"></script>
+    <script src="/Content/Dainik/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="/Content/Dainik/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="/Content/Dainik/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="/Content/Dainik/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/Content/Dainik/dist/js/adminlte.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="/Content/Dainik/dist/js/pages/dashboard.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="/Content/Dainik/dist/js/demo.js"></script>
     <div class="container body-content">
         @RenderBody()
         <hr />
 
     </div>
-
-
 </body>
 </html>
