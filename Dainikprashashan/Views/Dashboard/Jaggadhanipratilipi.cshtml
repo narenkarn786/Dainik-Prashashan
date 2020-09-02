@@ -1,0 +1,138 @@
+﻿@model Dainikprashashan.Jaggadhani_Pratilipi
+
+@{
+    ViewBag.Title = "Jaggadhanipratilipi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal" style="padding:0px 200px">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <label class="control-label col-md-2"><b>आवेदन गरिएको मिति</b></label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Aabedan_miti, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Aabedan_miti, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <h4>जग्गाको विवरण </h4><hr />
+
+    <div class="form-group">
+        <label class="control-label col-md-2"> नाम </label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Naam, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Naam, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">ना.प्र.नं.</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Nagarikta_no, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Nagarikta_no, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">ना.प्र. जारी मिति</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Nagarikta_miti, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Nagarikta_miti, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">बुवाको नाम</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Buwako_naam, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Buwako_naam, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">बाजेको नाम </label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Bajeko_naam, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Bajeko_naam, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="control-label col-md-2">ठेगाना </label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Aabedak_pradesh, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Aabedak_pradesh, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Aabedak_jilla, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Aabedak_jilla, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Aabedak_gabisa, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Aabedak_gabisa, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Aabedak_ward, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Aabedak_ward, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">साबिक ठेगाना </label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Aabedak_sabik_thegana, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Aabedak_sabik_thegana, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <h4>जग्गाको विवरण</h4><hr />
+
+    <div class="form-group">
+        <label class="control-label col-md-2">जग्गा धनिको नाम</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Jaggadhaniko_naam, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Jaggadhaniko_naam, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">कित्ता नं.</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Kitta_no, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Kitta_no, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-2">क्षेत्रफल </label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Bigga, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Bigga, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Kattha, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Kattha, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Dhur, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Dhur, "", new { @class = "text-danger" })
+
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-2">ठेगाना </label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Jagga_pradesh, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Jagga_pradesh, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Jagga_jilla, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Jagga_jilla, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Jagga_gabisa, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Jagga_gabisa, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Jagga_ward, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Jagga_ward, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2">साबिक ठेगाना </label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Jagga_sabik_thegana, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Jagga_sabik_thegana, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success" type="submit">पेश गर्नुहोस् </button>
+    </div>
+    </div>
+}

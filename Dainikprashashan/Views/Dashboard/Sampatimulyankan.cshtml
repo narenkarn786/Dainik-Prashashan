@@ -1,0 +1,104 @@
+﻿@model Dainikprashashan.Sampati_Muluyankan
+
+@{
+    ViewBag.Title = "Sampatimulyankan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal" style="padding:0px 200px">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <label class="control-label col-md-2"><b>Applicated Date </b></label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Applicated_date, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Applicated_date, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2"><b>Full Name </b></label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Full_name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Full_name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2"><b>Address </b></label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Pradesh, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Pradesh, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Jilla, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Jilla, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Gabisa, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Gabisa, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Ward, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Ward, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <hr />
+    <div class="table-responsive-sm">
+
+
+        <table class="table table-bordered">
+
+            <colgroup span="3"></colgroup>
+
+
+            <tr>
+            <tr>
+                <th rowspan="2">Owner</th>
+                <th rowspan="2">Particular Plot no</th>
+                
+                <th colspan="3" scope="colgroup">Area</th>
+                <th rowspan="2">Total Value</th>
+                <th rowspan="2">Remarks</th>
+            </tr>
+            <tr>
+                <th scope="col">Bigga</th>
+                <th scope="col">Kattha</th>
+                <th scope="col">Dhur</th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.EditorFor(model => model.Owners, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Owners, "", new { @class = "text-danger" })
+                </th>
+                <th>
+                    @Html.EditorFor(model => model.Particular_plotno, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Particular_plotno, "", new { @class = "text-danger" })
+                </th>
+                <th>
+                    @Html.EditorFor(model => model.Bigga, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Bigga, "", new { @class = "text-danger" })
+                    </th>
+                <th>
+                    @Html.EditorFor(model => model.Kattha, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Kattha, "", new { @class = "text-danger" })
+                    </th>
+                <th>
+                    @Html.EditorFor(model => model.Dhur, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Dhur, "", new { @class = "text-danger" })
+                </th>
+                <th>
+                    @Html.EditorFor(model => model.Total_value, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Total_value, "", new { @class = "text-danger" })
+                </th>
+                <th>
+                    @Html.EditorFor(model => model.Remarks, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
+                </th>
+            </tr>
+        </table>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-success" type="submit">पेश गर्नुहोस् </button>
+        </div>
+    </div>
+    }
+

@@ -147,7 +147,7 @@ namespace Dainikprashashan.Controllers
             var lbdService = new Gharsambandhit();
             var selfList = lbdService.GetSelfList(loginId);
             return View(selfList);
-            
+
         }
 
         [HttpGet]//Edit Aabedanko Biwaran
@@ -276,7 +276,7 @@ namespace Dainikprashashan.Controllers
         [HttpGet]//Ghar Bato Pramanit
         public ActionResult Gharbatopramanit()
         {
-           return View(); 
+            return View();
         }
 
         [HttpPost]//Ghar Bato Pramanit
@@ -362,5 +362,151 @@ namespace Dainikprashashan.Controllers
             return RedirectToAction("Antarikbasaisarai");
         }
 
+
+        //NAGARIKTA
+
+        [HttpGet]//Nagarikta_Praman_Patra
+        public ActionResult Nagariktapramanpatra()
+        {
+            return View();
+        }
+
+        [HttpPost]//Nagarikta Praman Patra
+        public ActionResult Nagariktapramanpatra(Nagarikta_Pramanpatra n)
+        {
+            var lservice = new Nagariktaservice();
+            var lresponse = lservice.SaveNagariktapramanpatra(n);
+            return RedirectToAction("Nagariktapramanpatra");
+        }
+
+        [HttpGet]//Nagarikta_Praman_Patra_Pratilipi
+        public ActionResult Nagariktapramanpatrapratilipi()
+        {
+            return View();
+        }
+
+        [HttpPost]//Nagarikta Praman Patra Pratilipi
+        public ActionResult Nagariktapramanpatrapratilipi(Nagarikta_Pramanpatra_Pratilipi n)
+        {
+            var lservice = new Nagariktaservice();
+            var lresponse = lservice.SaveNagariktapramanpatrapratilipi(n);
+            return RedirectToAction("Nagariktapramanpatrapratilipi");
+        }
+
+        //Jagga
+        [HttpGet]//जग्गाधनी लाल पुर्जा प्रतिलिपि
+        public ActionResult Jaggadhanipratilipi()
+        {
+            return View();
+        }
+
+        [HttpPost]//जग्गाधनी लाल पुर्जा प्रतिलिपि
+        public ActionResult Jaggadhanipratilipi(Jaggadhani_Pratilipi j)
+        {
+            var lservice = new Jaggaservice();
+            var lresponse = lservice.SaveJaggadhanipratilipi(j);
+            return RedirectToAction("Jaggadhanipratilipi");
+        }
+
+
+        [HttpGet]//बाटो कायम
+        public ActionResult Batokayam()
+        {
+            return View();
+        }
+
+        [HttpPost]//बाटो कायम
+        public ActionResult Batokayam(Bato_Kayam bk)
+        {
+            var lservice = new Jaggaservice();
+            var lresponse = lservice.SaveBatokayam(bk);
+            return RedirectToAction("Batokayam");
+        }
+
+        [HttpGet]//पुर्जामा घर कायम
+        public ActionResult Jaggagharkayam()
+        {
+            return View();
+        }
+
+        [HttpPost]//पुर्जामा घर कायम
+        public ActionResult Jaggagharkayam(Jagga_Ghar_Kayam jg)
+        {
+            var lservice = new Jaggaservice();
+            var lresponse = lservice.SaveJaggagharkayam(jg);
+            return RedirectToAction("Jaggagharkayam");
+        }
+
+        [HttpGet]//चार किल्ला प्रमाणित
+        public ActionResult Charkilla()
+        {
+            return View();
+        }
+
+        [HttpPost]//चार किल्ला प्रमाणित
+        public ActionResult Charkilla(Charkilla_Sambandhama c)
+        {
+            var lservice = new Jaggaservice();
+            var lresponse = lservice.SaveCharkilla(c);
+            return RedirectToAction("Charkilla");
+        }
+
+        [HttpGet]//मोही लागत कट्टा
+        public ActionResult Mohilagatkatta()
+        {
+            return View();
+        }
+        [HttpPost]//मोही लागत कट्टा
+        public ActionResult Mohilagatkatta(Mohi_Lagat_Katta ml)
+        {
+            var lservice = new Jaggaservice();
+            var lresponse = lservice.SaveMohilagatkatta(ml);
+            return RedirectToAction("Mohilagatkatta");
+        }
+
+        //Sampati sambandhi
+        [HttpGet]//वार्षिक आय प्रमाणिकरण
+
+        public ActionResult Barsikpramanikaran()
+        {
+            return View();
+        }
+
+        [HttpPost]//वार्षिक आय प्रमाणिकरण
+        public ActionResult Barsikpramanikaran(Barsik_Pramanikaran bp)
+        {
+            var lservice = new Sampatiservice();
+            var lresponse = lservice.SaveBarsikpramanikaran(bp);
+            return RedirectToAction("Barsikpramanikaran");
+        }
+
+        [HttpGet]//सम्पत्ति मूल्यांकन
+        public ActionResult Sampatimulyankan()
+        {
+            return View();
+        }
+
+        [HttpPost]//सम्पत्ति मूल्यांकन
+        public ActionResult Sampatimulyankan(Sampati_Muluyankan sm)
+        {
+            var lservice = new Sampatiservice();
+            var lresponse = lservice.SaveSampatimulyankan(sm);
+            return RedirectToAction("Sampatimulyankan");
+        }
+
+        [HttpGet] //कर सावधानी प्रमाणपत्र
+        public ActionResult Karsabdhani()
+        {
+            return View();
+        }
+
+        [HttpPost]//कर सावधानी प्रमाणपत्र
+        public ActionResult Karsabdhani(Kar_Sambandhi ks)
+        {
+            var lservice = new Sampatiservice();
+            var lresponse = lservice.SaveKarsabdhani(ks);
+            return RedirectToAction("Karsabdhani");
+        }
     }
+
 }

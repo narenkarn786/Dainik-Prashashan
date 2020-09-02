@@ -1,0 +1,125 @@
+﻿@model Dainikprashashan.Charkilla_Sambandhama
+
+@{
+    ViewBag.Title = "Charkilla";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal" style="padding:0px 200px">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <label class="control-label col-md-2"><b>आवेदन दिएको मिति</b></label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Aabedan_miti, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Aabedan_miti, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2"><b>कार्यालय </b></label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Karyalaya, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Karyalaya, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2"><b>जग्गा धनिको नाम </b></label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Jaggadhaniko_naam, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Jaggadhaniko_naam, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-2">ठेगाना </label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Pradesh, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Pradesh, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Jilla, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Jilla, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Gabisa, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Gabisa, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Ward, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Ward, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <hr />
+    <div class="table-responsive-sm" style="width:100%">
+
+
+        <table class="table table-bordered">
+
+            <colgroup span="6"></colgroup>
+
+
+            <tr>
+                <th rowspan="2">साबिक गा.बि.स/न.पा</th>
+                <th rowspan="2">हाल गा.बि.स/न.पा</th>
+                <th colspan="3" scope="colgroup">जग्गाको विवरण</th>
+                <th rowspan="2">बाटो</th>
+                <th rowspan="2">बाटोको  प्रकार</th>
+                <th colspan="4" scope="colgroup">चार किल्ला</th>
+                <th rowspan="2">कैफियत</th>
+
+            </tr>
+            <tr>
+                <th scope="col">नक्सा सि.नं</th>
+                <th scope="col">कि.नं</th>
+                <th scope="col">क्षेत्रफल</th>
+                <th scope="col">पुर्ब</th>
+                <th scope="col">पश्चिम</th>
+                <th scope="col">उत्तर</th>
+                <th scope="col">दक्षिण</th>
+            </tr>
+
+
+            <tr>
+                <th> @Html.TextBoxFor(m => m.Sabik_gabisa, "", new { @class = "form-control" })</th>
+                <th> @Html.TextBoxFor(m => m.Haal_gabisa, "", new { @class = "form-control" })</th>
+                <th> @Html.TextBoxFor(m => m.Naksha_sheetno, "", new { @class = "form-control" })</th>
+                <th> @Html.TextBoxFor(m => m.Kitta_no, "", new { @class = "form-control" })</th>
+                <th>
+                    @Html.TextBoxFor(m => m.Bigga, "", new { @class = "form-control", @placeholder = "Bigga" })
+                    @Html.TextBoxFor(m => m.Kattha, "", new { @class = "form-control", @placeholder = "Kattha" })
+                    @Html.TextBoxFor(m => m.Dhur, "", new { @class = "form-control", @placeholder = "Dhur" })
+                </th>
+                <th><input type="checkbox" id="myCheck" onclick="myFunction()"></th>
+                <th> @Html.TextBoxFor(m => m.Batoko_Prakaar, "", new { @class = "form-control", @id = "text", @style = "display:none" })</th>
+                
+                <th> @Html.TextBoxFor(m => m.East, "", new { @class = "form-control" })</th>
+                <th> @Html.TextBoxFor(m => m.West, "", new { @class = "form-control" })</th>
+                <th> @Html.TextBoxFor(m => m.North, "", new { @class = "form-control" })</th>
+                <th> @Html.TextBoxFor(m => m.South, "", new { @class = "form-control" })</th>
+                <th> @Html.TextBoxFor(m => m.Kaifiyat, "", new { @class = "form-control" })</th>
+            </tr>
+
+
+        </table>
+        <script>
+            function myFunction() {
+                var checkBox = document.getElementById("myCheck");
+                var text = document.getElementById("text");
+
+                if (checkBox.checked == true) {
+                    text.style.display = "block";
+                  
+                } else {
+                    text.style.display = "none";
+                   
+                }
+            }
+        </script>
+        <div class="form-group">
+            <button class="btn btn-success" type="submit">पेश गर्नुहोस् </button>
+        </div>
+    </div>
+    </div>
+    }
+
+
+
