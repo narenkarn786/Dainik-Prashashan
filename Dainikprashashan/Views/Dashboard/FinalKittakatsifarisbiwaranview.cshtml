@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Dainikprashashan.Models.GharkayamList>
+@{
+    ViewBag.Title = "FinalKittakatsifarisbiwaranview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding:25px 220px">
+    <div class="col-lg-1">
+    </div>
+
+    <div class="col-lg-12">
+        <center>
+            <h3><b>आबेदन विवरण</b></h3>
+            <hr />
+
+            <div class="table-responsive-sm">
+                <table class="table table-bordered" style="border:1px">
+
+                    <tr>
+                        <th scope="row">फारम ID</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            स्वीकृत
+                        </th>
+                        <td style="color:red">नभएको </td>
+                    </tr>
+                    <tr></tr>
+
+                    <tr>
+                        <th scope="row">जग्गाधनिको नाम</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Jaggadhanikonaam)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row"> जग्गा रहेको ठेगाना</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Pradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Jilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Gabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Ward)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">साबिक / हालको ठेगाना</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sabikthegana)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">कित्ता मिलान गर्न चाहेको दिशा </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Disa)</td>
+                    </tr>
+
+
+                    <tr>
+                        <th scope="row"> जग्गा मिलन गर्नुपर्ने क्षेत्रफल  </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Chetrafal)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">क्षेत्रफल</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Bigga)-@Html.DisplayFor(modelItem => Model.Last().Kattha)-@Html.DisplayFor(modelItem => Model.Last().Dhur)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">सिट.नं. </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sheetno)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">कित्ता  </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Kitta)</td>
+                    </tr>
+                    <tr>घर रहेको जग्गाको विवरण</tr>
+
+                    <tr>
+                        <th scope="row">घरको जम्मा क्षेत्रफल</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Jammachetrafal)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">घरको भुई तल्लाको क्षेत्रफल</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Bhuitalakochetrafal)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">पाउने फार</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Paunefaar)</td>
+                    </tr>
+
+
+
+
+                    <tr>
+                        <th scope="row">सिफारिस दिन मिल्ने कारण</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Karan)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">प्राबिधिकको नाम	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Prabidhiknaam)</td>
+                    </tr>
+ 
+                </table>
+                
+            </div>
+
+        </center>
+    </div>
+</div>

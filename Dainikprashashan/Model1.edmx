@@ -138,7 +138,7 @@
           <Property Name="Anumanit_Mulya" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Batoko_Prakar" Type="nvarchar" MaxLength="50" />
           <Property Name="Kaifiyat" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Files" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ImagePath" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="Ghar_Jagga_Naamsari">
           <Key>
@@ -821,7 +821,7 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Anumanit_Mulya" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Batoko_Prakar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Kaifiyat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Files" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Ghar_Jagga_Naamsari">
           <Key>
@@ -1230,7 +1230,7 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Protector_Ward" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Protector_Tole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Antarik_Basai_Sarai" EntityType="Self.Antarik_Basai_Sarai" />
           <EntitySet Name="Asthayi_Basobas" EntityType="Self.Asthayi_Basobas" />
           <EntitySet Name="Barsik_Pramanikaran" EntityType="Self.Barsik_Pramanikaran" />
@@ -1255,7 +1255,7 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Dainik_PrasashanModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="Dainik_PrasashanModelStoreContainer" CdmEntityContainer="Entities1">
           <EntitySetMapping Name="Antarik_Basai_Sarai">
             <EntityTypeMapping TypeName="Dainik_PrasashanModel.Antarik_Basai_Sarai">
               <MappingFragment StoreEntitySet="Antarik_Basai_Sarai">
@@ -1393,7 +1393,7 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
                 <ScalarProperty Name="Anumanit_Mulya" ColumnName="Anumanit_Mulya" />
                 <ScalarProperty Name="Batoko_Prakar" ColumnName="Batoko_Prakar" />
                 <ScalarProperty Name="Kaifiyat" ColumnName="Kaifiyat" />
-                <ScalarProperty Name="Files" ColumnName="Files" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

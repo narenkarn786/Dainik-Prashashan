@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e3936ec95f6b4c5fb7327f741adfe084" Name="Diagram1">
+      <Diagram DiagramId="029d1c130d2c4acfa08a94300b3ed177" Name="Diagram1">
         <EntityTypeShape EntityType="Dainik_PrasashanModel.Antarik_Basai_Sarai" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Dainik_PrasashanModel.Asthayi_Basobas" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Dainik_PrasashanModel.Barsik_Pramanikaran" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />

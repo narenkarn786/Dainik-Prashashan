@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Dainikprashashan.Models.GharkayamList>
+@{
+    ViewBag.Title = "Charkillaview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding:0px 100px">
+    <div class="col-lg-1">
+    </div>
+    <center>
+        <div class="col-lg-11">
+            <div class="table-responsive-sm">
+                <table class="table table-bordered" style="border:1px">
+
+                    <tr>
+                        <th scope="row">फारम ID</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</td>
+                    </tr>
+
+
+                    <tr>
+                        <th scope="row">
+                            अनुमोदित
+                        </th>
+                        <td style="color:red">नभएको </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">आवेदन गरिएको कार्यालय</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().karyalaya)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">आवेदन दिएको मिती</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedan_miti)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">जग्गा धनिको नाम</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Jaggadhanikonaam)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ठेगाना</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Pradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Jilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Gabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Ward)</td>
+                    </tr>
+                </table>
+                <hr />
+                <div class="table-responsive-sm" style="width:100%">
+
+
+                    <table class="table table-bordered">
+
+                        <colgroup span="6"></colgroup>
+
+
+                        <tr>
+                            <th rowspan="2">साबिक गा.बि.स/न.पा</th>
+                            <th rowspan="2">हाल गा.बि.स/न.पा</th>
+                            <th colspan="3" scope="colgroup">जग्गाको विवरण</th>
+                            <th rowspan="2">बाटो</th>
+                            <th rowspan="2">बाटोको  प्रकार</th>
+                            <th colspan="4" scope="colgroup">चार किल्ला</th>
+                            <th rowspan="2">कैफियत</th>
+
+                        </tr>
+                        <tr>
+                            <th scope="col">नक्सा सि.नं</th>
+                            <th scope="col">कि.नं</th>
+                            <th scope="col">क्षेत्रफल</th>
+                            <th scope="col">पुर्ब</th>
+                            <th scope="col">पश्चिम</th>
+                            <th scope="col">उत्तर</th>
+                            <th scope="col">दक्षिण</th>
+                        </tr>
+
+
+                        <tr>
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sabikgabisa)</th>
+                            <th> @Html.DisplayFor(modelItem => Model.LastOrDefault().Haalgabisa)</th>
+                            <th> @Html.DisplayFor(modelItem => Model.LastOrDefault().Naksa_sheetno)</th>
+                            <th> @Html.DisplayFor(modelItem => Model.LastOrDefault().Kitta_no)</th>
+                            <th>
+                                @Html.DisplayFor(modelItem => Model.LastOrDefault().Bigga)-@Html.DisplayFor(modelItem => Model.LastOrDefault().Kattha)-@Html.DisplayFor(modelItem => Model.LastOrDefault().Dhur)
+                            </th>
+                            <th><input type="checkbox" id="myCheck" onclick="myFunction()"></th>
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().Batoko_prakaar)</th>
+
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().East)</th>
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().West)</th>
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().North)</th>
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().South)</th>
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().Kaifiyat)</th>
+
+                        </tr>
+
+
+                    </table>
+                    <br />
+                    <button class="btn btn-warning col-lg-5" type="submit"> <a href="Editabedanniwaran"><b>सम्पादन गर्नुहोस् </b></a></button>
+                    &nbsp;
+                    <button class="btn btn-success col-lg-5" type="submit"><b>दर्ता गर्नुहोस् </b></button>
+
+                </div>
+            </div>
+        </div>
+    </center>
+</div>
+

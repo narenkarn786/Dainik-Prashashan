@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Dainikprashashan.Models.GharkayamList>
+@{
+    ViewBag.Title = "Antarikbasaisaraiview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding:0px 100px">
+    <div class="col-lg-1">
+    </div>
+    <center>
+        <div class="col-lg-11">
+            <div class="table-responsive-sm">
+                <table class="table table-bordered" style="border:1px">
+
+                    <tr>
+                        <th scope="row">फारम ID</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            स्वीकृत
+                        </th>
+                        <td style="color:red">नभएको </td>
+                    </tr>
+                    <tr>आबदेकको विवरण</tr>
+                    <tr>
+                        <th scope="row">नाम </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedak_name)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">बुवाको नाम </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Buwakonaam)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">आमाको नाम</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Amakonaam)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">पुरानो ठेगाना	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Pradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Jilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Gabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Ward),@Html.DisplayFor(modelItem => Model.LastOrDefault().Tole)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">हालको ठेगाना</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Haalpradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Haaljilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Haalgabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Haalward), @Html.DisplayFor(modelItem => Model.LastOrDefault().Haaltole)</td>
+                    </tr>
+                    <tr>
+                        परिवारको विवरण
+                    </tr>
+                    <tr>
+                        <th scope="row">नाम</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Pariwarkonaam)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">नाता</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Nata)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            ना.प्र.नं /जन्मदर्ता नं
+                        </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Nagariktano)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">घर नं</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Ghar_no)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">बाटोको नाम</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Batokonaam)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">उमेर	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Umer)</td>
+                    </tr>
+                </table>
+            </div>
+            <br />
+            <a href="Editabedanniwaran"><button class="btn btn-warning col-lg-5" type="submit"><b>सम्पादन गर्नुहोस् </b></button></a>
+            &nbsp;
+            <button class="btn btn-success col-lg-5" type="submit"><b>दर्ता गर्नुहोस् </b></button>
+        </div>
+    </center>
+</div>

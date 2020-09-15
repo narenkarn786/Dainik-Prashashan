@@ -23,6 +23,12 @@ namespace Dainikprashashan.Controllers
         }
 
         //Ghar Sambandhi
+        [HttpGet]//Gharsambandhicard
+        public ActionResult Gharsambandhicard()
+        {
+            return View();
+        }
+
         [HttpGet]//Ghar kayamko sifaris
         public ActionResult Gharkayamkosifaris()
         {
@@ -148,6 +154,24 @@ namespace Dainikprashashan.Controllers
             var selfList = lbdService.GetSelfList(loginId);
             return View(selfList);
 
+        }
+
+        [HttpGet]//Final view
+        public ActionResult Finalview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Gharsambandhit();
+            var selfList = lbdService.GetSelfList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//Final Biwaran View
+        public ActionResult Finalbiwaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Gharsambandhit();
+            var selfList = lbdService.GetSelfList(loginId);
+            return View(selfList);
         }
 
         [HttpGet]//Edit Aabedanko Biwaran
@@ -300,7 +324,34 @@ namespace Dainikprashashan.Controllers
         {
             var lservice = new Gharsambandhit();
             var lresponse = lservice.SaveGharjagganaamsari(gn);
-            return RedirectToAction("Gharjagganaamsari");
+            return RedirectToAction("Gharjagganaamsariview");
+        }
+
+        [HttpGet]//Ghar Jagga Naamsari /आवेदकको विवरण
+        public ActionResult Gharjagganaamsariview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Gharsambandhit();
+            var selfList = lbdService.GetGharjagganaamsariList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//Final Gharjagganaamsariview
+        public ActionResult FinalGharjagganaamsariview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Gharsambandhit();
+            var selfList = lbdService.GetGharjagganaamsariList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//Final Biwaran Gharjagganaamsariview
+        public ActionResult FinalGharjagganaamsaribiwaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Gharsambandhit();
+            var selfList = lbdService.GetGharjagganaamsariList(loginId);
+            return View(selfList);
         }
 
         //Kittakat Sifaris
@@ -318,82 +369,120 @@ namespace Dainikprashashan.Controllers
             return RedirectToAction("Kittakatsifaris");
         }
 
+        [HttpGet]//Kittakat Sifaris /आवेदकको विवरण
+        public ActionResult Kittakatsifarisview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Gharsambandhit();
+            var selfList = lbdService.GetKittakatsifarisList(loginId);
+            return View(selfList);
+        }
 
-        //BASOBAAS
-        [HttpGet]//Sthayi Basobaas
-        public ActionResult Sthayibasobas()
+        [HttpGet]//FinalKittakatsifarisview
+        public ActionResult FinalKittakatsifarisview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Gharsambandhit();
+            var selfList = lbdService.GetKittakatsifarisList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//FinalKittakatsifarisbiwaranview
+        public ActionResult FinalKittakatsifarisbiwaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Gharsambandhit();
+            var selfList = lbdService.GetKittakatsifarisList(loginId);
+            return View(selfList);
+        }
+
+        //Sampati sambandhi
+
+        [HttpGet]//Sampati Sambandhi card
+        public ActionResult Sampatisambandhicard()
         {
             return View();
         }
 
-        [HttpPost]//Sthayi Basobaas
-        public ActionResult Sthayibasobas(Sthayi_Basobas b)
-        {
-            var lservice = new Basobasservice();
-            var lresponse = lservice.SaveSthayibasobas(b);
-            return RedirectToAction("Sthayibasobas");
-        }
+        [HttpGet]//वार्षिक आय प्रमाणिकरण
 
-        [HttpGet]//Asthayi Basobaas
-        public ActionResult Asthayibasobas()
+        public ActionResult Barsikpramanikaran()
         {
             return View();
         }
 
-        [HttpPost]//Asthayi Basobaas
-        public ActionResult Asthayibasobas(Asthayi_Basobas a)
+        [HttpPost]//वार्षिक आय प्रमाणिकरण
+        public ActionResult Barsikpramanikaran(Barsik_Pramanikaran bp)
         {
-            var lservice = new Basobasservice();
-            var lresponse = lservice.SaveAsthayibasobas(a);
-            return RedirectToAction("Asthayibasobas");
+            var lservice = new Sampatiservice();
+            var lresponse = lservice.SaveBarsikpramanikaran(bp);
+            return RedirectToAction("Barsikpramanikaranview");
         }
 
-        [HttpGet] //Antarik Basobas
-        public ActionResult Antarikbasaisarai()
+        [HttpGet]//वार्षिक आय प्रमाणिकरण /आवेदकको विवरण
+        public ActionResult Barsikpramanikaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sampatiservice();
+            var selfList = lbdService.GetBarsikpramanikaranList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//सम्पत्ति मूल्यांकन
+        public ActionResult Sampatimulyankan()
         {
             return View();
         }
 
-        [HttpPost]//Asthayi Basobaas
-        public ActionResult Antarikbasaisarai(Antarik_Basai_Sarai ab)
+        [HttpPost]//सम्पत्ति मूल्यांकन
+        public ActionResult Sampatimulyankan(Sampati_Muluyankan sm)
         {
-            var lservice = new Basobasservice();
-            var lresponse = lservice.SaveAntarikbasaisarai(ab);
-            return RedirectToAction("Antarikbasaisarai");
+            var lservice = new Sampatiservice();
+            var lresponse = lservice.SaveSampatimulyankan(sm);
+            return RedirectToAction("Sampatimulyankanview");
+        }
+
+        [HttpGet]//सम्पत्ति मूल्यांकन/आवेदकको विवरण
+        public ActionResult Sampatimulyankanview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sampatiservice();
+            var selfList = lbdService.GetSampatimulyankanList(loginId);
+            return View(selfList);
         }
 
 
-        //NAGARIKTA
-
-        [HttpGet]//Nagarikta_Praman_Patra
-        public ActionResult Nagariktapramanpatra()
+        [HttpGet] //कर सावधानी प्रमाणपत्र
+        public ActionResult Karsabdhani()
         {
             return View();
         }
 
-        [HttpPost]//Nagarikta Praman Patra
-        public ActionResult Nagariktapramanpatra(Nagarikta_Pramanpatra n)
+        [HttpPost]//कर सावधानी प्रमाणपत्र
+        public ActionResult Karsabdhani(Kar_Sambandhi ks)
         {
-            var lservice = new Nagariktaservice();
-            var lresponse = lservice.SaveNagariktapramanpatra(n);
-            return RedirectToAction("Nagariktapramanpatra");
+            var lservice = new Sampatiservice();
+            var lresponse = lservice.SaveKarsabdhani(ks);
+            return RedirectToAction("Karsabdhaniview");
         }
 
-        [HttpGet]//Nagarikta_Praman_Patra_Pratilipi
-        public ActionResult Nagariktapramanpatrapratilipi()
+        [HttpGet]//कर सावधानी प्रमाणपत्र/आवेदकको विवरण
+        public ActionResult Karsabdhaniview()
         {
-            return View();
-        }
-
-        [HttpPost]//Nagarikta Praman Patra Pratilipi
-        public ActionResult Nagariktapramanpatrapratilipi(Nagarikta_Pramanpatra_Pratilipi n)
-        {
-            var lservice = new Nagariktaservice();
-            var lresponse = lservice.SaveNagariktapramanpatrapratilipi(n);
-            return RedirectToAction("Nagariktapramanpatrapratilipi");
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sampatiservice();
+            var selfList = lbdService.GetKarsabdhaniList(loginId);
+            return View(selfList);
         }
 
         //Jagga
+
+        [HttpGet]//Jagga Sambandhi card
+        public ActionResult Jaggasambandhicard()
+        {
+            return View();
+        }
+
         [HttpGet]//जग्गाधनी लाल पुर्जा प्रतिलिपि
         public ActionResult Jaggadhanipratilipi()
         {
@@ -406,6 +495,15 @@ namespace Dainikprashashan.Controllers
             var lservice = new Jaggaservice();
             var lresponse = lservice.SaveJaggadhanipratilipi(j);
             return RedirectToAction("Jaggadhanipratilipi");
+        }
+
+        [HttpGet]//जग्गाधनी लाल पुर्जा प्रतिलिपि/आवेदकको विवरण
+        public ActionResult Jaggadhanipratilipiview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetJaggadhanipratilipiList(loginId);
+            return View(selfList);
         }
 
 
@@ -423,7 +521,16 @@ namespace Dainikprashashan.Controllers
             return RedirectToAction("Batokayam");
         }
 
-        [HttpGet]//पुर्जामा घर कायम
+        [HttpGet]//बाटो कायम/आवेदकको विवरण
+        public ActionResult Batokayamview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetBatokayamList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//पुर्जामा घर कामय
         public ActionResult Jaggagharkayam()
         {
             return View();
@@ -435,6 +542,15 @@ namespace Dainikprashashan.Controllers
             var lservice = new Jaggaservice();
             var lresponse = lservice.SaveJaggagharkayam(jg);
             return RedirectToAction("Jaggagharkayam");
+        }
+
+        [HttpGet]//पुर्जामा घर कामय/आवेदकको विवरण
+        public ActionResult Jaggagharkayamview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetJaggagharkayamList(loginId);
+            return View(selfList);
         }
 
         [HttpGet]//चार किल्ला प्रमाणित
@@ -451,6 +567,15 @@ namespace Dainikprashashan.Controllers
             return RedirectToAction("Charkilla");
         }
 
+        [HttpGet]//चार किल्ला प्रमाणित/आवेदकको विवरण
+        public ActionResult Charkillaview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetCharkillaList(loginId);
+            return View(selfList);
+        }
+
         [HttpGet]//मोही लागत कट्टा
         public ActionResult Mohilagatkatta()
         {
@@ -464,49 +589,147 @@ namespace Dainikprashashan.Controllers
             return RedirectToAction("Mohilagatkatta");
         }
 
-        //Sampati sambandhi
-        [HttpGet]//वार्षिक आय प्रमाणिकरण
+        [HttpGet]//मोही लागत कट्टा/आवेदकको विवरण
+        public ActionResult Mohilagatkattaview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetMohilagatkattaList(loginId);
+            return View(selfList);
+        }
 
-        public ActionResult Barsikpramanikaran()
+
+        //BASOBAAS
+
+        [HttpGet]//Basobaas Sambandhi card
+        public ActionResult Basobaassambandhicard()
         {
             return View();
         }
 
-        [HttpPost]//वार्षिक आय प्रमाणिकरण
-        public ActionResult Barsikpramanikaran(Barsik_Pramanikaran bp)
-        {
-            var lservice = new Sampatiservice();
-            var lresponse = lservice.SaveBarsikpramanikaran(bp);
-            return RedirectToAction("Barsikpramanikaran");
-        }
-
-        [HttpGet]//सम्पत्ति मूल्यांकन
-        public ActionResult Sampatimulyankan()
+        [HttpGet]//Sthayi Basobaas
+        public ActionResult Sthayibasobas()
         {
             return View();
         }
 
-        [HttpPost]//सम्पत्ति मूल्यांकन
-        public ActionResult Sampatimulyankan(Sampati_Muluyankan sm)
+        [HttpPost]//Sthayi Basobaas
+        public ActionResult Sthayibasobas(Sthayi_Basobas b)
         {
-            var lservice = new Sampatiservice();
-            var lresponse = lservice.SaveSampatimulyankan(sm);
-            return RedirectToAction("Sampatimulyankan");
+            var lservice = new Basobasservice();
+            var lresponse = lservice.SaveSthayibasobas(b);
+            return RedirectToAction("Sthayibasobasview");
         }
 
-        [HttpGet] //कर सावधानी प्रमाणपत्र
-        public ActionResult Karsabdhani()
+        [HttpGet]//स्थायी बसोबास/आवेदकको विवरण
+        public ActionResult Sthayibasobasview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Basobasservice();
+            var selfList = lbdService.GetSthayibasobasList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//Asthayi Basobaas
+        public ActionResult Asthayibasobas()
         {
             return View();
         }
 
-        [HttpPost]//कर सावधानी प्रमाणपत्र
-        public ActionResult Karsabdhani(Kar_Sambandhi ks)
+        [HttpPost]//Asthayi Basobaas
+        public ActionResult Asthayibasobas(Asthayi_Basobas a)
         {
-            var lservice = new Sampatiservice();
-            var lresponse = lservice.SaveKarsabdhani(ks);
-            return RedirectToAction("Karsabdhani");
+            var lservice = new Basobasservice();
+            var lresponse = lservice.SaveAsthayibasobas(a);
+            return RedirectToAction("Asthayibasobas");
         }
+
+        [HttpGet]//अस्थाई बसोबास /आवेदकको विवरण
+        public ActionResult Asthayibasobasview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Basobasservice();
+            var selfList = lbdService.GetAsthayibasobasList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet] //Antarik Basobas
+        public ActionResult Antarikbasaisarai()
+        {
+            return View();
+        }
+
+        [HttpPost]//Asthayi Basobaas
+        public ActionResult Antarikbasaisarai(Antarik_Basai_Sarai ab)
+        {
+            var lservice = new Basobasservice();
+            var lresponse = lservice.SaveAntarikbasaisarai(ab);
+            return RedirectToAction("Antarikbasaisaraiview");
+        }
+
+        [HttpGet]//आन्तरिक बसाई सराई /आवेदकको विवरण
+        public ActionResult Antarikbasaisaraiview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Basobasservice();
+            var selfList = lbdService.GetAsthayibasobasList(loginId);
+            return View(selfList);
+        }
+
+        //NAGARIKTA
+
+        [HttpGet]//Nagarikta Sambandhi card
+        public ActionResult Nagariktasambandhicard()
+        {
+            return View();
+        }
+
+        [HttpGet]//Nagarikta_Praman_Patra
+        public ActionResult Nagariktapramanpatra()
+        {
+            return View();
+        }
+
+        [HttpPost]//Nagarikta Praman Patra
+        public ActionResult Nagariktapramanpatra(Nagarikta_Pramanpatra n)
+        {
+            var lservice = new Nagariktaservice();
+            var lresponse = lservice.SaveNagariktapramanpatra(n);
+            return RedirectToAction("Nagariktapramanpatra");
+        }
+
+        [HttpGet]//नागरिकता प्रमाण पत्र/ आवेदकको विवरण
+        public ActionResult Nagariktapramanpatraview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Nagariktaservice();
+            var selfList = lbdService.GetNagariktapramanpatraList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//Nagarikta_Praman_Patra_Pratilipi
+        public ActionResult Nagariktapramanpatrapratilipi()
+        {
+            return View();
+        }
+
+        [HttpPost]//Nagarikta Praman Patra Pratilipi
+        public ActionResult Nagariktapramanpatrapratilipi(Nagarikta_Pramanpatra_Pratilipi n)
+        {
+            var lservice = new Nagariktaservice();
+            var lresponse = lservice.SaveNagariktapramanpatrapratilipi(n);
+            return RedirectToAction("Nagariktapramanpatrapratilipi");
+        }
+
+        [HttpGet]//नागरिकता प्रमाण पत्र/ आवेदकको विवरण
+        public ActionResult Nagariktapramanpatrapratilipiview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Nagariktaservice();
+            var selfList = lbdService.GetNagariktapramanpatrapratilipiList(loginId);
+            return View(selfList);
+        }
+
     }
 
 }

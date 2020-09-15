@@ -1,0 +1,104 @@
+﻿@model IEnumerable<Dainikprashashan.Models.GharkayamList>
+@{
+    ViewBag.Title = "Nagariktapramanpatraview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding:0px 100px">
+    <div class="col-lg-1">
+    </div>
+    <center>
+        <div class="col-lg-11">
+            <div class="table-responsive-sm">
+                <table class="table table-bordered" style="border:1px">
+
+                    <tr>
+                        <th scope="row">फारम ID</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">नाम, थर</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Pahilonaam),@Html.DisplayFor(modelItem => Model.LastOrDefault().Bichkonaam),@Html.DisplayFor(modelItem => Model.LastOrDefault().Thar)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Full Name(In Block)</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Firstname),@Html.DisplayFor(modelItem => Model.LastOrDefault().Middlename),@Html.DisplayFor(modelItem => Model.LastOrDefault().Lastname)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">लिङ्ग</th>
+                        @*<td>@Html.DisplayFor(modelItem => Model.LastOrDefault().)</td>*@
+                    </tr>
+
+                    <tr>
+                        <th scope="row">जन्मस्थान</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Janmapradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Janmajilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Janmagabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Janmaward),@Html.DisplayFor(modelItem => Model.LastOrDefault().Janmatole)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">स्थाई ठेगाना</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Permanentpradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Permanentjilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Permanentgabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Permanentward),@Html.DisplayFor(modelItem => Model.LastOrDefault().Permanenttole)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">जन्म मिति</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Dob)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">बुबाको नाम, थर</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Buwakonaam)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">बुबाको ठेगाना</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Buwakopradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Buwakojilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Buwakogabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Buwakoward),@Html.DisplayFor(modelItem => Model.LastOrDefault().Buwakotole)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">बुबाको नागरिकता </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Buwakonagariktano)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">आमाको नाम, थर</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Amakonaam)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">आमाको ठेगाना</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Amakopradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Amakojilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Amakogabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Amakoward),@Html.DisplayFor(modelItem => Model.LastOrDefault().Amakotole)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">आमाको नागरिकता </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Amakonagariktano)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">पति / पत्नीको नाम, थर</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Patipatnikonaam)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">पति / पत्नीको ठेगाना</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Patipatnikopradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Patipatnikojilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Patipatnikogabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Patipatnikoward),@Html.DisplayFor(modelItem => Model.LastOrDefault().Patipatnikotole)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">पति / पत्नीको नागरिकता </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Patipatnikonagariktano)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">संरक्षकको नाम, थर</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Protectornaam)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">संरक्षकको ठेगाना</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Protectorpradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Protectorjilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Protectorgabisa   ),@Html.DisplayFor(modelItem => Model.LastOrDefault().Protectorward),@Html.DisplayFor(modelItem => Model.LastOrDefault().Protectortole)</td>
+                    </tr>
+                    <br />
+                    <a href="Editabedanniwaran"><button class="btn btn-warning col-lg-5" type="submit"><b>सम्पादन गर्नुहोस् </b></button></a>
+                    &nbsp;
+                    <button class="btn btn-success col-lg-5" type="submit"><b>दर्ता गर्नुहोस् </b></button>
+                </table>
+            </div>
+        </div>
+    </center>
+</div>
+

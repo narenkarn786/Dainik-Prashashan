@@ -1,0 +1,132 @@
+﻿@model IEnumerable<Dainikprashashan.Models.GharkayamList>
+
+@{
+    ViewBag.Title = "FinalGharjagganaamsaribiwaranview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding:25px 220px">
+    <div class="col-lg-1">
+    </div>
+
+    <div class="col-lg-12">
+        <center>
+            <h3><b>आबेदन विवरण</b></h3>
+            <hr />
+
+            <div class="table-responsive-sm">
+                <table class="table table-bordered" style="border:1px">
+
+                    <tr>
+                        <th scope="row">फारम ID</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            स्वीकृत
+                        </th>
+                        <td style="color:red">भएको </td>
+                    </tr>
+                    <tr></tr>
+
+                    <tr>
+                        <th scope="row">निबेदक नाम</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Nibedaknaam)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row"> निबेदक नाता</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Nibedaknata)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">जग्गा धनीको नाम </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Jaggadhanikonaam)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">मृत्‍यु मिती </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Mirtyumiti)</td>
+                    </tr>
+
+
+                    <tr>
+                        <th scope="row"> हकदारको नाम </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Hakdaarkonaam)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">मृत्‍क नाता  </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Mritaknata)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">बुवा/पतिको नाम  </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Buwapatikonaam)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">नागरिकता नं</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Nagariktano)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">घर नं</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Ghar_no)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">कित्ता</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Kitta)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">क्षेत्रफल</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Bigga)-@Html.DisplayFor(modelItem => Model.Last().Kattha)-@Html.DisplayFor(modelItem => Model.Last().Dhur)</td>
+                    </tr>
+
+
+                    <tr>
+                        <th scope="row">नक्सा सिट नं</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Naksa_sheetno)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">कित्ता नं	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Kitta_no)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">घर नं</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Ghar_no)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">बाटोको नाम </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Batokonaam)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">बाटोको प्रकार </th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Batoko_prakaar)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">वार्ड नं</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Wardno)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">कैफियत</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Kaifiyat)</td>
+                    </tr>
+
+
+                </table>
+               
+            </div>
+
+        </center>
+    </div>
+</div>

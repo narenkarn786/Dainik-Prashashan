@@ -13,7 +13,7 @@ namespace Dainikprashashan.Service
         public string SaveRegister(Login ml)
         {
             var message = "";
-            using (var Context = new Entities())
+            using (var Context = new Entities1())
             {
                 var user = new Login()
                 {
@@ -33,7 +33,7 @@ namespace Dainikprashashan.Service
         public Tuple<string, int> SaveLogin(Login ll)
         {
             var message = "";
-            using (var Context=new Entities())
+            using (var Context=new Entities1())
             {
                 var loginData = Context.Logins
                           .Where(lg => lg.Username == ll.Username && lg.Password == ll.Password)

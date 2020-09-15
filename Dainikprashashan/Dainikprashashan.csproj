@@ -2337,6 +2337,31 @@
     <Content Include="Views\Dashboard\Barsikpramanikaran.cshtml" />
     <Content Include="Views\Dashboard\Sampatimulyankan.cshtml" />
     <Content Include="Views\Dashboard\Karsabdhani.cshtml" />
+    <Content Include="Views\Dashboard\Barsikpramanikaranview.cshtml" />
+    <Content Include="Views\Dashboard\Sampatimulyankanview.cshtml" />
+    <Content Include="Views\Dashboard\Karsabdhaniview.cshtml" />
+    <Content Include="Views\Dashboard\Sthayibasobasview.cshtml" />
+    <Content Include="Views\Dashboard\Asthayibasobasview.cshtml" />
+    <Content Include="Views\Dashboard\Antarikbasaisaraiview.cshtml" />
+    <Content Include="Views\Dashboard\Nagariktapramanpatraview.cshtml" />
+    <Content Include="Views\Dashboard\Jaggadhanipratilipiview.cshtml" />
+    <Content Include="Views\Dashboard\Batokayamview.cshtml" />
+    <Content Include="Views\Dashboard\Jaggagharkayamview.cshtml" />
+    <Content Include="Views\Dashboard\Charkillaview.cshtml" />
+    <Content Include="Views\Dashboard\Mohilagatkattaview.cshtml" />
+    <Content Include="Views\Dashboard\Gharsambandhicard.cshtml" />
+    <Content Include="Views\Dashboard\Sampatisambandhicard.cshtml" />
+    <Content Include="Views\Dashboard\Jaggasambandhicard.cshtml" />
+    <Content Include="Views\Dashboard\Basobaassambandhicard.cshtml" />
+    <Content Include="Views\Dashboard\Nagariktasambandhicard.cshtml" />
+    <Content Include="Views\Dashboard\Finalview.cshtml" />
+    <Content Include="Views\Dashboard\Finalbiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\Gharjagganaamsariview.cshtml" />
+    <Content Include="Views\Dashboard\FinalGharjagganaamsariview.cshtml" />
+    <Content Include="Views\Dashboard\FinalGharjagganaamsaribiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\Kittakatsifarisview.cshtml" />
+    <Content Include="Views\Dashboard\FinalKittakatsifarisview.cshtml" />
+    <Content Include="Views\Dashboard\FinalKittakatsifarisbiwaranview.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2375,6 +2400,8 @@
           <DevelopmentServerPort>58393</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:58393/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:58393/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

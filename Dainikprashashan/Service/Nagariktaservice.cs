@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dainikprashashan.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,7 @@ namespace Dainikprashashan.Service
         public string SaveNagariktapramanpatra(Nagarikta_Pramanpatra np)
         {
             var message = "";
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var user = new Nagarikta_Pramanpatra()
                 {
@@ -72,11 +73,78 @@ namespace Dainikprashashan.Service
             return message;
         }
 
-        //saving Nagarikta Praman Patra
+        //View Nagariktapramanpatra
+        public List<GharkayamList> GetNagariktapramanpatraList(string loginId)
+        {
+            using (var context = new Entities1())
+            {
+                var lgId = Convert.ToInt32(loginId);
+                var selfData = context.Nagarikta_Pramanpatra.Where(x => x.FormId == lgId).ToList();
+                GharkayamList Lastlistobj = null;
+                var dataInfoList = new List<GharkayamList>();
+
+                foreach (var np in selfData)
+                {
+                    Lastlistobj = new GharkayamList
+                    {
+                        Aabedan_miti = np.Aabedan_miti,
+                        karyalaya = np.karyalaya,
+                        Pahilonaam = np.Pahilo_naam,
+                        Bichkonaam = np.Bichko_naam,
+                        Thar = np.Thar,
+                        Firstname = np.First_name,
+                        Middlename = np.Middle_name,
+                        Lastname = np.Last_name,
+                        Dob = np.Dob,
+                        Janmapradesh = np.Janma_Pradesh,
+                        Janmajilla = np.Janma_Jilla,
+                        Janmagabisa = np.Janma_Gabisa,
+                        Janmaward = np.Janma_Ward,
+                        Janmatole = np.Janma_Tole,
+                        Permanentpradesh = np.Permanent_Pradesh,
+                        Permanentjilla = np.Permanent_Jilla,
+                        Permanentgabisa = np.Permanent_Gabisa,
+                        Permanentward = np.Permanent_Ward,
+                        Permanenttole = np.Permanent_Tole,
+                        Buwakonaam = np.Buwako_naam,
+                        Buwakonagariktano = np.Buwako_nagariktano,
+                        Buwakopradesh = np.Buwako_Pradesh,
+                        Buwakojilla = np.Buwako_Jilla,
+                        Buwakogabisa = np.Buwako_Gabisa,
+                        Buwakoward = np.Buwako_Ward,
+                        Buwakotole = np.Buwako_Tole,
+                        Amakonaam = np.Amako_naam,
+                        Amakonagariktano = np.Amako_nagariktano,
+                        Amakopradesh = np.Amako_Pradesh,
+                        Amakojilla = np.Amako_Jilla,
+                        Amakogabisa = np.Amako_Gabisa,
+                        Amakoward = np.Amako_Ward,
+                        Amakotole = np.Amako_Tole,
+                        Patipatnikonaam = np.Patipatniko_naam,
+                        Patipatnikonagariktano = np.Patipatniko_nagariktano,
+                        Patipatnikopradesh = np.Patipatniko_Pradesh,
+                        Patipatnikojilla = np.Patipatniko_Jilla,
+                        Patipatnikogabisa = np.Patipatniko_Gabisa,
+                        Patipatnikoward = np.Patipatniko_Ward,
+                        Patipatnikotole = np.Patipatniko_Tole,
+                        Protectornaam = np.Protector_naam,
+                        Protectorpradesh = np.Protector_Pradesh,
+                        Protectorjilla = np.Protector_Jilla,
+                        Protectorgabisa = np.Protector_Gabisa,
+                        Protectorward = np.Protector_Ward,
+                        Protectortole = np.Protector_Tole
+                    };
+                    dataInfoList.Add(Lastlistobj);
+                }
+                return dataInfoList;
+            }
+        }
+
+        //saving Nagarikta Praman Patra Pratilipi
         public string SaveNagariktapramanpatrapratilipi(Nagarikta_Pramanpatra_Pratilipi np)
         {
             var message = "";
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var user = new Nagarikta_Pramanpatra_Pratilipi()
                 {
@@ -138,6 +206,76 @@ namespace Dainikprashashan.Service
                 message = "save successfull";
             }
             return message;
+        }
+
+        //View Nagariktapramanpatra Pratilipi
+        public List<GharkayamList> GetNagariktapramanpatrapratilipiList(string loginId)
+        {
+            using (var context = new Entities1())
+            {
+                var lgId = Convert.ToInt32(loginId);
+                var selfData = context.Nagarikta_Pramanpatra_Pratilipi.Where(x => x.FormId == lgId).ToList();
+                GharkayamList Lastlistobj = null;
+                var dataInfoList = new List<GharkayamList>();
+
+                foreach (var np in selfData)
+                {
+                    Lastlistobj = new GharkayamList
+                    {
+                        Aabedan_miti = np.Aabedan_miti,
+                        karyalaya = np.karyalaya,
+                        Pahilonaam = np.Pahilo_naam,
+                        Bichkonaam = np.Bichko_naam,
+                        Thar = np.Thar,
+                        Firstname = np.First_name,
+                        Middlename = np.Middle_name,
+                        Lastname = np.Last_name,
+                        Dob = np.Dob,
+                        Nagariktano = np.Nagarikta_no,
+                        Jarimiti = np.Jari_miti,
+                        Nagariktakisim = np.Nagarikta_kisim,
+                        Janmapradesh = np.Janma_Pradesh,
+                        Janmajilla = np.Janma_Jilla,
+                        Janmagabisa = np.Janma_Gabisa,
+                        Janmaward = np.Janma_Ward,
+                        Janmatole = np.Janma_Tole,
+                        Permanentpradesh = np.Permanent_Pradesh,
+                        Permanentjilla = np.Permanent_Jilla,
+                        Permanentgabisa = np.Permanent_Gabisa,
+                        Permanentward = np.Permanent_Ward,
+                        Permanenttole = np.Permanent_Tole,
+                        Buwakonaam = np.Buwako_naam,
+                        Buwakonagariktano = np.Buwako_nagariktano,
+                        Buwakopradesh = np.Buwako_Pradesh,
+                        Buwakojilla = np.Buwako_Jilla,
+                        Buwakogabisa = np.Buwako_Gabisa,
+                        Buwakoward = np.Buwako_Ward,
+                        Buwakotole = np.Buwako_Tole,
+                        Amakonaam = np.Amako_naam,
+                        Amakonagariktano = np.Amako_nagariktano,
+                        Amakopradesh = np.Amako_Pradesh,
+                        Amakojilla = np.Amako_Jilla,
+                        Amakogabisa = np.Amako_Gabisa,
+                        Amakoward = np.Amako_Ward,
+                        Amakotole = np.Amako_Tole,
+                        Patipatnikonaam = np.Patipatniko_naam,
+                        Patipatnikonagariktano = np.Patipatniko_nagariktano,
+                        Patipatnikopradesh = np.Patipatniko_Pradesh,
+                        Patipatnikojilla = np.Patipatniko_Jilla,
+                        Patipatnikogabisa = np.Patipatniko_Gabisa,
+                        Patipatnikoward = np.Patipatniko_Ward,
+                        Patipatnikotole = np.Patipatniko_Tole,
+                        Protectornaam = np.Protector_naam,
+                        Protectorpradesh = np.Protector_Pradesh,
+                        Protectorjilla = np.Protector_Jilla,
+                        Protectorgabisa = np.Protector_Gabisa,
+                        Protectorward = np.Protector_Ward,
+                        Protectortole = np.Protector_Tole
+                    };
+                    dataInfoList.Add(Lastlistobj);
+                }
+                return dataInfoList;
+            }
         }
     }
 }

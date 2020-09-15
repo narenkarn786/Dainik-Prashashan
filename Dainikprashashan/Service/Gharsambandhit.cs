@@ -9,11 +9,11 @@ namespace Dainikprashashan.Service
     public class Gharsambandhit
     {
         //Ghar sifarisko Bibaran
-        //Saving Data to Database
+        //Saving Ghar sifarisko Bibaran
         public string SaveGharkayamkosifaris(Ghar_kayamko_sifaris gks)
         {
             var message = "";
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var user = new Ghar_kayamko_sifaris()
                 {
@@ -47,10 +47,10 @@ namespace Dainikprashashan.Service
 
         public List<GharkayamList> GetSelfList(string loginId)
         {
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var lgId = Convert.ToInt32(loginId);
-                var selfData = context.Ghar_kayamko_sifaris.Where(x => x.FormId == lgId).ToList();
+                var selfData = context.Ghar_kayamko_sifaris/*.Where(x => x.FormId == lgId)*/.ToList();
                 GharkayamList Lastlistobj = null;
                 var dataInfoList = new List<GharkayamList>();
 
@@ -73,10 +73,6 @@ namespace Dainikprashashan.Service
                         Ghar_no = lbd.Ghar_no,
                         Gharko_prakaar = lbd.Gharko_prakaar,
                         Gharnirmaan_saal = lbd.Gharnirmaan_saal
-
-
-
-
                     };
                     dataInfoList.Add(Lastlistobj);
                 }
@@ -89,7 +85,7 @@ namespace Dainikprashashan.Service
 
             var message = "";
 
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var decId = Convert.ToDecimal(loginId);
                 var dataToUpdate = context.Ghar_kayamko_sifaris.Where(x => x.FormId == decId).FirstOrDefault();
@@ -122,7 +118,7 @@ namespace Dainikprashashan.Service
         public string SaveGharbatopramanit(Ghar_Bato_Pramanit gbp)
         {
             var message = "";
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var user = new Ghar_Bato_Pramanit()
                 {
@@ -146,7 +142,7 @@ namespace Dainikprashashan.Service
                     Anumanit_Mulya = gbp.Anumanit_Mulya,
                     Batoko_Prakar= gbp.Batoko_Prakar,
                     Kaifiyat= gbp.Kaifiyat,
-                    Files= gbp.Files
+                    ImagePath = gbp.ImagePath
                 };
                 context.Ghar_Bato_Pramanit.Add(user);
 
@@ -161,7 +157,7 @@ namespace Dainikprashashan.Service
         public string SaveGharjagganaamsari(Ghar_Jagga_Naamsari gjn)
         {
             var message = "";
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var user = new Ghar_Jagga_Naamsari()
                 {
@@ -186,8 +182,6 @@ namespace Dainikprashashan.Service
                     Batoko_prakar= gjn.Batoko_prakar,
                     Ward_no= gjn.Ward_no,
                     Kaifiyat=gjn.Kaifiyat
-
-
                 };
                 context.Ghar_Jagga_Naamsari.Add(user);
 
@@ -197,13 +191,55 @@ namespace Dainikprashashan.Service
             return message;
         }
 
+        //Ghar Jagga Naamsari /आवेदकको विवरण
+        public List<GharkayamList> GetGharjagganaamsariList(string loginId)
+        {
+            using (var context = new Entities1())
+            {
+                var lgId = Convert.ToInt32(loginId);
+                var selfData = context.Ghar_Jagga_Naamsari/*.Where(x => x.FormId == lgId)*/.ToList();
+                GharkayamList Lastlistobj = null;
+                var dataInfoList = new List<GharkayamList>();
+
+                foreach (var gjn in selfData)
+                {
+                    Lastlistobj = new GharkayamList
+                    {
+                        FormId = gjn.FormId,
+                        Aabedan_miti = gjn.Aabedan_miti,
+                        Nibedaknaam = gjn.Nibedak_naam,
+                        Nibedaknata = gjn.Nibedak_nata,
+                        Jaggadhanikonaam = gjn.Jagga_Dhaniko_Naam,
+                        Mirtyumiti = gjn.Mirtyu_miti,
+                        Hakdaarkonaam = gjn.Hakdaarko_naam,
+                        Mritaknata = gjn.Mritak_nata,
+                        Buwapatikonaam = gjn.Buwa_patiko_naam,
+                        Nagariktano = gjn.Nagarikta_no,
+                        Ghar_no = gjn.Ghar_no,
+                        Kitta = gjn.Kitta,
+                        Bigga = gjn.Bigga,
+                        Kattha = gjn.Kattha,
+                        Dhur = gjn.Dhur,
+                        Naksa_sheetno = gjn.Naksha_sheetno,
+                        Kitta_no = gjn.Kitta_no,
+                        Batokonaam = gjn.Batoko_naam,
+                        Batoko_prakaar = gjn.Batoko_prakar,
+                        Wardno = gjn.Ward_no,
+                        Kaifiyat = gjn.Kaifiyat
+                    };
+                    dataInfoList.Add(Lastlistobj);
+                }
+                return dataInfoList;
+            }
+        }
+
         //Kittakat Sifaris
         //saving Kittakat Sifaris
 
         public string SaveKittakatsifaris(Kittakat_Sifaris ks)
         {
             var message = "";
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var user = new Kittakat_Sifaris()
                 {
@@ -236,6 +272,47 @@ namespace Dainikprashashan.Service
                 message = "save successfull";
             }
             return message;
+        }
+
+        //Kittakat Sifaris /आवेदकको विवरण
+        public List<GharkayamList> GetKittakatsifarisList(string loginId)
+        {
+            using (var context = new Entities1())
+            {
+                var lgId = Convert.ToInt32(loginId);
+                var selfData = context.Kittakat_Sifaris/*.Where(x => x.FormId == lgId)*/.ToList();
+                GharkayamList Lastlistobj = null;
+                var dataInfoList = new List<GharkayamList>();
+
+                foreach (var ks in selfData)
+                {
+                    Lastlistobj = new GharkayamList
+                    {
+                        FormId = ks.FormId,
+                        Aabedan_miti = ks.Aabedan_miti,
+                        Jaggadhanikonaam = ks.Jagga_Dhaniko_Naam,
+                        Chetrafal = ks.Chetrafal,
+                        Pradesh = ks.Pradesh,
+                        Jilla = ks.Jilla,
+                        Gabisa = ks.Gabisa,
+                        Ward = ks.Ward,
+                        Sabikthegana = ks.Sabik_thegana,
+                        Disa = ks.Disa,
+                        Bigga = ks.Bigga,
+                        Kattha = ks.Kattha,
+                        Dhur = ks.Dhur,
+                        Sheetno = ks.Sheet_no,
+                        Kitta = ks.Kitta_no,
+                        Jammachetrafal = ks.Jamma_chetrafal,
+                        Bhuitalakochetrafal = ks.Bhui_talako_chetrafal,
+                        Paunefaar = ks.Paune_faar,
+                        Karan = ks.Karan,
+                        Prabidhiknaam = ks.Prabidhik_naam
+                    };
+                    dataInfoList.Add(Lastlistobj);
+                }
+                return dataInfoList;
+            }
         }
     }
 }

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Dainikprashashan.Models.GharkayamList>
+@{
+    ViewBag.Title = "Karsabdhaniview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" style="padding:0px 400px">
+
+
+    <center>
+
+        <div class="table-responsive-lg col-sm-12">
+            <table class="table table-bordered" style="border:1px">
+
+                <tr>
+                    <th scope="row">फारम ID</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</td>
+                </tr>
+                <tr>
+                    <th scope="row">आबदेन दिएको मिती</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedan_miti)</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        स्वीकृत
+                    </th>
+                    <td style="color:red">नभएको </td>
+                </tr>
+                <tr>
+                    <th scope="row">आवेदकको नाम</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedak_name)</td>
+                </tr>
+                <tr>
+                    <th scope="row">ठेगाना</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Pradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Jilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Gabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Ward)</td>
+                </tr>
+                <tr>
+                    <th scope="row">रकम</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Rakam)</td>
+                </tr>
+                <tr>
+                    <th scope="row">कित्ता नं	</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Kitta_no)</td>
+                </tr>
+                <tr>
+                    <th scope="row">वार्ड नं</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Wardno)</td>
+                </tr>
+              
+

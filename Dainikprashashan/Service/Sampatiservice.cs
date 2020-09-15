@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dainikprashashan.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,7 @@ namespace Dainikprashashan.Service
         public string SaveBarsikpramanikaran(Barsik_Pramanikaran bpn)
         {
             var message = "";
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var user = new Barsik_Pramanikaran()
                 {
@@ -37,11 +38,44 @@ namespace Dainikprashashan.Service
             return message;
         }
 
+        //View Barsik Aaya Pramanikaran
+        public List<GharkayamList> GetBarsikpramanikaranList(string loginId)
+        {
+            using (var context = new Entities1())
+            {
+                var lgId = Convert.ToInt32(loginId);
+                var selfData = context.Barsik_Pramanikaran.Where(x => x.FormId == lgId).ToList();
+                GharkayamList Lastlistobj = null;
+                var dataInfoList = new List<GharkayamList>();
+
+                foreach (var bpl in selfData)
+                {
+                    Lastlistobj = new GharkayamList
+                    {
+                        FormId = bpl.FormId,
+                        Aabedan_miti= bpl.Applicated_date,
+                        Aabedak_name= bpl.Full_name,
+                        Pradesh= bpl.Pradesh,
+                        Jilla= bpl.Jilla,
+                        Gabisa= bpl.Gabisa,
+                        Ward= bpl.Ward,
+                        Relationwithapplicant=bpl.Relation_with_applicant,
+                        Partiesname=bpl.Parties_name,
+                        Annualincome=bpl.Annual_income,
+                        Remarks=bpl.Remarks,
+                    };
+                    dataInfoList.Add(Lastlistobj);
+                }
+                return dataInfoList;
+            }
+        }
+
+
         //saving Sampati Mulyankan
         public string SaveSampatimulyankan(Sampati_Muluyankan smn)
         {
             var message = "";
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var user = new Sampati_Muluyankan()
                 {
@@ -70,11 +104,47 @@ namespace Dainikprashashan.Service
             return message;
         }
 
+
+        //View Sampati Mulyankan
+        public List<GharkayamList> GetSampatimulyankanList(string loginId)
+        {
+            using (var context = new Entities1())
+            {
+                var lgId = Convert.ToInt32(loginId);
+                var selfData = context.Sampati_Muluyankan.Where(x => x.FormId == lgId).ToList();
+                GharkayamList Lastlistobj = null;
+                var dataInfoList = new List<GharkayamList>();
+
+                foreach (var sml in selfData)
+                {
+                    Lastlistobj = new GharkayamList
+                    {
+                        FormId = sml.FormId,
+                        Aabedan_miti = sml.Applicated_date,
+                        Aabedak_name = sml.Full_name,
+                        Pradesh = sml.Pradesh,
+                        Jilla = sml.Jilla,
+                        Gabisa = sml.Gabisa,
+                        Ward = sml.Ward,
+                        Owner = sml.Owners,
+                        Particularplotno = sml.Particular_plotno,
+                        Bigga = sml.Bigga,
+                        Kattha = sml.Kattha,
+                        Dhur = sml.Dhur,
+                        TotalValue = sml.Total_value,
+                        Remarks = sml.Remarks,
+                    };
+                    dataInfoList.Add(Lastlistobj);
+                }
+                return dataInfoList;
+            }
+        }
+
         //saving Kar Sabdhani Pramanpatra
         public string SaveKarsabdhani(Kar_Sambandhi ksi)
         {
             var message = "";
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var user = new Kar_Sambandhi()
                 {
@@ -96,6 +166,38 @@ namespace Dainikprashashan.Service
                 message = "save successfull";
             }
             return message;
+        }
+
+
+        //View Kar Sabdhani
+        public List<GharkayamList> GetKarsabdhaniList(string loginId)
+        {
+            using (var context = new Entities1())
+            {
+                var lgId = Convert.ToInt32(loginId);
+                var selfData = context.Kar_Sambandhi.Where(x => x.FormId == lgId).ToList();
+                GharkayamList Lastlistobj = null;
+                var dataInfoList = new List<GharkayamList>();
+
+                foreach (var ksl in selfData)
+                {
+                    Lastlistobj = new GharkayamList
+                    {
+                        FormId = ksl.FormId,
+                        Aabedan_miti = ksl.Applicated_date,
+                        Aabedak_name = ksl.Full_name,
+                        Pradesh = ksl.Pradesh,
+                        Jilla = ksl.Jilla,
+                        Gabisa = ksl.Gabisa,
+                        Ward = ksl.Ward,
+                        Rakam = ksl.Tax_amount,
+                        Kitta_no=ksl.Plot_no,
+                        Wardno=ksl.Property_wardno
+                    };
+                    dataInfoList.Add(Lastlistobj);
+                }
+                return dataInfoList;
+            }
         }
 
 

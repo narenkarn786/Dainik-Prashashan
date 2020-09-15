@@ -32,14 +32,15 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body>
-    <div class="content" style="padding:5px 150px">
+<body style="margin:0px 0px 0px 0px">
+    <div style="padding:8px 150px">
+        <div class="col-lg-12 bg-success" style="padding:8px 5px 2px 8px"><h6>Login Successfull</h6></div> 
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Dashboard</h1>
+                        <h3 class="m-0 text-dark"></h3>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -52,22 +53,24 @@
         </div>
         <!-- /.content-header -->
         <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
+        @*<section class="content">*@
+            <div class="container">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-12">
                         <!-- small box -->
                         <div class="small-box bg-info">
-                            <br>
-                            <div class="inner">
-                                <h4><b>घर सम्बन्धित</b></h4>
-                                <br /><br /><br />
+                            <br /><br />
+                            <div class="inner" >
+                                <center>
+                                    <h5><b>घर सम्बन्धित</b></h5>
+                                    <br /><br />
+                                </center>
                             </div>
-                            <div class="icon">
+                            @*<div class="icon" style="">
                                 <i class="fas fa-home"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">अगाडि बड्नुहोस् <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>*@
+                            <a href="Gharsambandhicard" class="small-box-footer">अगाडि बड्नुहोस् <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -75,13 +78,15 @@
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
+                                <center>
+                                    <br /><br />
+                                    <h5><b>संस्था/व्यवसाय सम्बन्धित</b></h5>
+                                </center>
                                 <br />
-                                <h4><b>संस्था/व्यवसाय सम्बन्धित</b></h4>
-                                <br /><br />
                             </div>
-                            <div class="icon">
+                            @*<div class="icon">
                                 <i class="fas fa-briefcase"></i>
-                            </div>
+                            </div>*@
                             <a href="#" class="small-box-footer">अगाडि बड्नुहोस् <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -90,14 +95,16 @@
                         <!-- small box -->
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <br />
-                                <h4 style="color:white"><b>सम्पत्ती सम्बन्धित</b></h4>
-                                <br /><br /><br />
+                                <br /><br />
+                                      <center>
+                                          <h5 style="color:white"><b>सम्पत्ती सम्बन्धित</b></h5>
+                                      </center>
+                                <br /><br />
                             </div>
-                            <div class="icon">
+                            @*<div class="icon">
                                 <i class="fas fa-coins"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">अगाडि बड्नुहोस् <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>*@
+                            <a href="Sampatisambandhicard" class="small-box-footer">अगाडि बड्नुहोस् <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -105,44 +112,50 @@
                         <!-- small box -->
                         <div class="small-box bg-danger">
                             <div class="inner">
-                                <br />
-                                <h4><b>जग्गा सम्बन्धित</b></h4>
-                                <br /><br /><br />
+                                <center>
+                                    <br /><br />
+                                    <h5><b>जग्गा सम्बन्धित</b></h5>
+                                </center>
+                                <br /><br />
                             </div>
-                            <div class="icon">
+                            @*<div class="icon">
                                 <i class="fas fa-map"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">अगाडि बड्नुहोस् <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>*@
+                            <a href="Jaggasambandhicard" class="small-box-footer">अगाडि बड्नुहोस् <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <div class="small-box bg-gradient-gray">
+                        <div class="small-box bg-gray">
                             <div class="inner">
-                                <br />
-                                <h4><b>बसोबास सम्बन्धित</b></h4>
+                                <center>
+                                    <br /><br />
+                                    <h5><b>बसोबास सम्बन्धित</b></h5>
+                                </center>
                                 <br /><br />
                             </div>
-                            <div class="icon">
+                            @*<div class="icon">
                                 <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">अगाडि बड्नुहोस् <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>*@
+                            <a href="Basobaassambandhicard" class="small-box-footer">अगाडि बड्नुहोस् <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
 
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <div class="small-box bg-gradient-maroon">
+                        <div class="small-box bg-teal">
                             <div class="inner">
-                                <br />
-                                <h4><b>नागरिकता सम्बन्धित</b></h4>
+                                <br /><br />
+                                <center>
+                                <h5><b>नागरिकता सम्बन्धित</b></h5>
+                                </center>
                                 <br /><br />
                             </div>
-                            <div class="icon">
+                            @*<div class="icon">
                                 <i class="fas fa-id-card"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">अगाडि बड्नुहोस् <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>*@
+                            <a href="Nagariktasambandhicard" class="small-box-footer">अगाडि बड्नुहोस् <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
 
@@ -150,13 +163,15 @@
                         <!-- small box -->
                         <div class="small-box bg-gradient-indigo">
                             <div class="inner">
-                                <br />
-                                <h4><b>अन्य</b></h4>
-                                <br /><br /><br />
+                                <br /><br />
+                                      <center>
+                                          <h5><b>अन्य</b></h5>
+                                      </center>
+                                <br /><br />
                             </div>
-                            <div class="icon">
+                            @*<div class="icon">
                                 <i class="fas fa-ellipsis-h"></i>
-                            </div>
+                            </div>*@
                             <a href="#" class="small-box-footer">अगाडि बड्नुहोस् <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>

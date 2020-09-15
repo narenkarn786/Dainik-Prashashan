@@ -33,6 +33,6 @@ namespace Dainikprashashan
         public string Anumanit_Mulya { get; set; }
         public string Batoko_Prakar { get; set; }
         public string Kaifiyat { get; set; }
-        public byte[] Files { get; set; }
+        public string ImagePath { get; set; }
     }
 }

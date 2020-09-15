@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Dainikprashashan.Models.GharkayamList>
+@{
+    ViewBag.Title = "Batokayamview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" style="padding:0px 100px">
+    <div class="col-lg-1">
+    </div>
+    <center>
+        <div class="col-lg-11">
+            <div class="table-responsive-sm">
+                <table class="table table-bordered" style="border:1px">
+
+                    <tr>
+                        <th scope="row">फारम ID</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            स्वीकृत
+                        </th>
+                        <td style="color:red">नभएको </td>
+                    </tr>
+                    <tr>
+                        जग्गाको विवरण
+                    </tr>
+
+                    <tr>
+                        <th scope="row">जग्गाधनीको नाम	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Jaggadhanikonaam)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">कित्ता नं.		</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Kitta_no)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">क्षेत्रफल	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Bigga),@Html.DisplayFor(modelItem => Model.LastOrDefault().Kattha),@Html.DisplayFor(modelItem => Model.LastOrDefault().Dhur)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ठेगाना</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Pradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Jilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Gabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Ward)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">साबिक ठेगाना	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sabikthegana)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">बाटो खोल्न चाहेको दिशा	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Batodisa)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">सडक लम्बाई	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sadaklambai)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">सडक चौडाई	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sadakchaudai)</td>
+                    </tr>
+                    <br />
+                    <a href="Editabedanniwaran"><button class="btn btn-warning col-lg-5" type="submit"><b>सम्पादन गर्नुहोस् </b></button></a>
+                    &nbsp;
+                    <button class="btn btn-success col-lg-5" type="submit"><b>दर्ता गर्नुहोस् </b></button>
+                </table>
+            </div>
+        </div>
+    </center>
+</div>

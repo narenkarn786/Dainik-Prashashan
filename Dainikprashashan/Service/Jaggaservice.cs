@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dainikprashashan.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,7 @@ namespace Dainikprashashan.Service
         public string SaveJaggadhanipratilipi(Jaggadhani_Pratilipi jp)
         {
             var message = "";
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var user = new Jaggadhani_Pratilipi()
                 {
@@ -46,11 +47,54 @@ namespace Dainikprashashan.Service
             return message;
         }
 
+        //View Jaggadhani Pratilipi
+        public List<GharkayamList> GetJaggadhanipratilipiList(string loginId)
+        {
+            using (var context = new Entities1())
+            {
+                var lgId = Convert.ToInt32(loginId);
+                var selfData = context.Jaggadhani_Pratilipi.Where(x => x.Form_Id == lgId).ToList();
+                GharkayamList Lastlistobj = null;
+                var dataInfoList = new List<GharkayamList>();
+
+                foreach (var jp in selfData)
+                {
+                    Lastlistobj = new GharkayamList
+                    {
+                        FormId=jp.Form_Id,
+                        Aabedan_miti = jp.Aabedan_miti,
+                        Aabedak_name = jp.Naam,
+                        Nagariktano = jp.Nagarikta_no,
+                        Nagariktamiti = jp.Nagarikta_miti,
+                        Buwakonaam = jp.Buwako_naam,
+                        Bajekonaam = jp.Bajeko_naam,
+                        Aabedakpradesh = jp.Aabedak_pradesh,
+                        Aabedakjilla = jp.Aabedak_jilla,
+                        Aabedakgabisa = jp.Aabedak_gabisa,
+                        Aabedakward = jp.Aabedak_ward,
+                        Aabedaksabikthegana = jp.Aabedak_sabik_thegana,
+                        Jaggadhanikonaam = jp.Jaggadhaniko_naam,
+                        Kitta_no = jp.Kitta_no,
+                        Bigga = jp.Bigga,
+                        Kattha = jp.Kattha,
+                        Dhur = jp.Dhur,
+                        Jaggapradesh = jp.Jagga_pradesh,
+                        Jaggajilla = jp.Jagga_jilla,
+                        Jaggagabisa = jp.Jagga_gabisa,
+                        Jaggaward = jp.Jagga_ward,
+                        Jaggasabikthegana = jp.Jagga_sabik_thegana
+                    };
+                    dataInfoList.Add(Lastlistobj);
+                }
+                return dataInfoList;
+            }
+        }
+
         //saving Bato Kayam
         public string SaveBatokayam(Bato_Kayam bkm)
         {
             var message = "";
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var user = new Bato_Kayam()
                 {
@@ -80,11 +124,48 @@ namespace Dainikprashashan.Service
             return message;
         }
 
+        //View Bato Kayam
+        public List<GharkayamList> GetBatokayamList(string loginId)
+        {
+            using (var context = new Entities1())
+            {
+                var lgId = Convert.ToInt32(loginId);
+                var selfData = context.Bato_Kayam.Where(x => x.FormId == lgId).ToList();
+                GharkayamList Lastlistobj = null;
+                var dataInfoList = new List<GharkayamList>();
+
+                foreach (var bkm in selfData)
+                {
+                    Lastlistobj = new GharkayamList
+                    {
+                        FormId = bkm.FormId,
+                        Aabedan_miti = bkm.Aabedan_miti,
+                        Jaggadhanikonaam = bkm.Jagga_Dhaniko_Naam,
+                        Kitta_no = bkm.Kitta_no,
+                        Bigga = bkm.Bigga,
+                        Kattha = bkm.Kattha,
+                        Dhur = bkm.Dhur,
+                        Pradesh = bkm.Pradesh,
+                        Jilla = bkm.Jilla,
+                        Gabisa = bkm.Gabisa,
+                        Ward = bkm.Ward,
+                        Sabikthegana = bkm.sabik_thegana,
+                        Batodisa = bkm.Bato_Disa,
+                        Sadaklambai = bkm.Sadak_Lambai,
+                        Sadakchaudai = bkm.Sadak_Chaudai
+                    };
+                    dataInfoList.Add(Lastlistobj);
+                }
+                return dataInfoList;
+            }
+        }
+
+
         //saving Jagga Ghar Kayam
         public string SaveJaggagharkayam(Jagga_Ghar_Kayam jgk)
         {
             var message = "";
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var user = new Jagga_Ghar_Kayam()
                 {
@@ -111,11 +192,44 @@ namespace Dainikprashashan.Service
             return message;
         }
 
+        //View Jagga Ghar Kayam
+        public List<GharkayamList> GetJaggagharkayamList(string loginId)
+        {
+            using (var context = new Entities1())
+            {
+                var lgId = Convert.ToInt32(loginId);
+                var selfData = context.Jagga_Ghar_Kayam.Where(x => x.FormId == lgId).ToList();
+                GharkayamList Lastlistobj = null;
+                var dataInfoList = new List<GharkayamList>();
+
+                foreach (var jgk in selfData)
+                {
+                    Lastlistobj = new GharkayamList
+                    {
+                        FormId = jgk.FormId,
+                        Aabedan_miti = jgk.Aabedan_miti,
+                        Aabedak_name = jgk.Aabedak_naam,
+                        Bigga = jgk.Bigga,
+                        Kattha = jgk.Kattha,
+                        Dhur = jgk.Dhur,
+                        Pradesh = jgk.Pradesh,
+                        Jilla = jgk.Jilla,
+                        Gabisa = jgk.Gabisa,
+                        Ward = jgk.Ward,
+                        Sabikthegana = jgk.sabik_thegana,
+                        Kitta_no = jgk.Kitta_no
+                    };
+                    dataInfoList.Add(Lastlistobj);
+                }
+                return dataInfoList;
+            }
+        }
+
         //saving Charkilla sambandhama
         public string SaveCharkilla(Charkilla_Sambandhama cs)
         {
             var message = "";
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var user = new Charkilla_Sambandhama()
                 {
@@ -123,6 +237,7 @@ namespace Dainikprashashan.Service
                     Aabedan_miti = cs.Aabedan_miti,
                    Karyalaya= cs.Karyalaya,
                     Pradesh = cs.Pradesh,
+                    Jaggadhaniko_naam=cs.Jaggadhaniko_naam,
                     Jilla = cs.Jilla,
                     Gabisa = cs.Gabisa,
                     Ward = cs.Ward,
@@ -151,11 +266,54 @@ namespace Dainikprashashan.Service
             return message;
         }
 
+
+        //View Charkilla sambandhama
+        public List<GharkayamList> GetCharkillaList(string loginId)
+        {
+            using (var context = new Entities1())
+            {
+                var lgId = Convert.ToInt32(loginId);
+                var selfData = context.Charkilla_Sambandhama.Where(x => x.Form_Id == lgId).ToList();
+                GharkayamList Lastlistobj = null;
+                var dataInfoList = new List<GharkayamList>();
+
+                foreach (var cs in selfData)
+                {
+                    Lastlistobj = new GharkayamList
+                    {
+                        FormId = cs.Form_Id,
+                        Aabedan_miti = cs.Aabedan_miti,
+                        karyalaya = cs.Karyalaya,
+                        Jaggadhanikonaam=cs.Jaggadhaniko_naam,
+                        Pradesh = cs.Pradesh,
+                        Jilla = cs.Jilla,
+                        Gabisa = cs.Gabisa,
+                        Ward = cs.Ward,
+                        Sabikgabisa = cs.Sabik_gabisa,
+                        Haalgabisa = cs.Haal_gabisa,
+                        Naksa_sheetno = cs.Naksha_sheetno,
+                        Kitta_no = cs.Kitta_no,
+                        Bigga = cs.Bigga,
+                        Kattha = cs.Kattha,
+                        Dhur = cs.Dhur,
+                        Batoko_prakaar = cs.Batoko_Prakaar,
+                        East = cs.East,
+                        West = cs.West,
+                        North = cs.North,
+                        South = cs.South,
+                        Kaifiyat = cs.Kaifiyat
+                    };
+                    dataInfoList.Add(Lastlistobj);
+                }
+                return dataInfoList;
+            }
+        }
+
         //saving Mohi Lagat Katta
         public string SaveMohilagatkatta(Mohi_Lagat_Katta mlk)
         {
             var message = "";
-            using (var context = new Entities())
+            using (var context = new Entities1())
             {
                 var user = new Mohi_Lagat_Katta()
                 {
@@ -181,6 +339,42 @@ namespace Dainikprashashan.Service
                 message = "save successfull";
             }
             return message;
+        }
+
+        //View Mohi Lagat Katta
+        public List<GharkayamList> GetMohilagatkattaList(string loginId)
+        {
+            using (var context = new Entities1())
+            {
+                var lgId = Convert.ToInt32(loginId);
+                var selfData = context.Mohi_Lagat_Katta.Where(x => x.Form_Id == lgId).ToList();
+                GharkayamList Lastlistobj = null;
+                var dataInfoList = new List<GharkayamList>();
+
+                foreach (var mlk in selfData)
+                {
+                    Lastlistobj = new GharkayamList
+                    {
+                        FormId = mlk.Form_Id,
+                        Aabedan_miti = mlk.Aabedan_miti,
+                        Jaggadhanikonaam = mlk.Jaggadhaniko_naam,
+                        Mohikonaam = mlk.Mohiko_naam,
+                        Kitta_no = mlk.Kitta_no,
+                        Sheetno = mlk.Sheet_no,
+                        Bigga = mlk.Bigga,
+                        Kattha = mlk.Kattha,
+                        Dhur = mlk.Dhur,
+                        Pradesh = mlk.Pradesh,
+                        Jilla = mlk.Jilla,
+                        Gabisa = mlk.Gabisa,
+                        Ward = mlk.Ward,
+                        Sabikthegana = mlk.Sabik_thegana,
+                        Sarjaminmiti = mlk.Sarjamin_miti
+                    };
+                    dataInfoList.Add(Lastlistobj);
+                }
+                return dataInfoList;
+            }
         }
     }
 }

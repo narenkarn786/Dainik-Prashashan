@@ -1,0 +1,84 @@
+﻿
+@model IEnumerable<Dainikprashashan.Models.GharkayamList>
+
+@{
+    ViewBag.Title = "Sthayibasobasview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" style="padding:0px 100px">
+    <div class="col-lg-1">
+    </div>
+    <center>
+        <div class="col-lg-11">
+            <div class="table-responsive-sm">
+                <table class="table table-bordered" style="border:1px">
+
+                    <tr>
+                        <th scope="row">फारम ID</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">
+                            स्वीकृत
+                        </th>
+                        <td style="color:red">नभएको </td>
+                    </tr>
+                    <tr>निवेदकको विवरण</tr>
+
+                    <tr>
+                        <th scope="row">नाम</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedak_name)</td>
+                    </tr>
+                    <tr>स्थाई बसोबास गर्ने व्यक्तिको विवरण</tr>
+                    <tr>
+                        <th scope="row">नाम</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Naam)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ना.प्र.प.नं.	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Nagariktano)</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">ना.प्र.प. जारी जिल्ला</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Nagariktajilla)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ना.प्र.प. जारी मिति	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Nagariktajilla)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">बसोबास सुरु गरेको मिति	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Basobasmiti)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">स्थायी ठेगाना	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Pradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Jilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Gabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Ward)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">साबिक / हालको ठेगाना		</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sabikthegana)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">घर नं.</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Ghar_no)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">टोल</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Tole)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">बाटोको नाम	</th>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Batokonaam)</td>
+                    </tr>
+                    <br />
+                    <a href="Editabedanniwaran"><button class="btn btn-warning col-lg-5" type="submit"><b>सम्पादन गर्नुहोस् </b></button></a>
+                    &nbsp;
+                    <button class="btn btn-success col-lg-5" type="submit"><b>दर्ता गर्नुहोस् </b></button>
+                </table>
+                </div>
+            </div>
+        </center>
+    </div>
+
