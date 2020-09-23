@@ -1,0 +1,19 @@
+﻿@media print {
+    body {
+        -webkit-print-color-adjust: exact; /* This settings is used to print background color, but only works in Chrome browser*/
+    }
+
+    .featured .content-wrapper {
+        background-color: greenyellow !important;
+        color: #3e5667;
+        padding: 50px 100px 300px 400px;
+        
+    }
+    .main-content {
+        display: none !important;
+    }
+
+    .button {
+        display: none !important;
+    }
+}

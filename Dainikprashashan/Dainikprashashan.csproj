@@ -52,6 +52,9 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.7.3\lib\net461\Rotativa.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -100,8 +103,6 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Dainik\.gitignore" />
     <Content Include="Content\Dainik\build\config\postcss.config.js" />
     <Content Include="Content\Dainik\build\config\rollup.config.js" />
@@ -1934,12 +1935,14 @@
     <Content Include="Content\Dainik\plugins\toastr\toastr.min.css" />
     <Content Include="Content\Dainik\plugins\toastr\toastr.min.js" />
     <Content Include="Content\Dainik\starter.html" />
+    <Content Include="Content\Print.css" />
     <Content Include="Content\sidebar\bootstrap-3\index5.html" />
     <Content Include="Content\sidebar\bootstrap-3\Logo.png" />
     <Content Include="Content\sidebar\bootstrap-3\style5.css" />
     <Content Include="Content\sidebar\index5.html" />
     <Content Include="Content\sidebar\style5.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Site1.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Model1.Context.tt">
@@ -1952,6 +1955,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
+    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
+    <Content Include="Rotativa\wkhtmltoimage.exe" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\Dainik\.babelrc" />
@@ -2213,6 +2220,7 @@
     <Content Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="App_Browsers\qt.browser" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -2362,6 +2370,12 @@
     <Content Include="Views\Dashboard\Kittakatsifarisview.cshtml" />
     <Content Include="Views\Dashboard\FinalKittakatsifarisview.cshtml" />
     <Content Include="Views\Dashboard\FinalKittakatsifarisbiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\FinalBarsikpramanikaranview.cshtml" />
+    <Content Include="Views\Dashboard\FinalBarsikpramanikaranbiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\FinalSampatimulyankanview.cshtml" />
+    <Content Include="Views\Dashboard\FinalSampatimulyankanbiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\FinalKarsabdhaniview.cshtml" />
+    <Content Include="Views\Dashboard\FinalKarsabdhanibiwaranview.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

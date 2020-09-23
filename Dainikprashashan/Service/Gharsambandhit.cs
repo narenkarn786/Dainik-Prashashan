@@ -59,6 +59,7 @@ namespace Dainikprashashan.Service
                     Lastlistobj = new GharkayamList
                     {
                         FormId = lbd.FormId,
+                        Aabedan_miti=lbd.Aabedan_miti,
                         Aabedak_name = lbd.Aabedak_name,
                         Pradesh = lbd.Pradesh,
                         Jilla = lbd.Jilla,

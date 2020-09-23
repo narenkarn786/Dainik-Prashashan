@@ -428,6 +428,24 @@ namespace Dainikprashashan.Controllers
             return View(selfList);
         }
 
+        [HttpGet]//Final Barsikpramanikaranview
+        public ActionResult FinalBarsikpramanikaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sampatiservice();
+            var selfList = lbdService.GetBarsikpramanikaranList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//Final Barsikpramanikaranbiwaranview
+        public ActionResult FinalBarsikpramanikaranbiwaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sampatiservice();
+            var selfList = lbdService.GetBarsikpramanikaranList(loginId);
+            return View(selfList);
+        }
+
         [HttpGet]//सम्पत्ति मूल्यांकन
         public ActionResult Sampatimulyankan()
         {
@@ -444,6 +462,24 @@ namespace Dainikprashashan.Controllers
 
         [HttpGet]//सम्पत्ति मूल्यांकन/आवेदकको विवरण
         public ActionResult Sampatimulyankanview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sampatiservice();
+            var selfList = lbdService.GetSampatimulyankanList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//FinalSampatimulyankanview
+        public ActionResult FinalSampatimulyankanview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sampatiservice();
+            var selfList = lbdService.GetSampatimulyankanList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//FinalSampatimulyankanbiwaranview
+        public ActionResult FinalSampatimulyankanbiwaranview()
         {
             var loginId = Session["LoginId"].ToString();
             var lbdService = new Sampatiservice();
@@ -468,6 +504,24 @@ namespace Dainikprashashan.Controllers
 
         [HttpGet]//कर सावधानी प्रमाणपत्र/आवेदकको विवरण
         public ActionResult Karsabdhaniview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sampatiservice();
+            var selfList = lbdService.GetKarsabdhaniList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//FinalKarsabdhaniview
+        public ActionResult FinalKarsabdhaniview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sampatiservice();
+            var selfList = lbdService.GetKarsabdhaniList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//कर सावधानी प्रमाणपत्र/आवेदकको विवरण
+        public ActionResult FinalKarsabdhanibiwaranview()
         {
             var loginId = Session["LoginId"].ToString();
             var lbdService = new Sampatiservice();

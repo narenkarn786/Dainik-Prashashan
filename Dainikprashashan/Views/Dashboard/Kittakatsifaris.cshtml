@@ -15,124 +15,166 @@
     <link href="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v3.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v3.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        window.onload = function () {
-            var mainInput = document.getElementById("nepali-datepicker");
-            mainInput.nepaliDatePicker();
-        };
-    </script>
-    <div class="col-lg-12" style="padding:5px 180px">
 
-        <div class="content">
+    <div style="padding:30px 200px;width:100%; margin:0 auto;">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <div class="row " style="padding:0px 25px">
+                <label>
+                    आवेदन गरिएको मिति:
+                </label>
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(m => m.Aabedan_miti, "", new { @id = "nepali-datepicker", @name = "nepali-datepicker", @class = "form-control" })
+                </div>
 
-            @using (Html.BeginForm())
-            {
-                @Html.ValidationSummary(true)
-                <form>
+                <script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v3.min.js" type="text/javascript"></script>
+                <script type="text/javascript">
+                    window.onload = function () {
+                        var mainInput = document.getElementById("nepali-datepicker");
+                        mainInput.nepaliDatePicker();
+                    };
+                </script>
+            </div>
 
+            <hr />
+            <h3><b>घर रहेको जग्गाको विवरण</b></h3>
+            <hr />
+            <div class="row" style="padding:0px 15px">
+                <div class="col-lg-5">
+                    <label><b>जग्गाधनिको नाम</b></label>
+                    @Html.TextBoxFor(m => m.Jagga_Dhaniko_Naam, new { @class = "form-control" })
+                </div>
+                <br />
+                <div class="col-lg-5">
+                    <label>
+                        <b>
+                            जग्गा मिलन गर्नुपर्ने क्षेत्रफल
+                        </b>
+                    </label>
+                    @Html.TextBoxFor(m => m.Chetrafal, new { @class = "form-control" })
+                </div>
+            </div>
+            <br />
+            <div class="col-lg-12">
+                <label><b>जग्गा रहेको ठेगाना</b></label>
 
-                    <div>
-                        <label style="color:black;font-family:Arial">
-                            आवेदन गरिएको मिति:
-                        </label>
-                        <div class="col-lg-4">
-                            @Html.TextBoxFor(m => m.Aabedan_miti, "", new { @id = "nepali-datepicker", @name = "nepali-datepicker", @class = "form-control" })
-
-                        </div>
-
-
-                    </div>
-                    <br />
-                    <h3><b>घर रहेको जग्गाको विवरण</b></h3>
-                    <br />
-                    <div class="col-lg-5">
-                        <label><b>जग्गाधनिको नाम</b></label>
-                        @Html.TextBoxFor(m => m.Jagga_Dhaniko_Naam, new { @class = "form-control" })
-                    </div>
-
-                    <div class="col-lg-5">
-                        <label>
-                            <b>
-                                जग्गा मिलन गर्नुपर्ने क्षेत्रफल
-                            </b>
-                        </label>
-                        @Html.TextBoxFor(m => m.Chetrafal, new { @class = "form-control" })
-                    </div>
-                    <div class="col-lg-5">
-                        <label><b>जग्गा रहेको ठेगाना</b></label>
+                <div class="row">
+                    <div class="col-sm-5">
                         @Html.TextBoxFor(m => m.Pradesh, new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-5">
                         @Html.TextBoxFor(m => m.Jilla, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="row">
+                    <div class="col-sm-5">
                         @Html.TextBoxFor(m => m.Gabisa, new { @class = "form-control" })
+                    </div>
+
+
+                    <div class="col-sm-5">
                         @Html.TextBoxFor(m => m.Ward, new { @class = "form-control" })
                     </div>
-                    <div class="col-lg-5">
-                        <label style="color:black;font-family:Arial">
-                            साबिक ठेगाना
-                        </label>
+                </div>
 
-                        @Html.TextBoxFor(m => m.Sabik_thegana, new { @class = "form-control" })
+            </div>
+            <br />
+            <div class="row" style="padding:0px 15px">
+                <div class="col-sm-5">
+                    <label>
+                        साबिक ठेगाना
+                    </label>
+                    @Html.TextBoxFor(m => m.Sabik_thegana, new { @class = "form-control" })
 
-                    </div>
-
-                    <div class="col-lg-5">
-                        <label>
-                            <b>
-                                कित्ता मिलान गर्न चाहेको  दिशा
-                            </b>
-                        </label>
-                        @Html.TextBoxFor(m => m.Disa, new { @class = "form-control" })
-                    </div>
-                    <div class="col-lg-5">
-                        <label><b>क्षेत्रफल </b></label>
-                        @Html.TextBoxFor(m => m.Bigga, new { @class = "form-control" })
-                        @Html.TextBoxFor(m => m.Kattha, new { @class = "form-control" })
-                        @Html.TextBoxFor(m => m.Dhur, new { @class = "form-control" })
-                    </div>
-                    <div class="col-lg-5">
-                        <label><b>सिट.नं. </b></label>
-                        @Html.TextBoxFor(m => m.Sheet_no, new { @class = "form-control" })
-                    </div>
-                    <div class="col-lg-5">
-                        <label><b>कित्ता नम्बर  </b></label>
-                        @Html.TextBoxFor(m => m.Kitta_no, new { @class = "form-control" })
-                    </div>
-
-                    <br /><h3>
+                </div>
+                <br />
+                <div class="col-sm-5">
+                    <label>
                         <b>
-                            फिल्ड निरीक्षण प्रतिवेदन
+                            कित्ता मिलान गर्न चाहेको  दिशा
                         </b>
-                    </h3>
-                    <br />
-                    <div class="col-lg-5">
-                        <label><b>घरको जम्मा क्षेत्रफल</b></label>
-                        @Html.TextBoxFor(m => m.Jamma_chetrafal, new { @class = "form-control" })
+                    </label>
+                    @Html.TextBoxFor(m => m.Disa, new { @class = "form-control" })
+                </div>
+            </div>
+            <br />
+            <div class="col-sm-12">
+                <label><b>क्षेत्रफल </b></label>
+                <div class="form-inline">
+                    <div class="form-group row">
+                        <div class="col-lg-3">
+                            @Html.TextBoxFor(m => m.Bigga, new { @class = "form-control", @placeholder = "बिग्गा" })
+                        </div>
                     </div>
-                    <div class="col-lg-5">
-                        <label><b>घरको भुई तल्लाको क्षेत्रफल</b></label>
-                        @Html.TextBoxFor(m => m.Bhui_talako_chetrafal, new { @class = "form-control" })
+                    &nbsp;
+                    <div class="form-group row">
+                        <div class="col-lg-3">
+                            @Html.TextBoxFor(m => m.Kattha, new { @class = "form-control", @placeholder = "कटठा" })
+                        </div>
                     </div>
-                    <div class="col-lg-5">
-                        <label><b>पाउने फार</b></label>
-                        @Html.TextBoxFor(m => m.Paune_faar, new { @class = "form-control" })
+                    &nbsp;
+                    <div class="form-group row">
+                        <div class="col-lg-3">
+                            @Html.TextBoxFor(m => m.Dhur, new { @class = "form-control", @placeholder = "धुर" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row" style="padding:0px 15px">
+                <div class="col-lg-5">
+                    <label><b>सिट.नं. </b></label>
+                    @Html.TextBoxFor(m => m.Sheet_no, new { @class = "form-control" })
+                </div>
+                <div class="col-lg-5">
+                    <label><b>कित्ता नम्बर  </b></label>
+                    @Html.TextBoxFor(m => m.Kitta_no, new { @class = "form-control" })
+                </div>
+            </div>
+            <hr /><h3>
+                <b>
+                    फिल्ड निरीक्षण प्रतिवेदन
+                </b>
+            </h3>
+            <hr />
+            <div class="row" style="padding:0px 15px">
+                <div class="col-lg-5">
+                    <label><b>घरको जम्मा क्षेत्रफल</b></label>
+                    @Html.TextBoxFor(m => m.Jamma_chetrafal, new { @class = "form-control" })
+                </div>
+                <div class="col-lg-5">
+                    <label><b>घरको भुई तल्लाको क्षेत्रफल</b></label>
+                    @Html.TextBoxFor(m => m.Bhui_talako_chetrafal, new { @class = "form-control" })
+                </div>
+            </div>
+            <br />
+            <div class="row" style="padding:0px 15px">
+                <div class="col-lg-5">
+                    <label><b>पाउने फार</b></label>
+                    @Html.TextBoxFor(m => m.Paune_faar, new { @class = "form-control" })
+                </div>
+                <div class="col-lg-5">
+                    <label><b>सिफारिस दिन मिल्ने कारण </b></label>
+                    @Html.TextBoxFor(m => m.Karan, new { @class = "form-control" })
+                </div>
+            </div>
+            <br />
+            <div class="col-lg-5">
+                <label><b>प्राबिधिकको नाम  </b></label>
+                @Html.TextBoxFor(m => m.Prabidhik_naam, new { @class = "form-control" })
+            </div>
 
-                    </div>
+            <br />
 
-                    <div class="col-lg-5">
-                        <label><b>सिफारिस दिन मिल्ने कारण </b></label>
-                        @Html.TextBoxFor(m => m.Karan, new { @class = "form-control" })
-                    </div>
-                    <div class="col-lg-5">
-                        <label><b>प्राबिधिकको नाम  </b></label>
-                        @Html.TextBoxFor(m => m.Prabidhik_naam, new { @class = "form-control" })
-                    </div>
+            <button class="btn btn-success" type="submit">पेश गर्नुहोस् </button>
 
-                    <br />
-                    <button class="btn btn-success" type="submit">पेश गर्नुहोस् </button>
-                </form>
-            }
-        </div>
+        }
     </div>
+
 </body>
 </html>
 
