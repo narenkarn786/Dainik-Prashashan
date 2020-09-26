@@ -1,16 +1,13 @@
-﻿using Dainikprashashan.Models;
-using Dainikprashashan.Service;
-using System;
+﻿using Dainikprashashan.Service;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.IO;
 
 namespace Dainikprashashan.Controllers
 {
     public class DashboardController : Controller
     {
+        private Entities1 e = new Entities1();
         // GET: Dashboard
         public ActionResult Index()
         {
@@ -33,12 +30,21 @@ namespace Dainikprashashan.Controllers
         public ActionResult Gharkayamkosifaris()
         {
 
-            var KARYALAYALIST = new List<string>();
-            KARYALAYALIST.Add("वडा कार्यालय  ");
-            KARYALAYALIST.Add("मालपोत  कार्यालय  ");
-            KARYALAYALIST.Add("जिल्ला प्रशासन  कार्यालय  ");
-            ViewBag.karyalaya = KARYALAYALIST;
+            //var KARYALAYALIST = new List<string>();
+            //KARYALAYALIST.Add("वडा कार्यालय  ");
+            //KARYALAYALIST.Add("मालपोत  कार्यालय  ");
+            //KARYALAYALIST.Add("जिल्ला प्रशासन  कार्यालय  ");
+            //ViewBag.karyalaya = KARYALAYALIST;
 
+
+
+            //ViewBag.Karyalaya = new SelectList(e.Karyalayas,"");
+            IEnumerable<SelectListItem> Karyalaya = e.Karyalayas.Select(c => new SelectListItem
+            {
+                Value = c.Karyalaya_Id.ToString(),
+                Text = c.Karyalaya1
+            });
+            ViewBag.Karyalaya = Karyalaya;
 
             var PRADESHLIST = new List<string>();
             PRADESHLIST.Add("प्रदेश नम्बर १   ");
@@ -179,10 +185,12 @@ namespace Dainikprashashan.Controllers
         {
 
             var KARYALAYALIST = new List<string>();
-            KARYALAYALIST.Add("वडा कार्यालय  ");
-            KARYALAYALIST.Add("मालपोत  कार्यालय  ");
-            KARYALAYALIST.Add("जिल्ला प्रशासन  कार्यालय  ");
-            ViewBag.karyalaya = KARYALAYALIST;
+            //KARYALAYALIST.Add("वडा कार्यालय  ");
+            //KARYALAYALIST.Add("मालपोत  कार्यालय  ");
+            //KARYALAYALIST.Add("जिल्ला प्रशासन  कार्यालय  ");
+            Entities1 e = new Entities1();
+
+            ViewBag.karyalaya = new SelectList(e.Karyalayas, "Karyalaya1");
 
 
             var PRADESHLIST = new List<string>();
@@ -308,9 +316,36 @@ namespace Dainikprashashan.Controllers
         {
             var lresponse = new Gharsambandhit();
             var lservice = lresponse.SaveGharbatopramanit(gp);
-            return RedirectToAction("Gharbatopramanit");
+            return RedirectToAction("Gharbatopramanitview");
         }
 
+        [HttpGet]//Gharbatopramanitview
+        public ActionResult Gharbatopramanitview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Gharsambandhit();
+            var selfList = lbdService.GetGharbatopramanitList(loginId);
+            return View(selfList);
+
+        }
+
+        [HttpGet]//Final Gharbatopramanitview
+        public ActionResult FinalGharbatopramanitview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Gharsambandhit();
+            var selfList = lbdService.GetGharbatopramanitList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//Final Biwaran Gharbatopramanitview
+        public ActionResult FinalGharbatopramanitviewbiwaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Gharsambandhit();
+            var selfList = lbdService.GetGharbatopramanitList(loginId);
+            return View(selfList);
+        }
 
         //Ghar Jagga Naamsari
         [HttpGet]
@@ -393,6 +428,210 @@ namespace Dainikprashashan.Controllers
             var loginId = Session["LoginId"].ToString();
             var lbdService = new Gharsambandhit();
             var selfList = lbdService.GetKittakatsifarisList(loginId);
+            return View(selfList);
+        }
+
+        //संस्था/व्यवसाय सम्बन्धित
+        [HttpGet]//संस्था दर्ता प्रमाणपत्र
+        public ActionResult Sansthadartapramanpatra()
+        {
+            return View();
+        }
+
+        [HttpPost]//संस्था दर्ता प्रमाणपत्र
+        public ActionResult Sansthadartapramanpatra(Sanstha_Darta_Pramanpatra sd)
+        {
+            var lservice = new Sansthaservice();
+            var lresponse = lservice.SaveSansthadartapramanpatra(sd);
+            return RedirectToAction("Sansthadartapramanpatraview");
+        }
+
+        [HttpGet]//संस्था दर्ता प्रमाणपत्र/आवेदकको विवरण
+        public ActionResult Sansthadartapramanpatraview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetSansthadartapramanpatraList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//संस्था दर्ता प्रमाणपत्र/Final View
+        public ActionResult FinalSansthadartapramanpatraview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetSansthadartapramanpatraList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//संस्था दर्ता प्रमाणपत्र /Final Biwaran View
+        public ActionResult FinalSansthadartapramanpatrabiwaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetSansthadartapramanpatraList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//व्यवसाय दर्ता प्रमाणपत्र
+        public ActionResult Byawasyadarta()
+        {
+            return View();
+        }
+
+        [HttpPost]//व्यवसाय दर्ता प्रमाणपत्र
+        public ActionResult Byawasyadarta(Byawasaya_Darta b)
+        {
+            var lservice = new Sansthaservice();
+            var lresponse = lservice.SaveByawasayadarta(b);
+            return RedirectToAction("Byawasayadartaview");
+        }
+
+        [HttpGet]//व्यवसाय दर्ता प्रमाणपत्र/आवेदकको विवरण
+        public ActionResult Byawasayadartaview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetByawasayadartaList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//व्यवसाय दर्ता प्रमाणपत्र/Final View
+        public ActionResult FinalByawasayadartaview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetByawasayadartaList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//व्यवसाय दर्ता प्रमाणपत्र/Final Biwaran View
+        public ActionResult FinalByawasayadartabiwaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetByawasayadartaList(loginId);
+            return View(selfList);
+        }
+
+        //व्यवसाय बन्द बारे
+        public ActionResult Byawasayabanda()
+        {
+            return View();
+        }
+
+        [HttpPost]//व्यवसाय बन्द बारे
+        public ActionResult Byawasayabanda(Byawasaya_Banda_Barey sds)
+        {
+            var lservice = new Sansthaservice();
+            var lresponse = lservice.SaveByawasayabanda(sds);
+            return RedirectToAction("Byawasayabandaview");
+        }
+
+        [HttpGet]//व्यवसाय बन्द बारे/आवेदकको विवरण
+        public ActionResult Byawasayabandaview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetByawasayabandaList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//व्यवसाय बन्द बारे/Final View
+        public ActionResult FinalByawasayabandaview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetByawasayabandaList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//व्यवसाय बन्द बारे/Fial Biwaran View
+        public ActionResult FinalByawasayabandadartaview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetByawasayabandaList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]// संस्था दर्ता सिफारिस
+        public ActionResult Sansthadartasifaris()
+        {
+            return View();
+        }
+        [HttpPost]//संस्था दर्ता सिफारिस
+        public ActionResult Sansthadartasifaris(Sanstha_Darta_Sifaris sds)
+        {
+            var lservice = new Sansthaservice();
+            var lresponse = lservice.SaveSansthadartasifaris(sds);
+            return RedirectToAction("Sansthadartasifarisview");
+        }
+
+        [HttpGet]//संस्था दर्ता Sifaris/आवेदकको विवरण
+        public ActionResult Sansthadartasifarisview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetSansthadartasifarisList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//संस्था दर्ता Sifaris/Final view
+        public ActionResult FinalSansthadartasifarisview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetSansthadartasifarisList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//संस्था दर्ता Sifaris/Final Biwaran
+        public ActionResult FinalSansthadartasifarisbiwaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetSansthadartasifarisList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]// संस्था Nawikaran
+        public ActionResult Sansthanawikaran()
+        {
+            return View();
+        }
+        [HttpPost]//संस्था Nawikaran
+        public ActionResult Sansthanawikaran(Sanstha_Nawikaran sn)
+        {
+            var lservice = new Sansthaservice();
+            var lresponse = lservice.SaveSansthanawikaran(sn);
+            return RedirectToAction("Sansthanawikaranview");
+        }
+
+        [HttpGet]//संस्था Nawikaran/आवेदकको विवरण
+        public ActionResult Sansthanawikaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetSansthanawikaranList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//संस्था Nawikaran/Final View
+        public ActionResult FinalSansthanawikaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetSansthanawikaranList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//संस्था Nawikaran/Final Biwaran View
+        public ActionResult FinalSansthanawikaranbiwaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Sansthaservice();
+            var selfList = lbdService.GetSansthanawikaranList(loginId);
             return View(selfList);
         }
 
@@ -560,6 +799,24 @@ namespace Dainikprashashan.Controllers
             return View(selfList);
         }
 
+        [HttpGet]//FinalJaggadhanipratilipiview
+        public ActionResult FinalJaggadhanipratilipiview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetJaggadhanipratilipiList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//FinalJaggadhanipratilipibiwaranview
+        public ActionResult FinalJaggadhanipratilipibiwaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetJaggadhanipratilipiList(loginId);
+            return View(selfList);
+        }
+
 
         [HttpGet]//बाटो कायम
         public ActionResult Batokayam()
@@ -577,6 +834,24 @@ namespace Dainikprashashan.Controllers
 
         [HttpGet]//बाटो कायम/आवेदकको विवरण
         public ActionResult Batokayamview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetBatokayamList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//FinalBatokayamview
+        public ActionResult FinalBatokayamview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetBatokayamList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//FinalBatokayambiwaranview
+        public ActionResult FinalBatokayambiwaranview()
         {
             var loginId = Session["LoginId"].ToString();
             var lbdService = new Jaggaservice();
@@ -607,6 +882,24 @@ namespace Dainikprashashan.Controllers
             return View(selfList);
         }
 
+        [HttpGet]//FinalJaggagharkayamview
+        public ActionResult FinalJaggagharkayamview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetJaggagharkayamList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//FinalJaggagharkayambiwaranview
+        public ActionResult FinalJaggagharkayambiwaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetJaggagharkayamList(loginId);
+            return View(selfList);
+        }
+
         [HttpGet]//चार किल्ला प्रमाणित
         public ActionResult Charkilla()
         {
@@ -630,6 +923,24 @@ namespace Dainikprashashan.Controllers
             return View(selfList);
         }
 
+        [HttpGet]//FinalCharkillaview
+        public ActionResult FinalCharkillaview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetCharkillaList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//FinalCharkillabiwaranview
+        public ActionResult FinalCharkillabiwaranview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetCharkillaList(loginId);
+            return View(selfList);
+        }
+
         [HttpGet]//मोही लागत कट्टा
         public ActionResult Mohilagatkatta()
         {
@@ -645,6 +956,24 @@ namespace Dainikprashashan.Controllers
 
         [HttpGet]//मोही लागत कट्टा/आवेदकको विवरण
         public ActionResult Mohilagatkattaview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetMohilagatkattaList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//FinalMohilagatkattaview
+        public ActionResult FinalMohilagatkattaview()
+        {
+            var loginId = Session["LoginId"].ToString();
+            var lbdService = new Jaggaservice();
+            var selfList = lbdService.GetMohilagatkattaList(loginId);
+            return View(selfList);
+        }
+
+        [HttpGet]//FinalMohilagatkattabiwaranview
+        public ActionResult FinalMohilagatkattabiwaranview()
         {
             var loginId = Session["LoginId"].ToString();
             var lbdService = new Jaggaservice();
@@ -784,6 +1113,19 @@ namespace Dainikprashashan.Controllers
             return View(selfList);
         }
 
+        [HttpGet]//Karyalaya
+        public ActionResult Karyalaya()
+        {
+            return View();
+        }
+
+        [HttpPost]//Karyalaya
+        public ActionResult Karyalaya(Karyalaya ka)
+        {
+            var lservice = new Settingservice();
+            var lresponse = lservice.SaveKaryalaya(ka);
+            return RedirectToAction("Karyalaya");
+        }
     }
 
 }

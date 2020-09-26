@@ -20,32 +20,26 @@
         {
             @Html.ValidationSummary(true)
 
-            <div class="form-inline" style="padding:0px 25px">
+            <div class="row" style="padding:0px 25px">
 
-                <div class="form-group row ">
-                    <label style="color:black;">
+                <div class="col-sm-4">
+                    <label>
                         आवेदन गरिएको मिति:
                     </label>
-                    <div class="col-sm-5">
-                        @Html.TextBoxFor(m => m.Aabedan_miti, "", new { @id = "nepali-datepicker", @name = "nepali-datepicker", @class = "form-control" })
-                    </div>
 
-                    <script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v3.min.js" type="text/javascript"></script>
-                    <script type="text/javascript">
-                        window.onload = function () {
-                            var mainInput = document.getElementById("nepali-datepicker");
-                            mainInput.nepaliDatePicker();
-                        };
-                    </script>
+                    @Html.TextBoxFor(m => m.Aabedan_miti, "", new { @id = "nepali-datepicker", @name = "nepali-datepicker", @class = "form-control" })
                 </div>
 
-                <div class="custom-control form-group row">
-                    <label style="color:black">कार्यलय</label>
-                    <div class="col-sm-4">
-                        @Html.DropDownListFor(m => m.karyalaya, new SelectList(ViewBag.Karyalaya), "-- छान्नुहोस्  --", new { @class = "form-control" })
-                    </div>
+
+
+
+                <div class="col-sm-4">
+                    <label>कार्यलय</label>
+                    @Html.DropDownListFor(m => m.karyalaya, new SelectList(ViewBag.Karyalaya), "-- छान्नुहोस्  --", new { @class = "form-control" })
+
                 </div>
             </div>
+
 
             <hr />
             <h3><b>घर कायम सिफारिस विवरण</b></h3>
@@ -118,7 +112,7 @@
             </div>
 
             <br />
-            <div class="row"  style="padding:0px 15px">
+            <div class="row" style="padding:0px 15px">
                 <div class="col-sm-5">
                     <label><b>कित्ता नं</b></label>
                     @Html.TextBoxFor(m => m.Kitta_no, new { @class = "form-control" })
@@ -130,7 +124,7 @@
                 </div>
             </div>
             <br />
-            <div class="row"  style="padding:0px 15px">
+            <div class="row" style="padding:0px 15px">
                 <div class="col-sm-5">
                     <label><b>घरको प्रकार </b></label>
                     @Html.DropDownListFor(m => m.Gharko_prakaar, new SelectList(ViewBag.Gharprakar), "-- छान्नुहोस्  --", new { @class = "form-control" })
@@ -145,8 +139,14 @@
             <button type="submit" class="btn btn-success">पेश गर्नुहोस् </button>
         }
     </div>
-
-    </body>
+    <script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v3.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+                    window.onload = function () {
+                        var mainInput = document.getElementById("nepali-datepicker");
+                        mainInput.nepaliDatePicker();
+                    };
+    </script>
+</body>
 </html>
 
 

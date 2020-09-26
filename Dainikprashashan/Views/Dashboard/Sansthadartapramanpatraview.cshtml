@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Dainikprashashan.Models.GharkayamList>
+@{
+    ViewBag.Title = "Sansthadartapramanpatraview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding:25px 150px">
+    <div class="col-lg-1">
+    </div>
+
+
+    <h3><b>आबेदन विवरण</b></h3>
+    <hr />
+    <center>
+        <div class="table-responsive-sm">
+            <table class="table table-bordered" style="border:1px">
+
+                <tr>
+                    <th scope="row">फारम ID</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        स्वीकृत
+                    </th>
+                    <td style="color:red">नभएको </td>
+                </tr>
+                <tr>
+                    <th>संस्थाको विवरण</th>
+                </tr>
+                <tr>
+                    <th scope="row">नाम</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sanstha_naam)</td>
+                </tr>
+                <tr>
+                    <th scope="row">ठेगाना</th>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.LastOrDefault().Sanstha_pradesh),
+                        @Html.DisplayFor(modelItem => Model.LastOrDefault().Sanstha_jilla),
+                        @Html.DisplayFor(modelItem => Model.LastOrDefault().Sanstha_gabisa),
+                        @Html.DisplayFor(modelItem => Model.LastOrDefault().Sanstha_ward)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">स्वदेशी / विदेशी</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Swadesh_bidesh)</td>
+                </tr>
+                <tr>
+                    <th scope="row">बिषयगत क्षेत्र</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Bisayagat_chetra)</td>
+                </tr>
+                <tr>
+                    <th scope="row">कारोबार सुरु भएको मिति</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Karobaar_miti)</td>
+                </tr>
+                <tr>
+                    <th scope="row">ई-मेल</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sanstha_email)</td>
+                </tr>
+                <tr>
+                    <th scope="row"> सम्पर्क फोन नं.</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sanstha_phoneno)</td>
+                </tr>
+                <tr>संचालक / अध्यक्ष / मुख्य व्यक्तिको विवरण</tr>
+                <tr>
+                <th scope="row">नाम</th>
+                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sanchalak_naam)</td>
+                </tr>
+                <tr>
+                    <th scope="row">ठेगाना</th>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.LastOrDefault().Sanchalak_pradesh),
+                        @Html.DisplayFor(modelItem => Model.LastOrDefault().Sanchalak_jilla),
+                        @Html.DisplayFor(modelItem => Model.LastOrDefault().Sanchalak_gabisa),
+                        @Html.DisplayFor(modelItem => Model.LastOrDefault().Sanchalak_ward)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">ई-मेल</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sanchalak_email)</td>
+                </tr>
+                <tr>
+                    <th scope="row"> सम्पर्क फोन नं.</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sanchalak_phoneno)</td>
+                </tr>
+            </table>
+            <a href="#"><button class="btn btn-warning col-lg-5" type="submit"><b>सम्पादन गर्नुहोस् </b></button></a>
+            &nbsp;
+            <a href="FinalSansthadartapramanpatraview"><button class="btn btn-success col-lg-5" type="submit"><b>दर्ता गर्नुहोस् </b></button></a>
+        </div>
+
+    </center>
+</div>
+

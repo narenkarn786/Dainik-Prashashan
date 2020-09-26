@@ -153,6 +153,47 @@ namespace Dainikprashashan.Service
             return message;
         }
 
+        //Ghar Bato Pramanit view
+        public List<GharkayamList> GetGharbatopramanitList(string loginId)
+        {
+            using (var context = new Entities1())
+            {
+                var lgId = Convert.ToInt32(loginId);
+                var selfData = context.Ghar_Bato_Pramanit/*.Where(x => x.FormId == lgId)*/.ToList();
+                GharkayamList Lastlistobj = null;
+                var dataInfoList = new List<GharkayamList>();
+
+                foreach (var gbp in selfData)
+                {
+                    Lastlistobj = new GharkayamList
+                    {
+                        FormId=gbp.FormId,
+                        Aabedan_miti = gbp.Aabedan_miti,
+                        karyalaya = gbp.karyalaya,
+                        Jaggadhanikonaam = gbp.Jagga_Dhaniko_Naam,
+                        Pradesh = gbp.Pradesh,
+                        Jilla = gbp.Jilla,
+                        Gabisa = gbp.Gabisa,
+                        Ward = gbp.Ward,
+                        Sabikgabisa = gbp.sabik_Gabisa,
+                        Haalgabisa = gbp.Haal_Gabisa,
+                        Naksa_sheetno = gbp.Naksa_sheetno,
+                        Kitta_no = gbp.Kitta_no,
+                        Bigga = gbp.Bigga,
+                        Kattha = gbp.Kattha,
+                        Dhur = gbp.Dhur,
+                        Gharko_prakaar = gbp.Gharko_prakaar,
+                        Anumanitmulya = gbp.Anumanit_Mulya,
+                        Batoko_prakaar = gbp.Batoko_Prakar,
+                        Kaifiyat = gbp.Kaifiyat,
+                      
+                    };
+                    dataInfoList.Add(Lastlistobj);
+                }
+                return dataInfoList;
+            }
+        }
+
         //Ghar Jagga Naamsari
         //saving Ghar Jagga Naamsari
         public string SaveGharjagganaamsari(Ghar_Jagga_Naamsari gjn)

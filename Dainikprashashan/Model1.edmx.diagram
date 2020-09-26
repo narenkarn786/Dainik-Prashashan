@@ -4,25 +4,43 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="029d1c130d2c4acfa08a94300b3ed177" Name="Diagram1">
+      <Diagram DiagramId="a865146d3c8147949930144119c6bbb4" Name="Diagram1">
         <EntityTypeShape EntityType="Dainik_PrasashanModel.Antarik_Basai_Sarai" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Asthayi_Basobas" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Arthik_Barsa" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Asthayi_Basobas" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Dainik_PrasashanModel.Barsik_Pramanikaran" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Dainik_PrasashanModel.Bato_Kayam" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Charkilla_Sambandhama" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Ghar_Bato_Pramanit" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Ghar_Jagga_Naamsari" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Ghar_kayamko_sifaris" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Jagga_Ghar_Kayam" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Jaggadhani_Pratilipi" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Kar_Sambandhi" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Kittakat_Sifaris" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Mohi_Lagat_Katta" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Sampati_Muluyankan" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Sthayi_Basobas" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Login" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Nagarikta_Pramanpatra" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Dainik_PrasashanModel.Nagarikta_Pramanpatra_Pratilipi" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Byawasaya_Banda_Barey" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Byawasaya_Darta" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Charkilla_Sambandhama" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Faat" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Faat_Karmachari" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Gabisa" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Ghar_Bato_Pramanit" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Ghar_Jagga_Naamsari" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Ghar_kayamko_sifaris" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Jagga_Ghar_Kayam" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Jaggadhani_Pratilipi" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Jilla" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Kaam" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Kagajaat" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Kar_Sambandhi" Width="1.5" PointX="10.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Karyalaya" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Kittakat_Sifaris" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Mohi_Lagat_Katta" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Padd" Width="1.5" PointX="14.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Pradesh" Width="1.5" PointX="14.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Sabik_Thegana" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Sampati_Muluyankan" Width="1.5" PointX="12.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Sanstha_Darta_Pramanpatra" Width="1.5" PointX="14.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Sanstha_Darta_Sifaris" Width="1.5" PointX="6.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Sanstha_Nawikaran" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Sewa" Width="1.5" PointX="16.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Sthayi_Basobas" Width="1.5" PointX="16.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Ward" Width="1.5" PointX="8.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Login" Width="1.5" PointX="16.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Nagarikta_Pramanpatra" Width="1.5" PointX="16.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Dainik_PrasashanModel.Nagarikta_Pramanpatra_Pratilipi" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

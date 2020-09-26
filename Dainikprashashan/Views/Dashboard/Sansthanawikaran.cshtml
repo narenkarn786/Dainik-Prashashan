@@ -1,0 +1,86 @@
+﻿@model Dainikprashashan.Sanstha_Nawikaran
+
+@{
+    ViewBag.Title = "Sansthanawikaran";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html lang="en">
+<head>
+    <title>Sanstha Nwikaran</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <!-- Nepali Datepicker -->
+    <link href="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v3.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div style="padding:30px 200px;width:100%; margin:0 auto;">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+
+
+
+            <div class="col-sm-4">
+                <label>
+                    आवेदन गरिएको मिति:
+                </label>
+
+                @Html.TextBoxFor(m => m.Aabedan_miti, "", new { @id = "nepali-datepicker", @name = "nepali-datepicker", @class = "form-control" })
+            </div>
+
+            <script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v3.min.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                window.onload = function () {
+                    var mainInput = document.getElementById("nepali-datepicker");
+                    mainInput.nepaliDatePicker();
+                };
+            </script>
+            <div class="col-sm-5">
+                <label> नाम </label>
+
+                @Html.EditorFor(model => model.Naam, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Naam, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            <label class="control-label col-md-2">ठेगाना </label>
+            <div class="row" style="padding:0px 15px">
+                <div class="col-sm-5">
+                    @Html.EditorFor(model => model.Pradesh, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Pradesh, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-sm-5">
+                    @Html.EditorFor(model => model.Jilla, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Jilla, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <div class="row" style="padding:0px 15px">
+                <div class="col-sm-5">
+                    @Html.EditorFor(model => model.Gabisa, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Gabisa, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-sm-5">
+                    @Html.EditorFor(model => model.Ward, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Ward, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <div class="col-sm-5">
+                <label> साबिक ठेगाना</label>
+
+                @Html.EditorFor(model => model.Sabik_thegana, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Sabik_thegana, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            @Html.TextBoxFor(m => m.ImagePath, "", new { type = "file" })
+            @Html.ValidationMessageFor(m => m.ImagePath, "", new { @class = "error" })
+            <div class="form-group" style="padding:10px 0px">
+                <button type="submit" class="btn btn-success">पेश गर्नुहोस् </button>
+            </div>
+        }
+    </div>
+</body>
+</html>
+

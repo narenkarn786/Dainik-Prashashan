@@ -1,0 +1,16 @@
+﻿@model Dainikprashashan.Karyalaya
+
+@{
+    ViewBag.Title = "Karyalaya";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    <div style="padding:10px 150px">
+        <div class="col-sm-5">
+            @Html.TextBoxFor(m => m.Karyalaya1, new { @class = "form-control" })
+        </div>
+        <br />
+        <button class="btn btn-success" type="submit">पेश गर्नुहोस् </button>
+    </div>
+    }

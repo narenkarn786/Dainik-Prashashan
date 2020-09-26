@@ -1,0 +1,163 @@
+﻿@model IEnumerable<Dainikprashashan.Models.GharkayamList>
+
+@{
+    ViewBag.Title = "FinalBatokayambiwaranview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="row" style="padding:20px 200px">
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="active" style="width:45%"><a data-toggle="tab" href="#bistrit">बिस्तृत</a></li>
+            <li><a data-toggle="tab" href="#sifaris"> सिफारिस</a></li>
+        </ul>
+        <br />
+        <div class="tab-content">
+            <div id="bistrit" class="tab-pane fade in active">
+                <center>
+                    <div class="col-sm-12">
+                        <h3><b>बाटो कायम विवरण</b></h3>
+                        <hr />
+                        <table class="table-responsive-sm table table-bordered" style="padding:10px 50px;border:1px">
+
+
+                            <tr>
+                                <th scope="row">फारम ID</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">
+                                    स्वीकृत
+                                </th>
+                                <td style="color:darkgreen"><b>भएको</b> </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">आवेदकको नाम</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedak_name)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">ठेगाना</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Pradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Jilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Gabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Ward)</td>
+                            </tr>
+
+
+                            <tr>
+                                <th scope="row">साबिक ठेगाना</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Gajjako_sabikthegana)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">नक्सा सिट नं</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Naksa_sheetno)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">कित्ता नं	</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Kitta_no)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">क्षेत्रफल</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Bigga)-@Html.DisplayFor(modelItem => Model.Last().Kattha)-@Html.DisplayFor(modelItem => Model.Last().Dhur)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">घर नं</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Ghar_no)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">घरको प्रकार</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Gharko_prakaar)</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">घर निर्माण भएको / आनुमति लिएको साल</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Gharnirmaan_saal)</td>
+                            </tr>
+
+
+                        </table>
+
+
+                    </div>
+                </center>
+            </div>
+            <div id="sifaris" class="tab-pane fade">
+
+
+                <script type="text/javascript">
+
+
+                    $(function () {
+                        $("#btnPrint").click(function () {
+                            window.print();
+                        });
+                    });
+
+                </script>
+                <div style="padding:0px 800px">
+                    <input type="button" class="bg-success" id="btnPrint" value="Print" />
+                </div>
+                <img src="~/Content/sidebar/bootstrap-3/Logo.png" style="height:7%;width:13%" />
+
+                पत्र संख्या: 2077/78,
+                चलानी नं.: @Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)
+                <h3 style="padding:0px 350px"><b>कर्जन्हा नगरपालिका</b></h3>
+                <h4 style="padding:2px 370px">
+                    <b>नगरपालिका कार्यालय</b>
+                </h4>
+                <h4 style="padding:2px 390px">
+                    कर्जन्हा , सिरहा
+                </h4>
+                <h4 style="padding:2px 385px">
+                    २ नं प्रदेश, नेपाल
+                </h4>
+                <h4 style="padding:2px 0px">मिति : @Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedan_miti)</h4><br />
+                .........................................<br /><br />
+                .........................................<br /><br />
+                .........................................
+                <h3 style="padding:10px 300px"><b><u>बिषय: बाटो कायम सिफारिस।</u></b></h3>
+                <h4 class="col-sm-10" style="justify-content"> @Html.DisplayFor(modelItem => Model.LastOrDefault().Gabisa)  @Html.DisplayFor(modelItem => Model.LastOrDefault().Ward) अन्तर्गत बस्ने श्री/सुश्री/श्रीमती  @Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedak_name)को नाममा श्रेस्ता दर्ता कायम रहेको (साबिक ठेगाना  @Html.DisplayFor(modelItem => Model.LastOrDefault().Gajjako_sabikthegana)) अन्तर्गतको निम्नमा उल्लेखित जग्गामा घर निर्माण गरि यस वडा कार्यालयमा निजले चालु आर्थिक वर्ष सम्मको घरजग्गा कर / सम्पत्ति कर चुक्ता गरिसकेको हुनाले निजको जग्गा धनी प्रमाणपुर्जामा घर कायम गरिदिन हुन सिफारिस साथ अनुरोध गरिन्छ।</h4>
+                <div style="padding:40px 40px">
+                    <table class="table-responsive-sm table-bordered">
+                        <tr>
+                            <th><b>क्र.स.</b>	</th>
+                            <th><b>साबिक ठेगाना</b>	</th>
+                            <th><b>हाल ठेगाना	</b></th>
+                            <th><b>सिट नं	</b></th>
+                            <th><b>कि नं	</b></th>
+                            <th><b>क्षेत्रफल</b></th>
+                            <th><b>घर नं	</b></th>
+                            <th><b>घरको प्रकार</b>	</th>
+                            <th><b> घर निर्माण भएको साल/अनुमति लिएको</b></th>
+                        </tr>
+                        <tr>
+                            <th>1</th>
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().Gajjako_sabikthegana)</th>
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().Gabisa)</th>
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sheetno)</th>
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().Kitta_no)</th>
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().Bigga)- @Html.DisplayFor(modelItem => Model.LastOrDefault().Kattha)- @Html.DisplayFor(modelItem => Model.LastOrDefault().Dhur)</th>
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().Ghar_no)</th>
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().Gharko_prakaar)</th>
+                            <th>@Html.DisplayFor(modelItem => Model.LastOrDefault().Gharnirmaan_saal)</th>
+                        </tr>
+                    </table>
+                    <div style="padding:30px 700px">
+                        .............................<br /><br />
+                        .............................
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

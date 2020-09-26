@@ -1,0 +1,191 @@
+﻿@model Dainikprashashan.Byawasaya_Darta
+
+@{
+    ViewBag.Title = "Byawasyadarta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html lang="en">
+<head>
+    <title>Ghar_kayamko_sifaris</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <!-- Nepali Datepicker -->
+    <link href="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v3.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v3.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var mainInput = document.getElementById("nepali-datepicker");
+            mainInput.nepaliDatePicker();
+        };
+    </script>
+    <div class="col-lg-12" style="padding:5px 180px">
+
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <div class="col-lg-5">
+                    <label style="color:black;font-family:Arial">
+                        आवेदन गरिएको मिति:
+                    </label>
+                    @Html.TextBoxFor(m => m.Aabedan_miti, "", new { @id = "nepali-datepicker", @name = "nepali-datepicker", @class = "form-control" })
+                </div>
+                <hr />
+                <h3><b>व्यवसाय / फार्मको विवरण</b></h3>
+                <hr />
+                <div class="row" style="padding:0px 15px">
+                    <div class="col-lg-5">
+                        <label>
+                            व्यवसायको नाम
+                        </label>
+                        @Html.TextBoxFor(m => m.Byawasaya_naam, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-lg-5">
+                        <label>
+                            व्यवसायीको नाम
+                        </label>
+                        @Html.TextBoxFor(m => m.Byawasayi_naam, "", new { @class = "form-control" })
+                    </div>
+                </div>
+                <br />
+                <div class="row" style="padding:0px 15px">
+                    <div class="col-lg-5">
+                        <label>
+                            दर्ता नं.
+                        </label>
+                        @Html.TextBoxFor(m => m.Darta_no, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-lg-5">
+                        <label>
+                            दर्ता मिति
+                        </label>
+                        @Html.TextBoxFor(m => m.Darta_miti, "", new { @class = "form-control" })
+                    </div>
+                </div>
+                <br />
+                <div class="col-lg-5">
+                    <label>
+                        प्यान नं.
+                    </label>
+                    @Html.TextBoxFor(m => m.Pan_no, "", new { @class = "form-control" })
+                </div>
+                <br />
+                <div class="row" style="padding:0px 15px">
+                    <div class="col-lg-5">
+                        <label>
+                            व्यवसायीको प्रकार
+                        </label>
+                        @Html.TextBoxFor(m => m.Prakaar, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-lg-5">
+                        <label>
+                            व्यवसायीको प्रकृति
+                        </label>
+                        @Html.TextBoxFor(m => m.Prakriti, "", new { @class = "form-control" })
+                    </div>
+                </div>
+                <br />
+                <label class="control-label col-md-2">ठेगाना </label>
+                <div class="row" style="padding:0px 15px">
+                    <div class="col-sm-5">
+                        @Html.EditorFor(model => model.Pradesh, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Pradesh, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-5">
+                        @Html.EditorFor(model => model.Jilla, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Jilla, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <div class="row" style="padding:0px 15px">
+                    <div class="col-sm-5">
+                        @Html.EditorFor(model => model.Gabisa, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Gabisa, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-sm-5">
+                        @Html.EditorFor(model => model.Ward, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Ward, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <div class="row" style="padding:0px 15px">
+                    <div class="col-lg-5">
+                        <label>
+                            टोलको नाम
+                        </label>
+                        @Html.TextBoxFor(m => m.Toleko_naam, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-lg-5">
+                        <label>
+                            बाटोको नाम
+                        </label>
+                        @Html.TextBoxFor(m => m.Batoko_naam, "", new { @class = "form-control" })
+                    </div>
+                </div>
+                <br />
+                <div class="row" style="padding:0px 15px">
+                    <div class="col-lg-5">
+                        <label>
+                            घरधनीको नाम
+                        </label>
+                        @Html.TextBoxFor(m => m.Ghardhaniko_naam, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-lg-5">
+                        <label>
+                            घर नं
+                        </label>
+                        @Html.TextBoxFor(m => m.Ghar_no, "", new { @class = "form-control" })
+                    </div>
+                </div>
+                <br />
+                <div class="row" style="padding:0px 15px">
+                    <div class="col-lg-5">
+                        <label>
+                            व्यवसायीको ई-मेल
+                        </label>
+                        @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-lg-5">
+                        <label>
+                            व्यवसायीको फोन नं.
+                        </label>
+                        @Html.TextBoxFor(m => m.Phoneno, "", new { @class = "form-control" })
+                    </div>
+                </div>
+                <hr />
+                <h3><b>अन्य विवरण</b></h3><hr />
+                <div class="col-lg-5">
+                    <label>
+                        निकाय
+                    </label>
+                    @Html.TextBoxFor(m => m.Nikaya, "", new { @class = "form-control" })
+                </div>
+                <br />
+
+                <div class="row" style="padding:0px 15px">
+                    <div class="col-lg-5">
+                        <label>
+                            दर्ता नं.
+                        </label>
+                        @Html.TextBoxFor(m => m.Anya_dartano, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-lg-5">
+                        <label>
+                            दर्ता मिति
+                        </label>
+                        @Html.TextBoxFor(m => m.Anya_dartamiti, "", new { @class = "form-control" })
+                    </div>
+                </div>
+                <hr />
+                @Html.TextBoxFor(m => m.ImagePath, "", new { type = "file" })
+                @Html.ValidationMessageFor(m => m.ImagePath, "", new { @class = "error" })
+                <div class="form-group" style="padding:10px 0px">
+                    <button type="submit" class="btn btn-success">पेश गर्नुहोस् </button>
+                </div>
+            }
+            </div>
+    </body>
+</html>

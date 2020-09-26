@@ -32,6 +32,13 @@
           <Property Name="Batoko_naam" Type="nvarchar" MaxLength="50" />
           <Property Name="Umer" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Arthik_Barsa">
+          <Key>
+            <PropertyRef Name="Barsa_Id" />
+          </Key>
+          <Property Name="Barsa_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Barsa" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Asthayi_Basobas">
           <Key>
             <PropertyRef Name="FormId" />
@@ -89,6 +96,58 @@
           <Property Name="Sadak_Lambai" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Sadak_Chaudai" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Byawasaya_Banda_Barey">
+          <Key>
+            <PropertyRef Name="FormId" />
+          </Key>
+          <Property Name="FormId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aabedan_miti" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Byawasaya_naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Byawasayi_naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Darta_no" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prakaar" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prakriti" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pradesh" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Jilla" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gabisa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ward" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sabik_thegana" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Haal_thegana" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Toleko_naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Batoko_naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gharno" Type="nvarchar" MaxLength="50" />
+          <Property Name="Byawasaya_Bandamiti" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sarjamin_miti" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ImagePath" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Byawasaya_Darta">
+          <Key>
+            <PropertyRef Name="FormId" />
+          </Key>
+          <Property Name="FormId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aabedan_miti" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Byawasaya_naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Byawasayi_naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Darta_no" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Darta_miti" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pan_no" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prakaar" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prakriti" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pradesh" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Jilla" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gabisa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ward" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Toleko_naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Batoko_naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ghardhaniko_naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ghar_no" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phoneno" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nikaya" Type="nvarchar" MaxLength="50" />
+          <Property Name="Anya_dartano" Type="nvarchar" MaxLength="50" />
+          <Property Name="Anya_dartamiti" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImagePath" Type="varchar" MaxLength="500" />
+        </EntityType>
         <EntityType Name="Charkilla_Sambandhama">
           <Key>
             <PropertyRef Name="Form_Id" />
@@ -114,6 +173,27 @@
           <Property Name="North" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="South" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Kaifiyat" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Faat">
+          <Key>
+            <PropertyRef Name="Faat_Id" />
+          </Key>
+          <Property Name="Faat_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Faat" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Faat_Karmachari">
+          <Key>
+            <PropertyRef Name="Faat_Id" />
+          </Key>
+          <Property Name="Faat_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Faatkarmachari" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gabisa">
+          <Key>
+            <PropertyRef Name="Gabisa_Id" />
+          </Key>
+          <Property Name="Gabisa_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gabisa" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Ghar_Bato_Pramanit">
           <Key>
@@ -233,6 +313,27 @@
           <Property Name="Jagga_ward" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Jagga_sabik_thegana" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Jilla">
+          <Key>
+            <PropertyRef Name="Jilla_Id" />
+          </Key>
+          <Property Name="Jilla_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Jilla" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kaam">
+          <Key>
+            <PropertyRef Name="Kaam_Id" />
+          </Key>
+          <Property Name="Kaam_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kaam" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kagajaat">
+          <Key>
+            <PropertyRef Name="Kagajaat_Id" />
+          </Key>
+          <Property Name="Kagajaat_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kagajaat" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Kar_Sambandhi">
           <Key>
             <PropertyRef Name="FormId" />
@@ -247,6 +348,13 @@
           <Property Name="Plot_no" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Tax_amount" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Property_wardno" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Karyalaya">
+          <Key>
+            <PropertyRef Name="Karyalaya_Id" />
+          </Key>
+          <Property Name="Karyalaya_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Karyalaya" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Kittakat_Sifaris">
           <Key>
@@ -513,6 +621,27 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Protector_Ward" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Protector_Tole" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="Padd">
+          <Key>
+            <PropertyRef Name="Paad_Id" />
+          </Key>
+          <Property Name="Paad_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Paad" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pradesh">
+          <Key>
+            <PropertyRef Name="Pradesh_Id" />
+          </Key>
+          <Property Name="Pradesh_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pradesh" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sabik_Thegana">
+          <Key>
+            <PropertyRef Name="Sabik_Id" />
+          </Key>
+          <Property Name="Sabik_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sabikthegana" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Sampati_Muluyankan">
           <Key>
             <PropertyRef Name="FormId" />
@@ -531,6 +660,68 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Dhur" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Total_value" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Remarks" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sanstha_Darta_Pramanpatra">
+          <Key>
+            <PropertyRef Name="FormId" />
+          </Key>
+          <Property Name="FormId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aabedan_miti" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sanstha_naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Bisayagat_chetra" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Darta_no" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Darta_miti" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sanstha_pradesh" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sanstha_jilla" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sanstha_gabisa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sanstha_ward" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sanstha_email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sanstha_phoneno" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Swadesh_bidesh" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Karobaar_miti" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sanchalak_naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sanchalak_email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sanchalak_pradesh" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sanchalak_jilla" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sanchalak_gabisa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sanchalak_ward" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sanchalak_phoneno" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ImagePath" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Sanstha_Darta_Sifaris">
+          <Key>
+            <PropertyRef Name="FormId" />
+          </Key>
+          <Property Name="FormId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aabedan_miti" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pradesh" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Jilla" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gabisa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ward" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sabik_thegana" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ImagePath" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Sanstha_Nawikaran">
+          <Key>
+            <PropertyRef Name="FormId" />
+          </Key>
+          <Property Name="FormId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aabedan_miti" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pradesh" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Jilla" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gabisa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ward" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sabik_thegana" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ImagePath" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Sewa">
+          <Key>
+            <PropertyRef Name="Sewa_Id" />
+          </Key>
+          <Property Name="Sewa_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sewa" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Sthayi_Basobas">
           <Key>
@@ -553,22 +744,47 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Batoko_naam" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Ghar_no" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Ward">
+          <Key>
+            <PropertyRef Name="Ward_Id" />
+          </Key>
+          <Property Name="Ward_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ward" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="Dainik_PrasashanModelStoreContainer">
           <EntitySet Name="Antarik_Basai_Sarai" EntityType="Self.Antarik_Basai_Sarai" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Arthik_Barsa" EntityType="Self.Arthik_Barsa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Asthayi_Basobas" EntityType="Self.Asthayi_Basobas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Barsik_Pramanikaran" EntityType="Self.Barsik_Pramanikaran" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Bato_Kayam" EntityType="Self.Bato_Kayam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Byawasaya_Banda_Barey" EntityType="Self.Byawasaya_Banda_Barey" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Byawasaya_Darta" EntityType="Self.Byawasaya_Darta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Charkilla_Sambandhama" EntityType="Self.Charkilla_Sambandhama" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Faat" EntityType="Self.Faat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Faat_Karmachari" EntityType="Self.Faat_Karmachari" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gabisa" EntityType="Self.Gabisa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ghar_Bato_Pramanit" EntityType="Self.Ghar_Bato_Pramanit" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ghar_Jagga_Naamsari" EntityType="Self.Ghar_Jagga_Naamsari" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ghar_kayamko_sifaris" EntityType="Self.Ghar_kayamko_sifaris" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jagga_Ghar_Kayam" EntityType="Self.Jagga_Ghar_Kayam" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jaggadhani_Pratilipi" EntityType="Self.Jaggadhani_Pratilipi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Jilla" EntityType="Self.Jilla" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kaam" EntityType="Self.Kaam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kagajaat" EntityType="Self.Kagajaat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kar_Sambandhi" EntityType="Self.Kar_Sambandhi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Karyalaya" EntityType="Self.Karyalaya" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kittakat_Sifaris" EntityType="Self.Kittakat_Sifaris" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Mohi_Lagat_Katta" EntityType="Self.Mohi_Lagat_Katta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Padd" EntityType="Self.Padd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pradesh" EntityType="Self.Pradesh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sabik_Thegana" EntityType="Self.Sabik_Thegana" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sampati_Muluyankan" EntityType="Self.Sampati_Muluyankan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sanstha_Darta_Pramanpatra" EntityType="Self.Sanstha_Darta_Pramanpatra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sanstha_Darta_Sifaris" EntityType="Self.Sanstha_Darta_Sifaris" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sanstha_Nawikaran" EntityType="Self.Sanstha_Nawikaran" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sewa" EntityType="Self.Sewa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sthayi_Basobas" EntityType="Self.Sthayi_Basobas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ward" EntityType="Self.Ward" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Login" EntityType="Self.Login" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Login].[UserId] AS [UserId], 
@@ -715,6 +931,13 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Batoko_naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Umer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Arthik_Barsa">
+          <Key>
+            <PropertyRef Name="Barsa_Id" />
+          </Key>
+          <Property Name="Barsa_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Barsa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityType Name="Asthayi_Basobas">
           <Key>
             <PropertyRef Name="FormId" />
@@ -772,6 +995,58 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Sadak_Lambai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Sadak_Chaudai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <EntityType Name="Byawasaya_Banda_Barey">
+          <Key>
+            <PropertyRef Name="FormId" />
+          </Key>
+          <Property Name="FormId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aabedan_miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Byawasaya_naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Byawasayi_naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Darta_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prakaar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prakriti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pradesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Jilla" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gabisa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ward" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sabik_thegana" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Haal_thegana" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Toleko_naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Batoko_naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gharno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Byawasaya_Bandamiti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sarjamin_miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Byawasaya_Darta">
+          <Key>
+            <PropertyRef Name="FormId" />
+          </Key>
+          <Property Name="FormId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aabedan_miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Byawasaya_naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Byawasayi_naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Darta_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Darta_miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pan_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prakaar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prakriti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pradesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Jilla" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gabisa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ward" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Toleko_naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Batoko_naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ghardhaniko_naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ghar_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phoneno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nikaya" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Anya_dartano" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Anya_dartamiti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="Charkilla_Sambandhama">
           <Key>
             <PropertyRef Name="Form_Id" />
@@ -797,6 +1072,27 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="North" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="South" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Kaifiyat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Faat">
+          <Key>
+            <PropertyRef Name="Faat_Id" />
+          </Key>
+          <Property Name="Faat_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Faat1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Faat_Karmachari">
+          <Key>
+            <PropertyRef Name="Faat_Id" />
+          </Key>
+          <Property Name="Faat_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Faatkarmachari" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gabisa">
+          <Key>
+            <PropertyRef Name="Gabisa_Id" />
+          </Key>
+          <Property Name="Gabisa_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gabisa1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Ghar_Bato_Pramanit">
           <Key>
@@ -916,6 +1212,27 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Jagga_ward" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Jagga_sabik_thegana" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <EntityType Name="Jilla">
+          <Key>
+            <PropertyRef Name="Jilla_Id" />
+          </Key>
+          <Property Name="Jilla_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Jilla1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kaam">
+          <Key>
+            <PropertyRef Name="Kaam_Id" />
+          </Key>
+          <Property Name="Kaam_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kaam1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kagajaat">
+          <Key>
+            <PropertyRef Name="Kagajaat_Id" />
+          </Key>
+          <Property Name="Kagajaat_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kagajaat1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityType Name="Kar_Sambandhi">
           <Key>
             <PropertyRef Name="FormId" />
@@ -930,6 +1247,13 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Plot_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Tax_amount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Property_wardno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Karyalaya">
+          <Key>
+            <PropertyRef Name="Karyalaya_Id" />
+          </Key>
+          <Property Name="Karyalaya_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Karyalaya1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Kittakat_Sifaris">
           <Key>
@@ -976,6 +1300,27 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Sabik_thegana" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Sarjamin_miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <EntityType Name="Padd">
+          <Key>
+            <PropertyRef Name="Paad_Id" />
+          </Key>
+          <Property Name="Paad_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Paad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pradesh">
+          <Key>
+            <PropertyRef Name="Pradesh_Id" />
+          </Key>
+          <Property Name="Pradesh_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pradesh1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sabik_Thegana">
+          <Key>
+            <PropertyRef Name="Sabik_Id" />
+          </Key>
+          <Property Name="Sabik_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sabikthegana" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityType Name="Sampati_Muluyankan">
           <Key>
             <PropertyRef Name="FormId" />
@@ -994,6 +1339,68 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Dhur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Total_value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sanstha_Darta_Pramanpatra">
+          <Key>
+            <PropertyRef Name="FormId" />
+          </Key>
+          <Property Name="FormId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aabedan_miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sanstha_naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Bisayagat_chetra" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Darta_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Darta_miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sanstha_pradesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sanstha_jilla" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sanstha_gabisa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sanstha_ward" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sanstha_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sanstha_phoneno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Swadesh_bidesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Karobaar_miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sanchalak_naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sanchalak_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sanchalak_pradesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sanchalak_jilla" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sanchalak_gabisa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sanchalak_ward" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sanchalak_phoneno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Sanstha_Darta_Sifaris">
+          <Key>
+            <PropertyRef Name="FormId" />
+          </Key>
+          <Property Name="FormId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aabedan_miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pradesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Jilla" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gabisa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ward" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sabik_thegana" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Sanstha_Nawikaran">
+          <Key>
+            <PropertyRef Name="FormId" />
+          </Key>
+          <Property Name="FormId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aabedan_miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pradesh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Jilla" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gabisa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ward" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sabik_thegana" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Sewa">
+          <Key>
+            <PropertyRef Name="Sewa_Id" />
+          </Key>
+          <Property Name="Sewa_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sewa1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Sthayi_Basobas">
           <Key>
@@ -1015,6 +1422,13 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Tole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Batoko_naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Ghar_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ward">
+          <Key>
+            <PropertyRef Name="Ward_Id" />
+          </Key>
+          <Property Name="Ward_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ward1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Login">
           <Key>
@@ -1232,20 +1646,38 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
         </EntityType>
         <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Antarik_Basai_Sarai" EntityType="Self.Antarik_Basai_Sarai" />
+          <EntitySet Name="Arthik_Barsa" EntityType="Self.Arthik_Barsa" />
           <EntitySet Name="Asthayi_Basobas" EntityType="Self.Asthayi_Basobas" />
           <EntitySet Name="Barsik_Pramanikaran" EntityType="Self.Barsik_Pramanikaran" />
           <EntitySet Name="Bato_Kayam" EntityType="Self.Bato_Kayam" />
+          <EntitySet Name="Byawasaya_Banda_Barey" EntityType="Self.Byawasaya_Banda_Barey" />
+          <EntitySet Name="Byawasaya_Darta" EntityType="Self.Byawasaya_Darta" />
           <EntitySet Name="Charkilla_Sambandhama" EntityType="Self.Charkilla_Sambandhama" />
+          <EntitySet Name="Faats" EntityType="Self.Faat" />
+          <EntitySet Name="Faat_Karmachari" EntityType="Self.Faat_Karmachari" />
+          <EntitySet Name="Gabisas" EntityType="Self.Gabisa" />
           <EntitySet Name="Ghar_Bato_Pramanit" EntityType="Self.Ghar_Bato_Pramanit" />
           <EntitySet Name="Ghar_Jagga_Naamsari" EntityType="Self.Ghar_Jagga_Naamsari" />
           <EntitySet Name="Ghar_kayamko_sifaris" EntityType="Self.Ghar_kayamko_sifaris" />
           <EntitySet Name="Jagga_Ghar_Kayam" EntityType="Self.Jagga_Ghar_Kayam" />
           <EntitySet Name="Jaggadhani_Pratilipi" EntityType="Self.Jaggadhani_Pratilipi" />
+          <EntitySet Name="Jillas" EntityType="Self.Jilla" />
+          <EntitySet Name="Kaams" EntityType="Self.Kaam" />
+          <EntitySet Name="Kagajaats" EntityType="Self.Kagajaat" />
           <EntitySet Name="Kar_Sambandhi" EntityType="Self.Kar_Sambandhi" />
+          <EntitySet Name="Karyalayas" EntityType="Self.Karyalaya" />
           <EntitySet Name="Kittakat_Sifaris" EntityType="Self.Kittakat_Sifaris" />
           <EntitySet Name="Mohi_Lagat_Katta" EntityType="Self.Mohi_Lagat_Katta" />
+          <EntitySet Name="Padds" EntityType="Self.Padd" />
+          <EntitySet Name="Pradeshes" EntityType="Self.Pradesh" />
+          <EntitySet Name="Sabik_Thegana" EntityType="Self.Sabik_Thegana" />
           <EntitySet Name="Sampati_Muluyankan" EntityType="Self.Sampati_Muluyankan" />
+          <EntitySet Name="Sanstha_Darta_Pramanpatra" EntityType="Self.Sanstha_Darta_Pramanpatra" />
+          <EntitySet Name="Sanstha_Darta_Sifaris" EntityType="Self.Sanstha_Darta_Sifaris" />
+          <EntitySet Name="Sanstha_Nawikaran" EntityType="Self.Sanstha_Nawikaran" />
+          <EntitySet Name="Sewas" EntityType="Self.Sewa" />
           <EntitySet Name="Sthayi_Basobas" EntityType="Self.Sthayi_Basobas" />
+          <EntitySet Name="Wards" EntityType="Self.Ward" />
           <EntitySet Name="Logins" EntityType="Self.Login" />
           <EntitySet Name="Nagarikta_Pramanpatra" EntityType="Self.Nagarikta_Pramanpatra" />
           <EntitySet Name="Nagarikta_Pramanpatra_Pratilipi" EntityType="Self.Nagarikta_Pramanpatra_Pratilipi" />
@@ -1281,6 +1713,14 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
                 <ScalarProperty Name="Ghar_no" ColumnName="Ghar_no" />
                 <ScalarProperty Name="Batoko_naam" ColumnName="Batoko_naam" />
                 <ScalarProperty Name="Umer" ColumnName="Umer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Arthik_Barsa">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Arthik_Barsa">
+              <MappingFragment StoreEntitySet="Arthik_Barsa">
+                <ScalarProperty Name="Barsa_Id" ColumnName="Barsa_Id" />
+                <ScalarProperty Name="Barsa" ColumnName="Barsa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1344,6 +1784,60 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Byawasaya_Banda_Barey">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Byawasaya_Banda_Barey">
+              <MappingFragment StoreEntitySet="Byawasaya_Banda_Barey">
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Aabedan_miti" ColumnName="Aabedan_miti" />
+                <ScalarProperty Name="Byawasaya_naam" ColumnName="Byawasaya_naam" />
+                <ScalarProperty Name="Byawasayi_naam" ColumnName="Byawasayi_naam" />
+                <ScalarProperty Name="Darta_no" ColumnName="Darta_no" />
+                <ScalarProperty Name="Prakaar" ColumnName="Prakaar" />
+                <ScalarProperty Name="Prakriti" ColumnName="Prakriti" />
+                <ScalarProperty Name="Pradesh" ColumnName="Pradesh" />
+                <ScalarProperty Name="Jilla" ColumnName="Jilla" />
+                <ScalarProperty Name="Gabisa" ColumnName="Gabisa" />
+                <ScalarProperty Name="Ward" ColumnName="Ward" />
+                <ScalarProperty Name="Sabik_thegana" ColumnName="Sabik_thegana" />
+                <ScalarProperty Name="Haal_thegana" ColumnName="Haal_thegana" />
+                <ScalarProperty Name="Toleko_naam" ColumnName="Toleko_naam" />
+                <ScalarProperty Name="Batoko_naam" ColumnName="Batoko_naam" />
+                <ScalarProperty Name="Gharno" ColumnName="Gharno" />
+                <ScalarProperty Name="Byawasaya_Bandamiti" ColumnName="Byawasaya_Bandamiti" />
+                <ScalarProperty Name="Sarjamin_miti" ColumnName="Sarjamin_miti" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Byawasaya_Darta">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Byawasaya_Darta">
+              <MappingFragment StoreEntitySet="Byawasaya_Darta">
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Aabedan_miti" ColumnName="Aabedan_miti" />
+                <ScalarProperty Name="Byawasaya_naam" ColumnName="Byawasaya_naam" />
+                <ScalarProperty Name="Byawasayi_naam" ColumnName="Byawasayi_naam" />
+                <ScalarProperty Name="Darta_no" ColumnName="Darta_no" />
+                <ScalarProperty Name="Darta_miti" ColumnName="Darta_miti" />
+                <ScalarProperty Name="Pan_no" ColumnName="Pan_no" />
+                <ScalarProperty Name="Prakaar" ColumnName="Prakaar" />
+                <ScalarProperty Name="Prakriti" ColumnName="Prakriti" />
+                <ScalarProperty Name="Pradesh" ColumnName="Pradesh" />
+                <ScalarProperty Name="Jilla" ColumnName="Jilla" />
+                <ScalarProperty Name="Gabisa" ColumnName="Gabisa" />
+                <ScalarProperty Name="Ward" ColumnName="Ward" />
+                <ScalarProperty Name="Toleko_naam" ColumnName="Toleko_naam" />
+                <ScalarProperty Name="Batoko_naam" ColumnName="Batoko_naam" />
+                <ScalarProperty Name="Ghardhaniko_naam" ColumnName="Ghardhaniko_naam" />
+                <ScalarProperty Name="Ghar_no" ColumnName="Ghar_no" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phoneno" ColumnName="Phoneno" />
+                <ScalarProperty Name="Nikaya" ColumnName="Nikaya" />
+                <ScalarProperty Name="Anya_dartano" ColumnName="Anya_dartano" />
+                <ScalarProperty Name="Anya_dartamiti" ColumnName="Anya_dartamiti" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Charkilla_Sambandhama">
             <EntityTypeMapping TypeName="Dainik_PrasashanModel.Charkilla_Sambandhama">
               <MappingFragment StoreEntitySet="Charkilla_Sambandhama">
@@ -1368,6 +1862,30 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
                 <ScalarProperty Name="North" ColumnName="North" />
                 <ScalarProperty Name="South" ColumnName="South" />
                 <ScalarProperty Name="Kaifiyat" ColumnName="Kaifiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Faats">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Faat">
+              <MappingFragment StoreEntitySet="Faat">
+                <ScalarProperty Name="Faat_Id" ColumnName="Faat_Id" />
+                <ScalarProperty Name="Faat1" ColumnName="Faat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Faat_Karmachari">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Faat_Karmachari">
+              <MappingFragment StoreEntitySet="Faat_Karmachari">
+                <ScalarProperty Name="Faat_Id" ColumnName="Faat_Id" />
+                <ScalarProperty Name="Faatkarmachari" ColumnName="Faatkarmachari" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gabisas">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Gabisa">
+              <MappingFragment StoreEntitySet="Gabisa">
+                <ScalarProperty Name="Gabisa_Id" ColumnName="Gabisa_Id" />
+                <ScalarProperty Name="Gabisa1" ColumnName="Gabisa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1494,6 +2012,30 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Jillas">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Jilla">
+              <MappingFragment StoreEntitySet="Jilla">
+                <ScalarProperty Name="Jilla_Id" ColumnName="Jilla_Id" />
+                <ScalarProperty Name="Jilla1" ColumnName="Jilla" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kaams">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Kaam">
+              <MappingFragment StoreEntitySet="Kaam">
+                <ScalarProperty Name="Kaam_Id" ColumnName="Kaam_Id" />
+                <ScalarProperty Name="Kaam1" ColumnName="Kaam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kagajaats">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Kagajaat">
+              <MappingFragment StoreEntitySet="Kagajaat">
+                <ScalarProperty Name="Kagajaat_Id" ColumnName="Kagajaat_Id" />
+                <ScalarProperty Name="Kagajaat1" ColumnName="Kagajaat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Kar_Sambandhi">
             <EntityTypeMapping TypeName="Dainik_PrasashanModel.Kar_Sambandhi">
               <MappingFragment StoreEntitySet="Kar_Sambandhi">
@@ -1507,6 +2049,14 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
                 <ScalarProperty Name="Plot_no" ColumnName="Plot_no" />
                 <ScalarProperty Name="Tax_amount" ColumnName="Tax_amount" />
                 <ScalarProperty Name="Property_wardno" ColumnName="Property_wardno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Karyalayas">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Karyalaya">
+              <MappingFragment StoreEntitySet="Karyalaya">
+                <ScalarProperty Name="Karyalaya_Id" ColumnName="Karyalaya_Id" />
+                <ScalarProperty Name="Karyalaya1" ColumnName="Karyalaya" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1557,6 +2107,30 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Padds">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Padd">
+              <MappingFragment StoreEntitySet="Padd">
+                <ScalarProperty Name="Paad_Id" ColumnName="Paad_Id" />
+                <ScalarProperty Name="Paad" ColumnName="Paad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pradeshes">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Pradesh">
+              <MappingFragment StoreEntitySet="Pradesh">
+                <ScalarProperty Name="Pradesh_Id" ColumnName="Pradesh_Id" />
+                <ScalarProperty Name="Pradesh1" ColumnName="Pradesh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sabik_Thegana">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Sabik_Thegana">
+              <MappingFragment StoreEntitySet="Sabik_Thegana">
+                <ScalarProperty Name="Sabik_Id" ColumnName="Sabik_Id" />
+                <ScalarProperty Name="Sabikthegana" ColumnName="Sabikthegana" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Sampati_Muluyankan">
             <EntityTypeMapping TypeName="Dainik_PrasashanModel.Sampati_Muluyankan">
               <MappingFragment StoreEntitySet="Sampati_Muluyankan">
@@ -1574,6 +2148,72 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
                 <ScalarProperty Name="Dhur" ColumnName="Dhur" />
                 <ScalarProperty Name="Total_value" ColumnName="Total_value" />
                 <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sanstha_Darta_Pramanpatra">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Sanstha_Darta_Pramanpatra">
+              <MappingFragment StoreEntitySet="Sanstha_Darta_Pramanpatra">
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Aabedan_miti" ColumnName="Aabedan_miti" />
+                <ScalarProperty Name="Sanstha_naam" ColumnName="Sanstha_naam" />
+                <ScalarProperty Name="Bisayagat_chetra" ColumnName="Bisayagat_chetra" />
+                <ScalarProperty Name="Darta_no" ColumnName="Darta_no" />
+                <ScalarProperty Name="Darta_miti" ColumnName="Darta_miti" />
+                <ScalarProperty Name="Sanstha_pradesh" ColumnName="Sanstha_pradesh" />
+                <ScalarProperty Name="Sanstha_jilla" ColumnName="Sanstha_jilla" />
+                <ScalarProperty Name="Sanstha_gabisa" ColumnName="Sanstha_gabisa" />
+                <ScalarProperty Name="Sanstha_ward" ColumnName="Sanstha_ward" />
+                <ScalarProperty Name="Sanstha_email" ColumnName="Sanstha_email" />
+                <ScalarProperty Name="Sanstha_phoneno" ColumnName="Sanstha_phoneno" />
+                <ScalarProperty Name="Swadesh_bidesh" ColumnName="Swadesh_bidesh" />
+                <ScalarProperty Name="Karobaar_miti" ColumnName="Karobaar_miti" />
+                <ScalarProperty Name="Sanchalak_naam" ColumnName="Sanchalak_naam" />
+                <ScalarProperty Name="Sanchalak_email" ColumnName="Sanchalak_email" />
+                <ScalarProperty Name="Sanchalak_pradesh" ColumnName="Sanchalak_pradesh" />
+                <ScalarProperty Name="Sanchalak_jilla" ColumnName="Sanchalak_jilla" />
+                <ScalarProperty Name="Sanchalak_gabisa" ColumnName="Sanchalak_gabisa" />
+                <ScalarProperty Name="Sanchalak_ward" ColumnName="Sanchalak_ward" />
+                <ScalarProperty Name="Sanchalak_phoneno" ColumnName="Sanchalak_phoneno" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sanstha_Darta_Sifaris">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Sanstha_Darta_Sifaris">
+              <MappingFragment StoreEntitySet="Sanstha_Darta_Sifaris">
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Aabedan_miti" ColumnName="Aabedan_miti" />
+                <ScalarProperty Name="Naam" ColumnName="Naam" />
+                <ScalarProperty Name="Pradesh" ColumnName="Pradesh" />
+                <ScalarProperty Name="Jilla" ColumnName="Jilla" />
+                <ScalarProperty Name="Gabisa" ColumnName="Gabisa" />
+                <ScalarProperty Name="Ward" ColumnName="Ward" />
+                <ScalarProperty Name="Sabik_thegana" ColumnName="Sabik_thegana" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sanstha_Nawikaran">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Sanstha_Nawikaran">
+              <MappingFragment StoreEntitySet="Sanstha_Nawikaran">
+                <ScalarProperty Name="FormId" ColumnName="FormId" />
+                <ScalarProperty Name="Aabedan_miti" ColumnName="Aabedan_miti" />
+                <ScalarProperty Name="Naam" ColumnName="Naam" />
+                <ScalarProperty Name="Pradesh" ColumnName="Pradesh" />
+                <ScalarProperty Name="Jilla" ColumnName="Jilla" />
+                <ScalarProperty Name="Gabisa" ColumnName="Gabisa" />
+                <ScalarProperty Name="Ward" ColumnName="Ward" />
+                <ScalarProperty Name="Sabik_thegana" ColumnName="Sabik_thegana" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sewas">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Sewa">
+              <MappingFragment StoreEntitySet="Sewa">
+                <ScalarProperty Name="Sewa_Id" ColumnName="Sewa_Id" />
+                <ScalarProperty Name="Sewa1" ColumnName="Sewa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1596,6 +2236,14 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
                 <ScalarProperty Name="Tole" ColumnName="Tole" />
                 <ScalarProperty Name="Batoko_naam" ColumnName="Batoko_naam" />
                 <ScalarProperty Name="Ghar_no" ColumnName="Ghar_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wards">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Ward">
+              <MappingFragment StoreEntitySet="Ward">
+                <ScalarProperty Name="Ward_Id" ColumnName="Ward_Id" />
+                <ScalarProperty Name="Ward1" ColumnName="Ward" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

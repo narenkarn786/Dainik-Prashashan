@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Dainikprashashan.Models.GharkayamList>
+
+@{
+    ViewBag.Title = "Sansthadartasifarisview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding:25px 150px">
+    <div class="col-lg-1">
+    </div>
+
+
+    <h3><b>आबेदन विवरण</b></h3>
+    <hr />
+    <center>
+        <div class="table-responsive-sm">
+            <table class="table table-bordered" style="border:1px">
+
+                <tr>
+                    <th scope="row">फारम ID</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        स्वीकृत
+                    </th>
+                    <td style="color:red">नभएको </td>
+                </tr>
+                <tr>
+                    <th scope="row"> आवेदन मिति</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedan_miti)</td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row"> नाम</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Naam)</td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row">ठेगाना</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Pradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Jilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Gabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Ward)</td>
+                </tr>
+
+
+                <tr>
+                    <th scope="row">साबिक ठेगाना</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sabikthegana)</td>
+                </tr>
+
+            </table>
+            <a href="#"><button class="btn btn-warning col-lg-5" type="submit"><b>सम्पादन गर्नुहोस् </b></button></a>
+            &nbsp;
+            <a href="FinalSansthadartasifarisview"><button class="btn btn-success col-lg-5" type="submit"><b>दर्ता गर्नुहोस् </b></button></a>
+        </div>
+
+    </center>
+</div>

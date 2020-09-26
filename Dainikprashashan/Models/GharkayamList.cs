@@ -31,6 +31,7 @@ namespace Dainikprashashan.Models
         public string Annualincome { get; set; }
         public string Remarks { get; set; }
         public string Owner { get; set; }
+        public string Anumanitmulya { get; set; }
         public string Particularplotno { get; set; }
         public string TotalValue { get; set; }
         public string Rakam { get; set; }
@@ -135,7 +136,38 @@ namespace Dainikprashashan.Models
         public string Paunefaar { get; set; }
         public string Karan { get; set; }
         public string Prabidhiknaam { get; set; }
-
+        public string Sanstha_naam { get; set; }
+        public string Bisayagat_chetra { get; set; }
+        public string Darta_no { get; set; }
+        public string Darta_miti { get; set; }
+        public string Sanstha_pradesh { get; set; }
+        public string Sanstha_jilla { get; set; }
+        public string Sanstha_gabisa { get; set; }
+        public string Sanstha_ward { get; set; }
+        public string Sanchalak_pradesh { get; set; }
+        public string Sanchalak_jilla { get; set; }
+        public string Sanchalak_gabisa { get; set; }
+        public string Sanchalak_ward { get; set; }
+        public string Sanstha_email { get; set; }
+        public string Sanstha_phoneno { get; set; }
+        public string Swadesh_bidesh { get; set; }
+        public string Karobaar_miti { get; set; }
+        public string Sanchalak_naam { get; set; }
+        public string Sanchalak_email { get; set; }
+        public string Sanchalak_phoneno { get; set; }
+        public string Byawasaya_naam { get; set; }
+        public string Byawasayi_naam { get; set; }
+        public string Pan_no { get; set; }
+        public string Prakaar { get; set; }
+        public string Prakriti { get; set; }
+        public string Ghardhaniko_naam { get; set; }
+        public string Email { get; set; }
+        public string Phoneno { get; set; }
+        public string Nikaya { get; set; }
+        public string Anya_dartano { get; set; }
+        public string Anya_dartamiti { get; set; }
+        public string Haalthegana { get; set; }
+    public string Byawasaya_Bandamiti { get; set; }
 
     }
 }

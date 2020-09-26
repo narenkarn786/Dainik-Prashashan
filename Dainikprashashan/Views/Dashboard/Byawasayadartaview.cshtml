@@ -1,0 +1,117 @@
+﻿@model IEnumerable<Dainikprashashan.Models.GharkayamList>
+@{
+    ViewBag.Title = "Byawasayadartaview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding:25px 150px">
+    <div class="col-lg-1">
+    </div>
+
+
+    <h3><b>आबेदन विवरण</b></h3>
+    <hr />
+    <center>
+        <div class="table-responsive-sm">
+            <table class="table table-bordered" style="border:1px">
+
+                <tr>
+                    <th scope="row">फारम ID</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">
+                        स्वीकृत
+                    </th>
+                    <td style="color:red">नभएको </td>
+                </tr>
+                <tr>
+                    <th>
+                        व्यवसाय / फार्मको विवरण
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="row">व्यवसायको नाम</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Byawasaya_naam)</td>
+                </tr>
+                <tr>
+                    <th scope="row">दर्ता नं.</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Darta_no)</td>
+                </tr>
+                <tr>
+                    <th scope="row">दर्ता मिति</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Darta_miti)</td>
+                </tr>
+                <tr>
+                    <th scope="row">व्यवसायीको प्रकार</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Prakaar)</td>
+                </tr>
+                <tr>
+                    <th scope="row">व्यवसायीको प्रकृति</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Prakriti)</td>
+                </tr>
+                <tr>
+                    <th scope="row">व्यवसायीको नाम</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Byawasayi_naam)</td>
+                </tr>
+                
+                <tr>
+                    <th scope="row">घरधनीको नाम</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Ghardhaniko_naam)</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">व्यवसाय रहेको स्थान</th>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.LastOrDefault().Pradesh),
+                        @Html.DisplayFor(modelItem => Model.LastOrDefault().Jilla)
+                        @Html.DisplayFor(modelItem => Model.LastOrDefault().Gabisa)
+                        @Html.DisplayFor(modelItem => Model.LastOrDefault().Ward)
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">टोल</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Tole)</td>
+                </tr>
+                <tr>
+                    <th scope="row">व्यवसाय रहेको बाटोको नाम</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Batokonaam)</td>
+                </tr>
+                <tr>
+                    <th scope="row">व्यवसाय रहेको घर नं</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Ghar_no)</td>
+                </tr>
+                <tr>
+                    <th scope="row">व्यवसायको ई-मेल</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Email)</td>
+                </tr>
+                <tr>
+                    <th scope="row">फोन नं.</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Phoneno)</td>
+                </tr>
+                <tr>
+                    <th scope="row">प्यान नं.</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Pan_no)</td>
+                </tr>
+                <tr><th>अन्य विवरण</th></tr>
+                <tr>
+                    <th scope="row">निकाय</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Nikaya)</td>
+                </tr>
+                <tr>
+                    <th scope="row">दर्ता नं.</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Anya_dartano)</td>
+                </tr>
+                <tr>
+                    <th scope="row">दर्ता मिति</th>
+                    <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Anya_dartamiti)</td>
+                </tr>
+            </table>
+            <a href="#"><button class="btn btn-warning col-lg-5" type="submit"><b>सम्पादन गर्नुहोस् </b></button></a>
+            &nbsp;
+            <a href="FinalByawasayadartaview"><button class="btn btn-success col-lg-5" type="submit"><b>दर्ता गर्नुहोस् </b></button></a>
+        </div>
+
+    </center>
+</div>

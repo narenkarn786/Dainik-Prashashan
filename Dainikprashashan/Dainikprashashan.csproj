@@ -2213,6 +2213,7 @@
     <Content Include="Content\Dainik\plugins\toastr\toastr.js.map" />
     <Content Include="Content\Dainik\README.md" />
     <Content Include="Content\Dainik\pages\forms\Login.cshtml" />
+    <Content Include="App_Browsers\qt.browser" />
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -2220,7 +2221,6 @@
     <Content Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="App_Browsers\qt.browser" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -2232,6 +2232,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Arthik_Barsa.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Asthayi_Basobas.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -2241,11 +2244,26 @@
     <Compile Include="Bato_Kayam.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Byawasaya_Banda_Barey.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Byawasaya_Darta.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Charkilla_Sambandhama.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Faat.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Faat_Karmachari.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gabisa.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Ghar_Bato_Pramanit.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -2262,6 +2280,18 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Jagga_Ghar_Kayam.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Jilla.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kaam.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kagajaat.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Karyalaya.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Kar_Sambandhi.cs">
@@ -2299,8 +2329,26 @@
     <Compile Include="Nagarikta_Pramanpatra_Pratilipi.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Padd.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pradesh.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sabik_Thegana.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Sampati_Muluyankan.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sanstha_Darta_Pramanpatra.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sanstha_Darta_Sifaris.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sanstha_Nawikaran.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Service\Basobasservice.cs" />
@@ -2309,7 +2357,15 @@
     <Compile Include="Service\Loginservice.cs" />
     <Compile Include="Service\Nagariktaservice.cs" />
     <Compile Include="Service\Sampatiservice.cs" />
+    <Compile Include="Service\Sansthaservice.cs" />
+    <Compile Include="Service\Settingservice.cs" />
+    <Compile Include="Sewa.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Sthayi_Basobas.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ward.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -2376,6 +2432,40 @@
     <Content Include="Views\Dashboard\FinalSampatimulyankanbiwaranview.cshtml" />
     <Content Include="Views\Dashboard\FinalKarsabdhaniview.cshtml" />
     <Content Include="Views\Dashboard\FinalKarsabdhanibiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\FinalJaggadhanipratilipiview.cshtml" />
+    <Content Include="Views\Dashboard\FinalJaggadhanipratilipibiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\FinalBatokayamview.cshtml" />
+    <Content Include="Views\Dashboard\FinalBatokayambiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\FinalJaggagharkayamview.cshtml" />
+    <Content Include="Views\Dashboard\FinalJaggagharkayambiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\FinalCharkillaview.cshtml" />
+    <Content Include="Views\Dashboard\FinalCharkillabiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\FinalMohilagatkattaview.cshtml" />
+    <Content Include="Views\Dashboard\FinalMohilagatkattabiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\Gharbatopramanitview.cshtml" />
+    <Content Include="Views\Dashboard\FinalGharbatopramanitview.cshtml" />
+    <Content Include="Views\Dashboard\FinalGharbatopramanitviewbiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\Karyalaya.cshtml" />
+    <Content Include="Views\Dashboard\Sansthadartapramanpatra.cshtml" />
+    <Content Include="Views\Dashboard\Sansthadartapramanpatraview.cshtml" />
+    <Content Include="Views\Dashboard\FinalSansthadartapramanpatraview.cshtml" />
+    <Content Include="Views\Dashboard\FinalSansthadartapramanpatrabiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\Sansthadartasifaris.cshtml" />
+    <Content Include="Views\Dashboard\Sansthanawikaran.cshtml" />
+    <Content Include="Views\Dashboard\FinalSansthadartasifarisview.cshtml" />
+    <Content Include="Views\Dashboard\Sansthadartasifarisview.cshtml" />
+    <Content Include="Views\Dashboard\FinalSansthadartasifarisbiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\Sansthanawikaranview.cshtml" />
+    <Content Include="Views\Dashboard\FinalSansthanawikaranview.cshtml" />
+    <Content Include="Views\Dashboard\FinalSansthanawikaranbiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\Byawasyadarta.cshtml" />
+    <Content Include="Views\Dashboard\Byawasayadartaview.cshtml" />
+    <Content Include="Views\Dashboard\FinalByawasayadartaview.cshtml" />
+    <Content Include="Views\Dashboard\FinalByawasayadartabiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\Byawasayabanda.cshtml" />
+    <Content Include="Views\Dashboard\Byawasayabandaview.cshtml" />
+    <Content Include="Views\Dashboard\FinalByawasayabandaview.cshtml" />
+    <Content Include="Views\Dashboard\FinalByawasayabandadartaview.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
