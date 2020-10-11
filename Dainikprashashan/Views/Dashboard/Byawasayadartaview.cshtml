@@ -4,14 +4,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row" style="padding:25px 150px">
-    <div class="col-lg-1">
-    </div>
+<div style="padding:25px 200px">
 
 
-    <h3><b>आबेदन विवरण</b></h3>
-    <hr />
     <center>
+        <h3><b>आबेदन विवरण</b></h3>
+        <hr />
+
         <div class="table-responsive-sm">
             <table class="table table-bordered" style="border:1px">
 
@@ -26,11 +25,7 @@
                     </th>
                     <td style="color:red">नभएको </td>
                 </tr>
-                <tr>
-                    <th>
-                        व्यवसाय / फार्मको विवरण
-                    </th>
-                </tr>
+
                 <tr>
                     <th scope="row">व्यवसायको नाम</th>
                     <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Byawasaya_naam)</td>
@@ -55,7 +50,7 @@
                     <th scope="row">व्यवसायीको नाम</th>
                     <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Byawasayi_naam)</td>
                 </tr>
-                
+
                 <tr>
                     <th scope="row">घरधनीको नाम</th>
                     <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Ghardhaniko_naam)</td>
@@ -111,7 +106,8 @@
             <a href="#"><button class="btn btn-warning col-lg-5" type="submit"><b>सम्पादन गर्नुहोस् </b></button></a>
             &nbsp;
             <a href="FinalByawasayadartaview"><button class="btn btn-success col-lg-5" type="submit"><b>दर्ता गर्नुहोस् </b></button></a>
-        </div>
 
+        </div>
     </center>
+
 </div>

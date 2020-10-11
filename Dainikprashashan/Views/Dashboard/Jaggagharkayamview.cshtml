@@ -4,9 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row" style="padding:0px 100px">
-    <div class="col-lg-1">
-    </div>
+<div style="padding:15px 100px">
+    
     <center>
         <div class="col-lg-11">
             <div class="table-responsive-sm">
@@ -31,7 +30,7 @@
                         <th scope="row">आबदेकको  नाम	</th>
                         <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedak_name)</td>
                     </tr>
-                    
+
                     <tr>
                         <th scope="row">कित्ता नं.		</th>
                         <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Kitta_no)</td>
@@ -49,12 +48,13 @@
                         <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sabikthegana)</td>
                     </tr>
                     <br />
-                    <a href="Editabedanniwaran"><button class="btn btn-warning col-lg-5" type="submit"><b>सम्पादन गर्नुहोस् </b></button></a>
-                    &nbsp;
-                    <button class="btn btn-success col-lg-5" type="submit"><b>दर्ता गर्नुहोस् </b></button>
+
                 </table>
             </div>
         </div>
+        <a href="Editabedanniwaran"><button class="btn btn-warning col-lg-5" type="submit"><b>सम्पादन गर्नुहोस् </b></button></a>
+        &nbsp;
+        <a href="FinalJaggagharkayamview"> <button class="btn btn-success col-lg-5" type="submit"><b>दर्ता गर्नुहोस् </b></button></a>
     </center>
 </div>
 

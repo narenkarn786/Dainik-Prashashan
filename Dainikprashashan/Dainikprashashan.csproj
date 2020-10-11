@@ -2224,6 +2224,11 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -2466,6 +2471,24 @@
     <Content Include="Views\Dashboard\Byawasayabandaview.cshtml" />
     <Content Include="Views\Dashboard\FinalByawasayabandaview.cshtml" />
     <Content Include="Views\Dashboard\FinalByawasayabandadartaview.cshtml" />
+    <Content Include="Views\Dashboard\FinalSthayibasobasview.cshtml" />
+    <Content Include="Views\Dashboard\FinalSthayibasobasbiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\FinalAsthayibasobasview.cshtml" />
+    <Content Include="Views\Dashboard\FinalAsthayibasobasbiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\FinalAntarikbasaisaraiview.cshtml" />
+    <Content Include="Views\Dashboard\FinalAntarikbasaisaraibiwaranview.cshtml" />
+    <Content Include="Views\Dashboard\Arthikbarsa.cshtml" />
+    <Content Include="Views\Dashboard\Faat.cshtml" />
+    <Content Include="Views\Dashboard\Kagajaat.cshtml" />
+    <Content Include="Views\Dashboard\Kaam.cshtml" />
+    <Content Include="Views\Dashboard\Sewa.cshtml" />
+    <Content Include="Views\Dashboard\Pradesh.cshtml" />
+    <Content Include="Views\Dashboard\Jilla.cshtml" />
+    <Content Include="Views\Dashboard\Gabisa.cshtml" />
+    <Content Include="Views\Dashboard\Ward.cshtml" />
+    <Content Include="Views\Dashboard\Sabikthegana.cshtml" />
+    <Content Include="Views\Dashboard\Paad.cshtml" />
+    <Content Include="Views\Dashboard\Faatkarmachari.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

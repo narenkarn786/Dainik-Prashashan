@@ -1,0 +1,32 @@
+﻿@model Dainikprashashan.Arthik_Barsa
+
+@{
+    ViewBag.Title = "Arthikbarsa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+@using (Html.BeginForm())
+{
+<div style="padding:10px 150px">
+    <h4><b>आर्थिक वर्ष थप्नुहोस् </b></h4><hr />
+    <br />
+    <div class="row">
+        <div class="col-sm-5">
+            @Html.TextBoxFor(m => m.Barsa, new { @class = "form-control"})
+        </div>
+    </div>
+    <br />
+
+  
+    @*<script type="text/javascript">
+
+           CreateHindiTextBox("id 1");
+
+        </script>*@
+    <button class="btn btn-success" type="submit">सेभ गर्नुहोस् </button>
+</div>
+}
+
+
+

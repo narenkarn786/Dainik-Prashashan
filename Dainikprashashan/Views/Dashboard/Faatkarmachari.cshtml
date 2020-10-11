@@ -1,9 +1,10 @@
-﻿@model Dainikprashashan.Karyalaya
+﻿@model Dainikprashashan.Faat_Karmachari
 
 @{
-    ViewBag.Title = "Karyalaya";
+    ViewBag.Title = "Faatkarmachari";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @using (Html.BeginForm())
 {
     <div style="padding:10px 150px">
@@ -11,10 +12,12 @@
         <br />
         <div class="row">
             <div class="col-sm-5">
-                @Html.TextBoxFor(m => m.Karyalaya1, new { @class = "form-control" })
+                @Html.TextBoxFor(m => m.Faatkarmachari, new { @class = "form-control" })
             </div>
         </div>
         <br />
         <button class="btn btn-success" type="submit">सेभ गर्नुहोस् </button>
     </div>
-    }
+}
+
+

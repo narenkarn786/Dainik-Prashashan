@@ -27,16 +27,16 @@
 </head>
 <body>
     <div class="container" style="padding:15px 180px">
-        <button type="button" class="btn btn-success"><a href="Kittakatsifaris" style="color:white"><h6><i class="fas fa-plus-circle"></i>&nbsp; नयाँ</h6> </a></button>
+        <a href="Kittakatsifaris" style="color:white"> <button type="button" class="btn btn-success"><h6><i class="fas fa-plus-circle"></i>&nbsp; नयाँ</h6> </button></a>
 
-        <br />
+        <hr />
         <div style="padding:10px 0px; width:100%; margin:0 auto;">
             <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                     <tr>
                         <th>फारम ID</th>
-                        <th>आवेदकको नाम</th>
-                        <th>नक्सा सिट नं	</th>
+                        <th>जग्गाधनिको नाम</th>
+                        <th> सिट नं	</th>
                         <th>कित्ता नं	</th>
                         <th>आवेदन गरिएको मिति</th>
                         <th>स्वीकृत</th>
@@ -44,9 +44,9 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="FinalGharjagganaamsaribiwaranview">@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</a></td>
-                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedak_name)</td>
-                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Naksa_sheetno)</td>
+                        <td><a href="FinalKittakatsifarisbiwaranview">@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</a></td>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Jaggadhanikonaam)</td>
+                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sheetno)</td>
                         <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Kitta_no)</td>
                         <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedan_miti)</td>
                         <td>भएको</td>

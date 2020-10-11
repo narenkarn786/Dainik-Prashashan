@@ -38,49 +38,36 @@
                             </tr>
 
                             <tr>
-                                <th scope="row">आवेदकको नाम</th>
-                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedak_name)</td>
+                                <th scope="row">जग्गाधनीको नाम	</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Jaggadhanikonaam)</td>
                             </tr>
-
+                            <tr>
+                                <th scope="row">कित्ता नं.		</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Kitta_no)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">क्षेत्रफल	</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Bigga),@Html.DisplayFor(modelItem => Model.LastOrDefault().Kattha),@Html.DisplayFor(modelItem => Model.LastOrDefault().Dhur)</td>
+                            </tr>
                             <tr>
                                 <th scope="row">ठेगाना</th>
                                 <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Pradesh),@Html.DisplayFor(modelItem => Model.LastOrDefault().Jilla),@Html.DisplayFor(modelItem => Model.LastOrDefault().Gabisa),@Html.DisplayFor(modelItem => Model.LastOrDefault().Ward)</td>
                             </tr>
-
-
                             <tr>
-                                <th scope="row">साबिक ठेगाना</th>
-                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Gajjako_sabikthegana)</td>
+                                <th scope="row">साबिक ठेगाना	</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sabikthegana)</td>
                             </tr>
-
                             <tr>
-                                <th scope="row">नक्सा सिट नं</th>
-                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Naksa_sheetno)</td>
+                                <th scope="row">बाटो खोल्न चाहेको दिशा	</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Batodisa)</td>
                             </tr>
-
                             <tr>
-                                <th scope="row">कित्ता नं	</th>
-                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Kitta_no)</td>
+                                <th scope="row">सडक लम्बाई	</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sadaklambai)</td>
                             </tr>
-
                             <tr>
-                                <th scope="row">क्षेत्रफल</th>
-                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Bigga)-@Html.DisplayFor(modelItem => Model.Last().Kattha)-@Html.DisplayFor(modelItem => Model.Last().Dhur)</td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">घर नं</th>
-                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Ghar_no)</td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">घरको प्रकार</th>
-                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Gharko_prakaar)</td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">घर निर्माण भएको / आनुमति लिएको साल</th>
-                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Gharnirmaan_saal)</td>
+                                <th scope="row">सडक चौडाई	</th>
+                                <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Sadakchaudai)</td>
                             </tr>
 
 

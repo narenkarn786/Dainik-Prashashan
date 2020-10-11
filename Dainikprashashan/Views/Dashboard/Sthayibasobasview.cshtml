@@ -24,13 +24,15 @@
                         </th>
                         <td style="color:red">नभएको </td>
                     </tr>
-                    <tr>निवेदकको विवरण</tr>
+                    <tr><th>निवेदकको विवरण</th></tr>
 
                     <tr>
                         <th scope="row">नाम</th>
                         <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedak_name)</td>
                     </tr>
-                    <tr>स्थाई बसोबास गर्ने व्यक्तिको विवरण</tr>
+                    <tr>
+                        <th>स्थाई बसोबास गर्ने व्यक्तिको विवरण</th>
+                    </tr>
                     <tr>
                         <th scope="row">नाम</th>
                         <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Naam)</td>
@@ -73,12 +75,13 @@
                         <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Batokonaam)</td>
                     </tr>
                     <br />
-                    <a href="Editabedanniwaran"><button class="btn btn-warning col-lg-5" type="submit"><b>सम्पादन गर्नुहोस् </b></button></a>
-                    &nbsp;
-                    <button class="btn btn-success col-lg-5" type="submit"><b>दर्ता गर्नुहोस् </b></button>
+
                 </table>
-                </div>
             </div>
-        </center>
+        </div>
+        <a href="Editabedanniwaran"><button class="btn btn-warning col-lg-5" type="submit"><b>सम्पादन गर्नुहोस् </b></button></a>
+        &nbsp;
+        <a href="FinalSthayibasobasview"> <button class="btn btn-success col-lg-5" type="submit"><b>दर्ता गर्नुहोस् </b></button></a>
+    </center>
     </div>
 
