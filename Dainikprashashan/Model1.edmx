@@ -32,6 +32,34 @@
           <Property Name="Batoko_naam" Type="nvarchar" MaxLength="50" />
           <Property Name="Umer" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Dainik_Prasashan.dbo.Anya_Sifaris' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Anya_Sifaris">
+          <Key>
+            <PropertyRef Name="AnyaId" />
+            <PropertyRef Name="Aabedak_naam" />
+            <PropertyRef Name="Aabedan_miti" />
+            <PropertyRef Name="Patrakokisim" />
+            <PropertyRef Name="Patrakobisaya" />
+            <PropertyRef Name="Freespace" />
+          </Key>
+          <Property Name="AnyaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aabedak_naam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Aabedan_miti" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patrakokisim" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patrakobisaya" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Freespace" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Dainik_Prasashan.dbo.Apangako_Kisim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Apangako_Kisim">
+          <Key>
+            <PropertyRef Name="ApangaId" />
+            <PropertyRef Name="Apangakokisim" />
+          </Key>
+          <Property Name="ApangaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Apangakokisim" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Arthik_Barsa">
           <Key>
             <PropertyRef Name="Barsa_Id" />
@@ -95,6 +123,26 @@
           <Property Name="Bato_Disa" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Sadak_Lambai" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Sadak_Chaudai" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Dainik_Prasashan.dbo.Batoko_Prakaar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Batoko_Prakaar">
+          <Key>
+            <PropertyRef Name="BatoId" />
+            <PropertyRef Name="Batokoprakaar" />
+          </Key>
+          <Property Name="BatoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Batokoprakaar" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Dainik_Prasashan.dbo.Biwahko_Prakaar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Biwahko_Prakaar">
+          <Key>
+            <PropertyRef Name="BiwahId" />
+            <PropertyRef Name="Biwahkoprakaar" />
+          </Key>
+          <Property Name="BiwahId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Biwahkoprakaar" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Byawasaya_Banda_Barey">
           <Key>
@@ -621,6 +669,16 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Protector_Ward" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Protector_Tole" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Dainik_Prasashan.dbo.Nata' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Nata">
+          <Key>
+            <PropertyRef Name="NataId" />
+            <PropertyRef Name="Nata" />
+          </Key>
+          <Property Name="NataId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nata" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Padd">
           <Key>
             <PropertyRef Name="Paad_Id" />
@@ -785,6 +843,34 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <EntitySet Name="Sewa" EntityType="Self.Sewa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sthayi_Basobas" EntityType="Self.Sthayi_Basobas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ward" EntityType="Self.Ward" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Anya_Sifaris" EntityType="Self.Anya_Sifaris" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Anya_Sifaris].[AnyaId] AS [AnyaId], 
+    [Anya_Sifaris].[Aabedak_naam] AS [Aabedak_naam], 
+    [Anya_Sifaris].[Aabedan_miti] AS [Aabedan_miti], 
+    [Anya_Sifaris].[Patrakokisim] AS [Patrakokisim], 
+    [Anya_Sifaris].[Patrakobisaya] AS [Patrakobisaya], 
+    [Anya_Sifaris].[Freespace] AS [Freespace]
+    FROM [dbo].[Anya_Sifaris] AS [Anya_Sifaris]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Apangako_Kisim" EntityType="Self.Apangako_Kisim" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Apangako_Kisim].[ApangaId] AS [ApangaId], 
+    [Apangako_Kisim].[Apangakokisim] AS [Apangakokisim]
+    FROM [dbo].[Apangako_Kisim] AS [Apangako_Kisim]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Batoko_Prakaar" EntityType="Self.Batoko_Prakaar" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Batoko_Prakaar].[BatoId] AS [BatoId], 
+    [Batoko_Prakaar].[Batokoprakaar] AS [Batokoprakaar]
+    FROM [dbo].[Batoko_Prakaar] AS [Batoko_Prakaar]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Biwahko_Prakaar" EntityType="Self.Biwahko_Prakaar" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Biwahko_Prakaar].[BiwahId] AS [BiwahId], 
+    [Biwahko_Prakaar].[Biwahkoprakaar] AS [Biwahkoprakaar]
+    FROM [dbo].[Biwahko_Prakaar] AS [Biwahko_Prakaar]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Login" EntityType="Self.Login" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Login].[UserId] AS [UserId], 
@@ -897,6 +983,12 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
     [Nagarikta_Pramanpatra_Pratilipi].[Protector_Ward] AS [Protector_Ward], 
     [Nagarikta_Pramanpatra_Pratilipi].[Protector_Tole] AS [Protector_Tole]
     FROM [dbo].[Nagarikta_Pramanpatra_Pratilipi] AS [Nagarikta_Pramanpatra_Pratilipi]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Nata" EntityType="Self.Nata" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Nata].[NataId] AS [NataId], 
+    [Nata].[Nata] AS [Nata]
+    FROM [dbo].[Nata] AS [Nata]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema>
@@ -1430,6 +1522,46 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Ward_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ward1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <EntityType Name="Anya_Sifaris">
+          <Key>
+            <PropertyRef Name="AnyaId" />
+            <PropertyRef Name="Aabedak_naam" />
+            <PropertyRef Name="Aabedan_miti" />
+            <PropertyRef Name="Patrakokisim" />
+            <PropertyRef Name="Patrakobisaya" />
+            <PropertyRef Name="Freespace" />
+          </Key>
+          <Property Name="AnyaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aabedak_naam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Aabedan_miti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patrakokisim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patrakobisaya" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Freespace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Apangako_Kisim">
+          <Key>
+            <PropertyRef Name="ApangaId" />
+            <PropertyRef Name="Apangakokisim" />
+          </Key>
+          <Property Name="ApangaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Apangakokisim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Batoko_Prakaar">
+          <Key>
+            <PropertyRef Name="BatoId" />
+            <PropertyRef Name="Batokoprakaar" />
+          </Key>
+          <Property Name="BatoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Batokoprakaar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Biwahko_Prakaar">
+          <Key>
+            <PropertyRef Name="BiwahId" />
+            <PropertyRef Name="Biwahkoprakaar" />
+          </Key>
+          <Property Name="BiwahId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Biwahkoprakaar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityType Name="Login">
           <Key>
             <PropertyRef Name="UserId" />
@@ -1644,6 +1776,14 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <Property Name="Protector_Ward" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Protector_Tole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <EntityType Name="Nata">
+          <Key>
+            <PropertyRef Name="NataId" />
+            <PropertyRef Name="Nata1" />
+          </Key>
+          <Property Name="NataId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nata1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Antarik_Basai_Sarai" EntityType="Self.Antarik_Basai_Sarai" />
           <EntitySet Name="Arthik_Barsa" EntityType="Self.Arthik_Barsa" />
@@ -1678,9 +1818,14 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
           <EntitySet Name="Sewas" EntityType="Self.Sewa" />
           <EntitySet Name="Sthayi_Basobas" EntityType="Self.Sthayi_Basobas" />
           <EntitySet Name="Wards" EntityType="Self.Ward" />
+          <EntitySet Name="Anya_Sifaris" EntityType="Self.Anya_Sifaris" />
+          <EntitySet Name="Apangako_Kisim" EntityType="Self.Apangako_Kisim" />
+          <EntitySet Name="Batoko_Prakaar" EntityType="Self.Batoko_Prakaar" />
+          <EntitySet Name="Biwahko_Prakaar" EntityType="Self.Biwahko_Prakaar" />
           <EntitySet Name="Logins" EntityType="Self.Login" />
           <EntitySet Name="Nagarikta_Pramanpatra" EntityType="Self.Nagarikta_Pramanpatra" />
           <EntitySet Name="Nagarikta_Pramanpatra_Pratilipi" EntityType="Self.Nagarikta_Pramanpatra_Pratilipi" />
+          <EntitySet Name="Natas" EntityType="Self.Nata" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -2247,6 +2392,42 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Anya_Sifaris">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Anya_Sifaris">
+              <MappingFragment StoreEntitySet="Anya_Sifaris">
+                <ScalarProperty Name="AnyaId" ColumnName="AnyaId" />
+                <ScalarProperty Name="Aabedak_naam" ColumnName="Aabedak_naam" />
+                <ScalarProperty Name="Aabedan_miti" ColumnName="Aabedan_miti" />
+                <ScalarProperty Name="Patrakokisim" ColumnName="Patrakokisim" />
+                <ScalarProperty Name="Patrakobisaya" ColumnName="Patrakobisaya" />
+                <ScalarProperty Name="Freespace" ColumnName="Freespace" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Apangako_Kisim">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Apangako_Kisim">
+              <MappingFragment StoreEntitySet="Apangako_Kisim">
+                <ScalarProperty Name="ApangaId" ColumnName="ApangaId" />
+                <ScalarProperty Name="Apangakokisim" ColumnName="Apangakokisim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Batoko_Prakaar">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Batoko_Prakaar">
+              <MappingFragment StoreEntitySet="Batoko_Prakaar">
+                <ScalarProperty Name="BatoId" ColumnName="BatoId" />
+                <ScalarProperty Name="Batokoprakaar" ColumnName="Batokoprakaar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Biwahko_Prakaar">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Biwahko_Prakaar">
+              <MappingFragment StoreEntitySet="Biwahko_Prakaar">
+                <ScalarProperty Name="BiwahId" ColumnName="BiwahId" />
+                <ScalarProperty Name="Biwahkoprakaar" ColumnName="Biwahkoprakaar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Logins">
             <EntityTypeMapping TypeName="Dainik_PrasashanModel.Login">
               <MappingFragment StoreEntitySet="Login">
@@ -2363,6 +2544,14 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nagarikta_Pramanpatra_Pratili
                 <ScalarProperty Name="Protector_Gabisa" ColumnName="Protector_Gabisa" />
                 <ScalarProperty Name="Protector_Ward" ColumnName="Protector_Ward" />
                 <ScalarProperty Name="Protector_Tole" ColumnName="Protector_Tole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Natas">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Nata">
+              <MappingFragment StoreEntitySet="Nata">
+                <ScalarProperty Name="NataId" ColumnName="NataId" />
+                <ScalarProperty Name="Nata1" ColumnName="Nata" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

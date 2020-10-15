@@ -101,6 +101,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Blue.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\Dainik\.gitignore" />
@@ -1935,6 +1936,7 @@
     <Content Include="Content\Dainik\plugins\toastr\toastr.min.css" />
     <Content Include="Content\Dainik\plugins\toastr\toastr.min.js" />
     <Content Include="Content\Dainik\starter.html" />
+    <Content Include="Content\Loginbackground.jpg" />
     <Content Include="Content\Print.css" />
     <Content Include="Content\sidebar\bootstrap-3\index5.html" />
     <Content Include="Content\sidebar\bootstrap-3\Logo.png" />
@@ -2236,6 +2238,12 @@
     <Compile Include="Antarik_Basai_Sarai.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Anya_Sifaris.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Apangako_Kisim.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Arthik_Barsa.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -2246,7 +2254,13 @@
     <Compile Include="Barsik_Pramanikaran.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Batoko_Prakaar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bato_Kayam.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Biwahko_Prakaar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Byawasaya_Banda_Barey.cs">
@@ -2332,6 +2346,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Nagarikta_Pramanpatra_Pratilipi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Nata.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Padd.cs">
@@ -2489,6 +2506,27 @@
     <Content Include="Views\Dashboard\Sabikthegana.cshtml" />
     <Content Include="Views\Dashboard\Paad.cshtml" />
     <Content Include="Views\Dashboard\Faatkarmachari.cshtml" />
+    <Content Include="Views\Dashboard\Biwahkoprakaar.cshtml" />
+    <Content Include="Views\Dashboard\Nata.cshtml" />
+    <Content Include="Views\Dashboard\Batokoprakaar.cshtml" />
+    <Content Include="Views\Dashboard\Apangakokisim.cshtml" />
+    <Content Include="Views\Dashboard\Karyalayaview.cshtml" />
+    <Content Include="Views\Dashboard\Arthikbarsaview.cshtml" />
+    <Content Include="Views\Dashboard\Faatview.cshtml" />
+    <Content Include="Views\Dashboard\Kagajaatview.cshtml" />
+    <Content Include="Views\Dashboard\Kaamkoprakaarview.cshtml" />
+    <Content Include="Views\Dashboard\Sewaview.cshtml" />
+    <Content Include="Views\Dashboard\Pradeshview.cshtml" />
+    <Content Include="Views\Dashboard\Jillaview.cshtml" />
+    <Content Include="Views\Dashboard\Gabisaview.cshtml" />
+    <Content Include="Views\Dashboard\Wardview.cshtml" />
+    <Content Include="Views\Dashboard\Sabiktheganaview.cshtml" />
+    <Content Include="Views\Dashboard\Paadview.cshtml" />
+    <Content Include="Views\Dashboard\Faatkarmachariview.cshtml" />
+    <Content Include="Views\Dashboard\Biwahkoprakaarview.cshtml" />
+    <Content Include="Views\Dashboard\Nataview.cshtml" />
+    <Content Include="Views\Dashboard\Batokoprakaarview.cshtml" />
+    <Content Include="Views\Dashboard\Apangakokisimview.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

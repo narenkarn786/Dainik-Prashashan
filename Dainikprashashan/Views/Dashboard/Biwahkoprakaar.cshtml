@@ -1,0 +1,23 @@
+﻿@model Dainikprashashan.Biwahko_Prakaar
+
+@{
+    ViewBag.Title = "Biwahkoprakaar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div style="padding:10px 150px">
+        <h4><b>विवाहको प्रकार थप्नुहोस् </b></h4><hr />
+        <br />
+        <div class="row">
+            <div class="col-sm-5">
+                @Html.TextBoxFor(m => m.Biwahkoprakaar, new { @class = "form-control" })
+            </div>
+        </div>
+        <br />
+        <button class="btn btn-success" type="submit">सेभ गर्नुहोस् </button>
+    </div>
+}
+
+

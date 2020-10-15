@@ -167,7 +167,15 @@ namespace Dainikprashashan.Models
         public string Anya_dartano { get; set; }
         public string Anya_dartamiti { get; set; }
         public string Haalthegana { get; set; }
-    public string Byawasaya_Bandamiti { get; set; }
-
+        public string Byawasaya_Bandamiti { get; set; }
+        public string Barsa { get; set; }
+        public string Faat { get; set; }
+        public string Kagajaat { get; set; }
+        public string Kaam { get; set; }
+        public string Sewa { get; set; }
+        public string Paad { get; set; }
+        public string Faatkarmachari { get; set; }
+        public string Biwahkoprakaar { get; set; }
+        public string Apangakokisim { get; set; }
     }
 }

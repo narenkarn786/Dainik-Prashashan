@@ -58,8 +58,13 @@ namespace Dainikprashashan
         public virtual DbSet<Sewa> Sewas { get; set; }
         public virtual DbSet<Sthayi_Basobas> Sthayi_Basobas { get; set; }
         public virtual DbSet<Ward> Wards { get; set; }
+        public virtual DbSet<Anya_Sifaris> Anya_Sifaris { get; set; }
+        public virtual DbSet<Apangako_Kisim> Apangako_Kisim { get; set; }
+        public virtual DbSet<Batoko_Prakaar> Batoko_Prakaar { get; set; }
+        public virtual DbSet<Biwahko_Prakaar> Biwahko_Prakaar { get; set; }
         public virtual DbSet<Login> Logins { get; set; }
         public virtual DbSet<Nagarikta_Pramanpatra> Nagarikta_Pramanpatra { get; set; }
         public virtual DbSet<Nagarikta_Pramanpatra_Pratilipi> Nagarikta_Pramanpatra_Pratilipi { get; set; }
+        public virtual DbSet<Nata> Natas { get; set; }
     }
 }

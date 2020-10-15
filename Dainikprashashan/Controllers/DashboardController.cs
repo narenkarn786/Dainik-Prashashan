@@ -1197,7 +1197,15 @@ namespace Dainikprashashan.Controllers
         {
             var lservice = new Settingservice();
             var lresponse = lservice.SaveArthikbarsa(ka);
-            return RedirectToAction("Arthikbarsa");
+            return RedirectToAction("Arthikbarsaview");
+        }
+
+        //Arthikbarsa View
+        public ActionResult Arthikbarsaview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.ArthikbarsaList();
+            return View(dataList);
         }
 
         [HttpGet]//Faat
@@ -1211,7 +1219,15 @@ namespace Dainikprashashan.Controllers
         {
             var lservice = new Settingservice();
             var lresponse = lservice.SaveFaat(ka);
-            return RedirectToAction("Faat");
+            return RedirectToAction("Faatview");
+        }
+
+        //Faat View
+        public ActionResult Faatview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.FaatList();
+            return View(dataList);
         }
 
         [HttpGet]//Karyalaya
@@ -1225,7 +1241,15 @@ namespace Dainikprashashan.Controllers
         {
             var lservice = new Settingservice();
             var lresponse = lservice.SaveKaryalaya(ka);
-            return RedirectToAction("Karyalaya");
+            return RedirectToAction("Karyalayaview");
+        }
+
+        //Karyalaya View
+        public ActionResult Karyalayaview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.KaryalayaList();
+            return View(dataList);
         }
 
         [HttpGet]//Kagajaat
@@ -1239,7 +1263,15 @@ namespace Dainikprashashan.Controllers
         {
             var lservice = new Settingservice();
             var lresponse = lservice.SaveKagajaat(ka);
-            return RedirectToAction("Kagajaat");
+            return RedirectToAction("Kagajaatview");
+        }
+
+        //Kagajaat View
+        public ActionResult Kagajaatview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.KagajaatList();
+            return View(dataList);
         }
 
         [HttpGet]//Kaamko Prakaar
@@ -1253,8 +1285,17 @@ namespace Dainikprashashan.Controllers
         {
             var lservice = new Settingservice();
             var lresponse = lservice.SaveKaam(ka);
-            return RedirectToAction("Kaam");
+            return RedirectToAction("Kaamkoprakaarview");
         }
+
+        //Kaamko Prakaar View
+        public ActionResult Kaamkoprakaarview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.KaamList();
+            return View(dataList);
+        }
+
 
         [HttpGet]//Sewako Prakaar
         public ActionResult Sewa()
@@ -1267,7 +1308,15 @@ namespace Dainikprashashan.Controllers
         {
             var lservice = new Settingservice();
             var lresponse = lservice.SaveSewa(ka);
-            return RedirectToAction("Sewa");
+            return RedirectToAction("Sewaview");
+        }
+
+        //Sewako Prakaar View
+        public ActionResult Sewaview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.SewaList();
+            return View(dataList);
         }
 
         [HttpGet]//Pradesh
@@ -1281,8 +1330,17 @@ namespace Dainikprashashan.Controllers
         {
             var lservice = new Settingservice();
             var lresponse = lservice.SavePradesh(ka);
-            return RedirectToAction("Pradesh");
+            return RedirectToAction("Pradeshview");
         }
+
+        //Pradesh View
+        public ActionResult Pradeshview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.PradeshList();
+            return View(dataList);
+        }
+
 
         [HttpGet]//Jilla
         public ActionResult Jilla()
@@ -1295,7 +1353,15 @@ namespace Dainikprashashan.Controllers
         {
             var lservice = new Settingservice();
             var lresponse = lservice.SaveJilla(ka);
-            return RedirectToAction("Jilla");
+            return RedirectToAction("Jillaview");
+        }
+
+        //Jilla View
+        public ActionResult Jillaview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.JillaList();
+            return View(dataList);
         }
 
         [HttpGet]//Gabisa
@@ -1309,7 +1375,15 @@ namespace Dainikprashashan.Controllers
         {
             var lservice = new Settingservice();
             var lresponse = lservice.SaveGabisa(ka);
-            return RedirectToAction("Gabisa");
+            return RedirectToAction("Gabisaview");
+        }
+
+        //Gabisa View
+        public ActionResult Gabisaview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.GabisaList();
+            return View(dataList);
         }
 
         [HttpGet]//Ward
@@ -1323,7 +1397,15 @@ namespace Dainikprashashan.Controllers
         {
             var lservice = new Settingservice();
             var lresponse = lservice.SaveWard(ka);
-            return RedirectToAction("Ward");
+            return RedirectToAction("Wardview");
+        }
+
+        //Ward View
+        public ActionResult Wardview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.WardList();
+            return View(dataList);
         }
 
         [HttpGet]//Sabik Thegana
@@ -1337,7 +1419,15 @@ namespace Dainikprashashan.Controllers
         {
             var lservice = new Settingservice();
             var lresponse = lservice.SaveSabikthegana(ka);
-            return RedirectToAction("Sabikthegana");
+            return RedirectToAction("Sabiktheganaview");
+        }
+
+        //Sabikthegana View
+        public ActionResult Sabiktheganaview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.SabiktheganaList();
+            return View(dataList);
         }
 
         [HttpGet]//Paad
@@ -1351,7 +1441,15 @@ namespace Dainikprashashan.Controllers
         {
             var lservice = new Settingservice();
             var lresponse = lservice.SavePaad(ka);
-            return RedirectToAction("Paad");
+            return RedirectToAction("Paadview");
+        }
+
+        //Paad View
+        public ActionResult Paadview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.PaadList();
+            return View(dataList);
         }
 
         [HttpGet]//Faat Karmachari
@@ -1365,8 +1463,113 @@ namespace Dainikprashashan.Controllers
         {
             var lservice = new Settingservice();
             var lresponse = lservice.SaveFaatkarmachari(ka);
-            return RedirectToAction("Faatkarmachari");
+            return RedirectToAction("Faatkarmachariview");
         }
+
+        //Faatkarmachari View
+        public ActionResult Faatkarmachariview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.FaatkarmachariList();
+            return View(dataList);
+        }
+
+        [HttpGet]//GharKo Prakaar
+        public ActionResult Gharkoprakaar()
+        {
+            return View();
+        }
+
+        [HttpGet]//Biwahko Prakaar
+        public ActionResult Biwahkoprakaar()
+        {
+            return View();
+        }
+
+        
+
+        [HttpPost]//Biwahko Prakaar
+        public ActionResult Biwahkoprakaar(Biwahko_Prakaar ka)
+        {
+            var lservice = new Settingservice();
+            var lresponse = lservice.SaveBiwahkoprakaar(ka);
+            return RedirectToAction("Biwahkoprakaarview");
+        }
+
+        //Biwahkoprakaar View
+        public ActionResult Biwahkoprakaarview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.BiwahkoprakaarList();
+            return View(dataList);
+        }
+
+        [HttpGet]//Nata
+        public ActionResult Nata()
+        {
+            return View();
+        }
+
+        [HttpPost]//Nata
+        public ActionResult Nata(Nata ka)
+        {
+            var lservice = new Settingservice();
+            var lresponse = lservice.SaveNata(ka);
+            return RedirectToAction("Nataview");
+        }
+
+        //Nata View
+        public ActionResult Nataview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.NataList();
+            return View(dataList);
+        }
+
+        [HttpGet]//Batoko Prakaar
+        public ActionResult Batokoprakaar()
+        {
+            return View();
+        }
+
+        [HttpPost]//Batokoprakaar
+        public ActionResult Batokoprakaar(Batoko_Prakaar ka)
+        {
+            var lservice = new Settingservice();
+            var lresponse = lservice.SaveBatokoprakaar(ka);
+            return RedirectToAction("Batokoprakaarview");
+        }
+
+        //Batokoprakaar View
+        public ActionResult Batokoprakaarview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.BatokoprakaarList();
+            return View(dataList);
+        }
+
+        [HttpGet]//Apangako Kisim
+        public ActionResult Apangakokisim()
+        {
+            return View();
+        }
+
+        [HttpPost]//Apangakokisim
+        public ActionResult Apangakokisim(Apangako_Kisim ka)
+        {
+            var lservice = new Settingservice();
+            var lresponse = lservice.SaveApangakokisim(ka);
+            return RedirectToAction("Apangakokisimview");
+        }
+
+        //Apangakokisim View
+        public ActionResult Apangakokisimview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.ApangakokisimList();
+            return View(dataList);
+        }
+
     }
 
 }

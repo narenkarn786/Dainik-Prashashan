@@ -47,19 +47,21 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td><a href="Finalbiwaranview">@Html.DisplayFor(modelItem => Model.LastOrDefault().FormId)</a> </td>
-                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedak_name)</td>
-                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Naksa_sheetno)</td>
-                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Kitta_no)</td>
-                        <td>@Html.DisplayFor(modelItem => Model.LastOrDefault().Aabedan_miti)</td>
-                        <td>भएको</td>
-                    </tr>
+                    @foreach (var m in Model)
+                    {
+                        <tr>
+                            <td><a href="Finalbiwaranview">@m.FormId</a> </td>
+                            <td>@m.Aabedak_name</td>
+                            <td>@m.Naksa_sheetno</td>
+                            <td>@m.Kitta_no</td>
+                            <td>@m.Aabedan_miti</td>
+                            <td>भएको</td>
+                        </tr>
+
+                    }
 
 
-
-
-                </tbody>
+                    </tbody>
             </table>
 
 
