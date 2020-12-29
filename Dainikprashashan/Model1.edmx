@@ -317,6 +317,13 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Biwahko_Prakaar' does not hav
           <Property Name="Gharnirmaan_saal" Type="nvarchar" MaxLength="50" />
           <Property Name="Files" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="Gharko_prakaar">
+          <Key>
+            <PropertyRef Name="Ghar_Id" />
+          </Key>
+          <Property Name="Ghar_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gharkoprakaar" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Jagga_Ghar_Kayam">
           <Key>
             <PropertyRef Name="FormId" />
@@ -824,6 +831,7 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nata' does not have a primary
           <EntitySet Name="Ghar_Bato_Pramanit" EntityType="Self.Ghar_Bato_Pramanit" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ghar_Jagga_Naamsari" EntityType="Self.Ghar_Jagga_Naamsari" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ghar_kayamko_sifaris" EntityType="Self.Ghar_kayamko_sifaris" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gharko_prakaar" EntityType="Self.Gharko_prakaar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jagga_Ghar_Kayam" EntityType="Self.Jagga_Ghar_Kayam" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jaggadhani_Pratilipi" EntityType="Self.Jaggadhani_Pratilipi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Jilla" EntityType="Self.Jilla" Schema="dbo" store:Type="Tables" />
@@ -1259,6 +1267,13 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nata' does not have a primary
           <Property Name="Gharko_prakaar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Gharnirmaan_saal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Files" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Gharko_prakaar">
+          <Key>
+            <PropertyRef Name="Ghar_Id" />
+          </Key>
+          <Property Name="Ghar_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gharkoprakaar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="Jagga_Ghar_Kayam">
           <Key>
@@ -1784,7 +1799,7 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nata' does not have a primary
           <Property Name="NataId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nata1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Antarik_Basai_Sarai" EntityType="Self.Antarik_Basai_Sarai" />
           <EntitySet Name="Arthik_Barsa" EntityType="Self.Arthik_Barsa" />
           <EntitySet Name="Asthayi_Basobas" EntityType="Self.Asthayi_Basobas" />
@@ -1799,6 +1814,7 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nata' does not have a primary
           <EntitySet Name="Ghar_Bato_Pramanit" EntityType="Self.Ghar_Bato_Pramanit" />
           <EntitySet Name="Ghar_Jagga_Naamsari" EntityType="Self.Ghar_Jagga_Naamsari" />
           <EntitySet Name="Ghar_kayamko_sifaris" EntityType="Self.Ghar_kayamko_sifaris" />
+          <EntitySet Name="Gharko_prakaar" EntityType="Self.Gharko_prakaar" />
           <EntitySet Name="Jagga_Ghar_Kayam" EntityType="Self.Jagga_Ghar_Kayam" />
           <EntitySet Name="Jaggadhani_Pratilipi" EntityType="Self.Jaggadhani_Pratilipi" />
           <EntitySet Name="Jillas" EntityType="Self.Jilla" />
@@ -1832,7 +1848,7 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nata' does not have a primary
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Dainik_PrasashanModelStoreContainer" CdmEntityContainer="Entities1">
+        <EntityContainerMapping StorageEntityContainer="Dainik_PrasashanModelStoreContainer" CdmEntityContainer="Entities2">
           <EntitySetMapping Name="Antarik_Basai_Sarai">
             <EntityTypeMapping TypeName="Dainik_PrasashanModel.Antarik_Basai_Sarai">
               <MappingFragment StoreEntitySet="Antarik_Basai_Sarai">
@@ -2108,6 +2124,14 @@ warning 6002: The table/view 'Dainik_Prasashan.dbo.Nata' does not have a primary
                 <ScalarProperty Name="Gharko_prakaar" ColumnName="Gharko_prakaar" />
                 <ScalarProperty Name="Gharnirmaan_saal" ColumnName="Gharnirmaan_saal" />
                 <ScalarProperty Name="Files" ColumnName="Files" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gharko_prakaar">
+            <EntityTypeMapping TypeName="Dainik_PrasashanModel.Gharko_prakaar">
+              <MappingFragment StoreEntitySet="Gharko_prakaar">
+                <ScalarProperty Name="Ghar_Id" ColumnName="Ghar_Id" />
+                <ScalarProperty Name="Gharkoprakaar" ColumnName="Gharkoprakaar" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

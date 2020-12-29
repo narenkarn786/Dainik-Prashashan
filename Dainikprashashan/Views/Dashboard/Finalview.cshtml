@@ -27,44 +27,51 @@
             $('#example').DataTable();
         });
     </script>
+    
 </head>
 <body>
+   
     <div class="container" style="padding:15px 180px">
-
-        <a href="Gharkayamkosifaris" style="color:white"> <button type="button" class="btn btn-success text-right"><h6><i class="fas fa-plus-circle"></i>&nbsp; नयाँ</h6> </button></a>
-        <hr />
-        <div style="padding:10px 0px; width:100%; margin:0 auto;">
-            <table id="example" class="table table-striped table-bordered" style="width:100%">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>फारम ID</th>
-                        <th>आवेदक को नाम</th>
-                        <th>नक्सा सिट नं	</th>
-                        <th>कित्ता नं	</th>
-                        <th>आवेदन गरिएको मिति</th>
-                        <th>स्वीकृत</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    @foreach (var m in Model)
-                    {
+        <div style="box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 5px 5px 5px 0 rgba(0, 0, 0, 0.24);padding:20px 20px 20px 20px";>
+            <h3><b>घर कायमको सिफारिस</b></h3>
+            <hr />
+         
+            <div style="padding:10px 0px; width:100%; margin:0 auto;">
+                <table id="example" class="table table-striped table-bordered" style="width:100%">
+                    <thead class="thead-dark">
                         <tr>
-                            <td><a href="Finalbiwaranview">@m.FormId</a> </td>
-                            <td>@m.Aabedak_name</td>
-                            <td>@m.Naksa_sheetno</td>
-                            <td>@m.Kitta_no</td>
-                            <td>@m.Aabedan_miti</td>
-                            <td>भएको</td>
+                            <th>फारम ID</th>
+                            <th>आवेदक को नाम</th>
+                            <th>नक्सा सिट नं	</th>
+                            <th>कित्ता नं	</th>
+                            <th>आवेदन गरिएको मिति</th>
+                            <th>स्वीकृत</th>
                         </tr>
+                    </thead>
 
-                    }
+                    <tbody>
+                        @foreach (var m in Model)
+                        {
+                            <tr>
+                                <td><a href="Finalbiwaranview">@m.FormId</a> </td>
+                                <td>@m.Aabedak_name</td>
+                                <td>@m.Naksa_sheetno</td>
+                                <td>@m.Kitta_no</td>
+                                <td>@m.Aabedan_miti</td>
+                                <td>भएको</td>
+                            </tr>
+
+                        }
 
 
                     </tbody>
-            </table>
+                </table>
+                <hr />
+
+                <a href="Gharkayamkosifaris" style="color:white"> <button type="button" class="btn btn-success text-right"><h6><i class="fas fa-plus-circle"></i>&nbsp; नयाँ</h6> </button></a>
 
 
+            </div>
         </div>
     </div>
 </body>

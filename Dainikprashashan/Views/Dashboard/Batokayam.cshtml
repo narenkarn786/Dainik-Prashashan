@@ -69,25 +69,22 @@
         </div>
         <br />
         <label class="control-label col-md-2">ठेगाना </label>
-        <div class="row" style="padding:0px 15px">
+        <div class="row">
             <div class="col-sm-5">
-                @Html.EditorFor(model => model.Pradesh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Pradesh, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-5">
-                @Html.EditorFor(model => model.Jilla, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Jilla, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
             </div>
         </div>
+
         <br />
-        <div class="row" style="padding:0px 15px">
+        <div class="row">
             <div class="col-sm-5">
-                @Html.EditorFor(model => model.Gabisa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Gabisa, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-5">
-                @Html.EditorFor(model => model.Ward, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Ward, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
             </div>
         </div>
         <br />
@@ -95,8 +92,7 @@
             <div class="col-sm-5">
                 <label><b>साबिक ठेगाना</b></label>
 
-                @Html.EditorFor(model => model.sabik_thegana, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.sabik_thegana, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.sabik_thegana, (List<SelectListItem>)ViewBag.Sabikthegana, "-- छान्नुहोस्  --", new { @class = "form-control" })
             </div>
 
             <div class="col-sm-5">
@@ -106,7 +102,7 @@
                 @Html.ValidationMessageFor(model => model.Bato_Disa, "", new { @class = "text-danger" })
             </div>
         </div>
-        <br />  
+        <br />
         <div class="row" style="padding:0px 15px">
             <div class="col-sm-5">
                 <label><b>सडक लम्बाई </b></label>
@@ -118,15 +114,15 @@
 
             <div class="col-sm-5">
                 <label><b>सडक चौडाई  </b></label>
-                
-                    @Html.EditorFor(model => model.Sadak_Chaudai, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Sadak_Chaudai, "", new { @class = "text-danger" })
-                </div>
-            </div>
-           <br />
-            <div class="form-group">
-                <button class="btn btn-success" type="submit">पेश गर्नुहोस् </button>
-            </div>
 
-            }
+                @Html.EditorFor(model => model.Sadak_Chaudai, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Sadak_Chaudai, "", new { @class = "text-danger" })
+            </div>
         </div>
+        <br />
+        <div class="form-group">
+            <button class="btn btn-success" type="submit">पेश गर्नुहोस् </button>
+        </div>
+
+    }
+</div>

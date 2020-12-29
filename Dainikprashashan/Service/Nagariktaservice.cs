@@ -12,7 +12,7 @@ namespace Dainikprashashan.Service
         public string SaveNagariktapramanpatra(Nagarikta_Pramanpatra np)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Nagarikta_Pramanpatra()
                 {
@@ -76,7 +76,7 @@ namespace Dainikprashashan.Service
         //View Nagariktapramanpatra
         public List<GharkayamList> GetNagariktapramanpatraList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Nagarikta_Pramanpatra.Where(x => x.FormId == lgId).ToList();
@@ -144,7 +144,7 @@ namespace Dainikprashashan.Service
         public string SaveNagariktapramanpatrapratilipi(Nagarikta_Pramanpatra_Pratilipi np)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Nagarikta_Pramanpatra_Pratilipi()
                 {
@@ -211,7 +211,7 @@ namespace Dainikprashashan.Service
         //View Nagariktapramanpatra Pratilipi
         public List<GharkayamList> GetNagariktapramanpatrapratilipiList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Nagarikta_Pramanpatra_Pratilipi.Where(x => x.FormId == lgId).ToList();

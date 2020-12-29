@@ -2283,6 +2283,9 @@
     <Compile Include="Gabisa.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Gharko_prakaar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Ghar_Bato_Pramanit.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -2527,6 +2530,9 @@
     <Content Include="Views\Dashboard\Nataview.cshtml" />
     <Content Include="Views\Dashboard\Batokoprakaarview.cshtml" />
     <Content Include="Views\Dashboard\Apangakokisimview.cshtml" />
+    <Content Include="Views\Dashboard\Gharkoprakaar.cshtml" />
+    <Content Include="Views\Dashboard\Gharkoprakaarview.cshtml" />
+    <Content Include="Views\Dashboard\Sansthadartacard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

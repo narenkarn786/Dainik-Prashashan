@@ -12,7 +12,7 @@ namespace Dainikprashashan.Service
         public string SaveSthayibasobas(Sthayi_Basobas sb)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Sthayi_Basobas()
                 {
@@ -44,7 +44,7 @@ namespace Dainikprashashan.Service
         //View Sthayi Basobas
         public List<GharkayamList> GetSthayibasobasList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Sthayi_Basobas.Where(x => x.FormId == lgId).ToList();
@@ -82,7 +82,7 @@ namespace Dainikprashashan.Service
         public string SaveAsthayibasobas(Asthayi_Basobas ab)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Asthayi_Basobas()
                 {
@@ -116,7 +116,7 @@ namespace Dainikprashashan.Service
         //View Asthayi Basobas
         public List<GharkayamList> GetAsthayibasobasList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Asthayi_Basobas.Where(x => x.FormId == lgId).ToList();
@@ -154,7 +154,7 @@ namespace Dainikprashashan.Service
         public string SaveAntarikbasaisarai(Antarik_Basai_Sarai abs)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Antarik_Basai_Sarai()
                 {
@@ -193,7 +193,7 @@ namespace Dainikprashashan.Service
         //View Antarik Basai Sarai
         public List<GharkayamList> GetAntarikbasaisaraiList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Antarik_Basai_Sarai.Where(x => x.FormId == lgId).ToList();

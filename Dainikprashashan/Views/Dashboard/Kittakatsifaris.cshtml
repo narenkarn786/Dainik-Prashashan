@@ -61,23 +61,20 @@
 
                 <div class="row">
                     <div class="col-sm-5">
-                        @Html.TextBoxFor(m => m.Pradesh, new { @class = "form-control" })
+                        @Html.DropDownListFor(m => m.Pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
                     </div>
                     <div class="col-sm-5">
-                        @Html.TextBoxFor(m => m.Jilla, new { @class = "form-control" })
+                        @Html.DropDownListFor(m => m.Jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
                     </div>
                 </div>
 
                 <br />
-
                 <div class="row">
                     <div class="col-sm-5">
-                        @Html.TextBoxFor(m => m.Gabisa, new { @class = "form-control" })
+                        @Html.DropDownListFor(m => m.Gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
                     </div>
-
-
                     <div class="col-sm-5">
-                        @Html.TextBoxFor(m => m.Ward, new { @class = "form-control" })
+                        @Html.DropDownListFor(m => m.Ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
                     </div>
                 </div>
 
@@ -88,7 +85,7 @@
                     <label>
                         साबिक ठेगाना
                     </label>
-                    @Html.TextBoxFor(m => m.Sabik_thegana, new { @class = "form-control" })
+                    @Html.DropDownListFor(m => m.Sabik_thegana, (List<SelectListItem>)ViewBag.Sabikthegana, "-- छान्नुहोस्  --", new { @class = "form-control" })
 
                 </div>
                 <br />

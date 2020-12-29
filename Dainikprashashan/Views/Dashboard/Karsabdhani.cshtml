@@ -6,90 +6,85 @@
     ViewBag.Title = "Karsabdhani";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v3.min.css" rel="stylesheet" type="text/css" />
-    <script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v3.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        window.onload = function () {
-            var mainInput = document.getElementById("nepali-datepicker");
-            mainInput.nepaliDatePicker();
-        };
-    </script>
-    
-    <div style="padding:30px 200px;width:100%; margin:0 auto;">
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/css/nepali.datepicker.v3.min.css" rel="stylesheet" type="text/css" />
+<script src="http://nepalidatepicker.sajanmaharjan.com.np/nepali.datepicker/js/nepali.datepicker.v3.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        var mainInput = document.getElementById("nepali-datepicker");
+        mainInput.nepaliDatePicker();
+    };
+</script>
 
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div style="padding:30px 200px;width:100%; margin:0 auto;">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-            <div class="col-sm-5">
-                <label>Applicated Date</label>
-                @Html.TextBoxFor(m => m.Applicated_date, "", new { @id = "nepali-datepicker", @name = "nepali-datepicker", @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Applicated_date, "", new { @class = "text-danger" })
-            </div>
-            <br />
-            <div class="col-sm-5">
-                <label>Full Name </label>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                @Html.EditorFor(model => model.Full_name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Full_name, "", new { @class = "text-danger" })
-            </div>
-            <br />
-            <div class="col-lg-12">
-                <label>Address</label>
+        <div class="col-sm-5">
+            <label>Applicated Date</label>
+            @Html.TextBoxFor(m => m.Applicated_date, "", new { @id = "nepali-datepicker", @name = "nepali-datepicker", @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Applicated_date, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div class="col-sm-5">
+            <label>Full Name </label>
 
-                <div class="row">
-                    <div class="col-sm-5">
-                        @Html.TextBoxFor(m => m.Pradesh, new { @class = "form-control" })
-                    </div>
-                    <div class="col-sm-5">
-                        @Html.TextBoxFor(m => m.Jilla, new { @class = "form-control" })
-                    </div>
+            @Html.EditorFor(model => model.Full_name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Full_name, "", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div class="col-lg-12">
+            <label>Address</label>
+            <div class="row">
+                <div class="col-sm-5">
+                    @Html.DropDownListFor(m => m.Pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
                 </div>
-
-                <br />
-
-                <div class="row">
-                    <div class="col-sm-5">
-                        @Html.TextBoxFor(m => m.Gabisa, new { @class = "form-control" })
-                    </div>
-
-
-                    <div class="col-sm-5">
-                        @Html.TextBoxFor(m => m.Ward, new { @class = "form-control" })
-                    </div>
+                <div class="col-sm-5">
+                    @Html.DropDownListFor(m => m.Jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
                 </div>
+            </div>
 
-            </div>
             <br />
-           <div class="col-sm-5">
-                <label>Plot No. </label>
-                
-                    @Html.EditorFor(model => model.Plot_no, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Plot_no, "", new { @class = "text-danger" })
-              
-            </div>
-            <br />
-            <div class="col-sm-5">
-                <label>Tax Amount</label>
-                
-                    @Html.EditorFor(model => model.Tax_amount, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Tax_amount, "", new { @class = "text-danger" })
-              
-            </div>
-            <br />
-            <div class="col-sm-5">
-                <label>Property Ward No.</label>
-              
-                    @Html.EditorFor(model => model.Property_wardno, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Property_wardno, "", new { @class = "text-danger" })
+            <div class="row">
+                <div class="col-sm-5">
+                    @Html.DropDownListFor(m => m.Gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
                 </div>
-            <br />
-            <div class="form-group">
-                <button class="btn btn-success" type="submit">पेश गर्नुहोस् </button>
+                <div class="col-sm-5">
+                    @Html.DropDownListFor(m => m.Ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
+                </div>
             </div>
-       
+
+        </div>
+        <br />
+        <div class="col-sm-5">
+            <label>Plot No. </label>
+
+            @Html.EditorFor(model => model.Plot_no, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Plot_no, "", new { @class = "text-danger" })
+
+        </div>
+        <br />
+        <div class="col-sm-5">
+            <label>Tax Amount</label>
+
+            @Html.EditorFor(model => model.Tax_amount, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Tax_amount, "", new { @class = "text-danger" })
+
+        </div>
+        <br />
+        <div class="col-sm-5">
+            <label>Property Ward No.</label>
+
+            @Html.DropDownListFor(m => m.Property_wardno, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
+        </div>
+        <br />
+        <div class="form-group">
+            <button class="btn btn-success" type="submit">पेश गर्नुहोस् </button>
+        </div>
+
     }
-    </div>
+</div>

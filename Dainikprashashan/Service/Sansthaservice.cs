@@ -13,7 +13,7 @@ namespace Dainikprashashan.Service
         public string SaveSansthadartapramanpatra(Sanstha_Darta_Pramanpatra sdp)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Sanstha_Darta_Pramanpatra()
                 {
@@ -52,7 +52,7 @@ namespace Dainikprashashan.Service
 
         public List<GharkayamList> GetSansthadartapramanpatraList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Sanstha_Darta_Pramanpatra/*.Where(x => x.FormId == lgId)*/.ToList();
@@ -96,7 +96,7 @@ namespace Dainikprashashan.Service
         public string SaveByawasayadarta(Byawasaya_Darta bd)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Byawasaya_Darta()
                 {
@@ -135,7 +135,7 @@ namespace Dainikprashashan.Service
         //व्यवसाय दर्ता प्रमाणपत्र List
         public List<GharkayamList> GetByawasayadartaList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Byawasaya_Darta/*.Where(x => x.FormId == lgId)*/.ToList();
@@ -180,7 +180,7 @@ namespace Dainikprashashan.Service
         public string SaveByawasayabanda(Byawasaya_Banda_Barey bd)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Byawasaya_Banda_Barey()
                 {
@@ -215,7 +215,7 @@ namespace Dainikprashashan.Service
         //व्यवसाय बन्द बारे List
         public List<GharkayamList> GetByawasayabandaList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Byawasaya_Banda_Barey/*.Where(x => x.FormId == lgId)*/.ToList();
@@ -256,7 +256,7 @@ namespace Dainikprashashan.Service
         public string SaveSansthadartasifaris(Sanstha_Darta_Sifaris sd)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Sanstha_Darta_Sifaris()
                 {
@@ -282,7 +282,7 @@ namespace Dainikprashashan.Service
 
         public List<GharkayamList> GetSansthadartasifarisList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Sanstha_Darta_Sifaris/*.Where(x => x.FormId == lgId)*/.ToList();
@@ -313,7 +313,7 @@ namespace Dainikprashashan.Service
         public string SaveSansthanawikaran(Sanstha_Nawikaran s)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Sanstha_Nawikaran()
                 {
@@ -339,7 +339,7 @@ namespace Dainikprashashan.Service
 
         public List<GharkayamList> GetSansthanawikaranList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Sanstha_Nawikaran/*.Where(x => x.FormId == lgId)*/.ToList();

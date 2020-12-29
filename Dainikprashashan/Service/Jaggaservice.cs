@@ -12,7 +12,7 @@ namespace Dainikprashashan.Service
         public string SaveJaggadhanipratilipi(Jaggadhani_Pratilipi jp)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Jaggadhani_Pratilipi()
                 {
@@ -50,7 +50,7 @@ namespace Dainikprashashan.Service
         //View Jaggadhani Pratilipi
         public List<GharkayamList> GetJaggadhanipratilipiList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Jaggadhani_Pratilipi.Where(x => x.Form_Id == lgId).ToList();
@@ -94,7 +94,7 @@ namespace Dainikprashashan.Service
         public string SaveBatokayam(Bato_Kayam bkm)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Bato_Kayam()
                 {
@@ -127,7 +127,7 @@ namespace Dainikprashashan.Service
         //View Bato Kayam
         public List<GharkayamList> GetBatokayamList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Bato_Kayam.Where(x => x.FormId == lgId).ToList();
@@ -165,7 +165,7 @@ namespace Dainikprashashan.Service
         public string SaveJaggagharkayam(Jagga_Ghar_Kayam jgk)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Jagga_Ghar_Kayam()
                 {
@@ -195,7 +195,7 @@ namespace Dainikprashashan.Service
         //View Jagga Ghar Kayam
         public List<GharkayamList> GetJaggagharkayamList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Jagga_Ghar_Kayam.Where(x => x.FormId == lgId).ToList();
@@ -229,7 +229,7 @@ namespace Dainikprashashan.Service
         public string SaveCharkilla(Charkilla_Sambandhama cs)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Charkilla_Sambandhama()
                 {
@@ -270,7 +270,7 @@ namespace Dainikprashashan.Service
         //View Charkilla sambandhama
         public List<GharkayamList> GetCharkillaList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Charkilla_Sambandhama.Where(x => x.Form_Id == lgId).ToList();
@@ -313,7 +313,7 @@ namespace Dainikprashashan.Service
         public string SaveMohilagatkatta(Mohi_Lagat_Katta mlk)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Mohi_Lagat_Katta()
                 {
@@ -344,7 +344,7 @@ namespace Dainikprashashan.Service
         //View Mohi Lagat Katta
         public List<GharkayamList> GetMohilagatkattaList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Mohi_Lagat_Katta.Where(x => x.Form_Id == lgId).ToList();

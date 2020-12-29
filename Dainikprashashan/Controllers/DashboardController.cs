@@ -7,7 +7,8 @@ namespace Dainikprashashan.Controllers
 {
     public class DashboardController : Controller
     {
-        private Entities1 e = new Entities1();
+        public Entities2 e = new Entities2();
+        
         // GET: Dashboard
         public ActionResult Index()
         {
@@ -30,120 +31,52 @@ namespace Dainikprashashan.Controllers
         public ActionResult Gharkayamkosifaris()
         {
 
-            //var KARYALAYALIST = new List<string>();
-            //KARYALAYALIST.Add("वडा कार्यालय  ");
-            //KARYALAYALIST.Add("मालपोत  कार्यालय  ");
-            //KARYALAYALIST.Add("जिल्ला प्रशासन  कार्यालय  ");
-            //ViewBag.karyalaya = KARYALAYALIST;
-
-
-
-            //ViewBag.Karyalaya = new SelectList(e.Karyalayas,"");
-            IEnumerable<SelectListItem> Karyalaya = e.Karyalayas.Select(c => new SelectListItem
+            List<SelectListItem> Karyalaya = e.Karyalayas.Select(c => new SelectListItem
             {
                 Value = c.Karyalaya_Id.ToString(),
                 Text = c.Karyalaya1
-            });
+            }).ToList();
             ViewBag.Karyalaya = Karyalaya;
 
 
 
-            var PRADESHLIST = new List<string>();
-            PRADESHLIST.Add("प्रदेश नम्बर १   ");
-            PRADESHLIST.Add("प्रदेश नम्बर २   ");
-            PRADESHLIST.Add("प्रदेश नम्बर ३   ");
-            PRADESHLIST.Add("प्रदेश नम्बर ४  ");
-            PRADESHLIST.Add("प्रदेश नम्बर ५  ");
-            PRADESHLIST.Add("प्रदेश नम्बर ६ ");
-            PRADESHLIST.Add("प्रदेश नम्बर ७   ");
-            ViewBag.Pradesh = PRADESHLIST;
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
 
-            var DISTRICTLIST = new List<string>();
-            DISTRICTLIST.Add("भोजपुर");
-            DISTRICTLIST.Add("धनकुटा");
-            DISTRICTLIST.Add("इलाम");
-            DISTRICTLIST.Add("झापा ");
-            DISTRICTLIST.Add("खोटाँग ");
-            DISTRICTLIST.Add("मोरंग ");
-            DISTRICTLIST.Add("ओखलढुंगा ");
-            DISTRICTLIST.Add("पांचथर ");
-            DISTRICTLIST.Add("संखुवासभा ");
-            DISTRICTLIST.Add("सोलुखुम्बू ");
-            DISTRICTLIST.Add("सुनसरी ");
-            DISTRICTLIST.Add("ताप्लेजुंग ");
-            DISTRICTLIST.Add("तेह्रथुम ");
-            DISTRICTLIST.Add("उदयपुर ");
-            DISTRICTLIST.Add("पर्सा ");
-            DISTRICTLIST.Add("बारा ");
-            DISTRICTLIST.Add("रौतहट ");
-            DISTRICTLIST.Add("सर्लाही ");
-            DISTRICTLIST.Add("धनुषा ");
-            DISTRICTLIST.Add("सिराहा ");
-            DISTRICTLIST.Add("महोत्तरी ");
-            DISTRICTLIST.Add("सप्तरी ");
-            DISTRICTLIST.Add("सिन्धुली ");
-            DISTRICTLIST.Add("रामेछाप  ");
-            DISTRICTLIST.Add("दोलखा ");
-            DISTRICTLIST.Add("	भक्तपुर");
-            DISTRICTLIST.Add("धादिङ ");
-            DISTRICTLIST.Add("काठमाडौँ ");
-            DISTRICTLIST.Add("काभ्रेपलान्चोक");
-            DISTRICTLIST.Add("ललितपुर ");
-            DISTRICTLIST.Add("नुवाकोट");
-            DISTRICTLIST.Add("	रसुवा");
-            DISTRICTLIST.Add("सिन्धुपाल्चोक ");
-            DISTRICTLIST.Add("चितवन ");
-            DISTRICTLIST.Add("मकवानपुर ");
-            DISTRICTLIST.Add("बागलुङ ");
-            DISTRICTLIST.Add("गोरखा ");
-            DISTRICTLIST.Add("कास्की");
-            DISTRICTLIST.Add("लमजुङ ");
-            DISTRICTLIST.Add("मनाङ ");
-            DISTRICTLIST.Add("मुस्ताङ ");
-            DISTRICTLIST.Add("म्याग्दी ");
-            DISTRICTLIST.Add("नवलपुर ");
-            DISTRICTLIST.Add("पर्वत ");
-            DISTRICTLIST.Add("स्याङग्जा ");
-            DISTRICTLIST.Add("तनहुँ ");
-            DISTRICTLIST.Add("कपिलवस्तु ");
-            DISTRICTLIST.Add("परासी ");
-            DISTRICTLIST.Add("रुपन्देही ");
-            DISTRICTLIST.Add("अर्घाखाँची ");
-            DISTRICTLIST.Add("गुल्मी ");
-            DISTRICTLIST.Add("पाल्पा");
-            DISTRICTLIST.Add("दाङ देउखुरी");
-            DISTRICTLIST.Add("प्युठान ");
-            DISTRICTLIST.Add("रोल्पा ");
-            DISTRICTLIST.Add("पूर्वी रूकुम");
-            DISTRICTLIST.Add("बाँके");
-            DISTRICTLIST.Add("बर्दिया");
-            ViewBag.District = DISTRICTLIST;
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
 
-            var WARDLIST = new List<string>();
-            WARDLIST.Add("१ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("२ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("३ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("४ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("५ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("६ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("७ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("८ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("९ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("१० नम्बर वडा कार्यालय ");
-            WARDLIST.Add("११ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("१२ नम्बर वडा कार्यालय ");
-            ViewBag.Ward = WARDLIST;
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
 
-            var GHARPRAKARLIST = new List<string>();
-            GHARPRAKARLIST.Add("अन्य फुसको कच्ची घर ");
-            GHARPRAKARLIST.Add("काठको फुसको कच्ची घर ");
-            GHARPRAKARLIST.Add("काठको  भुईतल्ले कच्ची घर  टीन वा टायल्को छाना");
-            GHARPRAKARLIST.Add("काठको ताड घर ,टीन वा टायल्को छाना");
-            GHARPRAKARLIST.Add("पक्की इटाको जोडाईमा टीनको छाना");
-            GHARPRAKARLIST.Add("पक्की छत्को ढलान");
-            GHARPRAKARLIST.Add("माटोको कच्ची घर ");
-            ViewBag.Gharprakar = GHARPRAKARLIST;
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Gharkoprakaar = e.Gharko_prakaar.Select(c => new SelectListItem
+            {
+                Value = c.Ghar_Id.ToString(),
+                Text = c.Gharkoprakaar
+            }).ToList();
+            ViewBag.Gharkoprakaar = Gharkoprakaar;
             return View();
+
+           
         }
         [HttpPost]//Gharkayamkosifaris
         public ActionResult Gharkayamkosifaris(Ghar_kayamko_sifaris gk)
@@ -186,114 +119,52 @@ namespace Dainikprashashan.Controllers
         public ActionResult Editabedanniwaran()
         {
 
-            var KARYALAYALIST = new List<string>();
-            //KARYALAYALIST.Add("वडा कार्यालय  ");
-            //KARYALAYALIST.Add("मालपोत  कार्यालय  ");
-            //KARYALAYALIST.Add("जिल्ला प्रशासन  कार्यालय  ");
-            Entities1 e = new Entities1();
+        
+            List<SelectListItem> Karyalaya = e.Karyalayas.Select(c => new SelectListItem
+            {
+                Value = c.Karyalaya_Id.ToString(),
+                Text = c.Karyalaya1
+            }).ToList();
+            ViewBag.Karyalaya = Karyalaya;
 
-            ViewBag.karyalaya = new SelectList(e.Karyalayas, "Karyalaya1");
 
 
-            var PRADESHLIST = new List<string>();
-            PRADESHLIST.Add("प्रदेश नम्बर १   ");
-            PRADESHLIST.Add("प्रदेश नम्बर २   ");
-            PRADESHLIST.Add("प्रदेश नम्बर ३   ");
-            PRADESHLIST.Add("प्रदेश नम्बर ४  ");
-            PRADESHLIST.Add("प्रदेश नम्बर ५  ");
-            PRADESHLIST.Add("प्रदेश नम्बर ६ ");
-            PRADESHLIST.Add("प्रदेश नम्बर ७   ");
-            ViewBag.Pradesh = PRADESHLIST;
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
 
-            var DISTRICTLIST = new List<string>();
-            DISTRICTLIST.Add("भोजपुर");
-            DISTRICTLIST.Add("धनकुटा");
-            DISTRICTLIST.Add("इलाम");
-            DISTRICTLIST.Add("झापा ");
-            DISTRICTLIST.Add("खोटाँग ");
-            DISTRICTLIST.Add("मोरंग ");
-            DISTRICTLIST.Add("ओखलढुंगा ");
-            DISTRICTLIST.Add("पांचथर ");
-            DISTRICTLIST.Add("संखुवासभा ");
-            DISTRICTLIST.Add("सोलुखुम्बू ");
-            DISTRICTLIST.Add("सुनसरी ");
-            DISTRICTLIST.Add("ताप्लेजुंग ");
-            DISTRICTLIST.Add("तेह्रथुम ");
-            DISTRICTLIST.Add("उदयपुर ");
-            DISTRICTLIST.Add("पर्सा ");
-            DISTRICTLIST.Add("बारा ");
-            DISTRICTLIST.Add("रौतहट ");
-            DISTRICTLIST.Add("सर्लाही ");
-            DISTRICTLIST.Add("धनुषा ");
-            DISTRICTLIST.Add("सिराहा ");
-            DISTRICTLIST.Add("महोत्तरी ");
-            DISTRICTLIST.Add("सप्तरी ");
-            DISTRICTLIST.Add("सिन्धुली ");
-            DISTRICTLIST.Add("रामेछाप  ");
-            DISTRICTLIST.Add("दोलखा ");
-            DISTRICTLIST.Add("	भक्तपुर");
-            DISTRICTLIST.Add("धादिङ ");
-            DISTRICTLIST.Add("काठमाडौँ ");
-            DISTRICTLIST.Add("काभ्रेपलान्चोक");
-            DISTRICTLIST.Add("ललितपुर ");
-            DISTRICTLIST.Add("नुवाकोट");
-            DISTRICTLIST.Add("	रसुवा");
-            DISTRICTLIST.Add("सिन्धुपाल्चोक ");
-            DISTRICTLIST.Add("चितवन ");
-            DISTRICTLIST.Add("मकवानपुर ");
-            DISTRICTLIST.Add("बागलुङ ");
-            DISTRICTLIST.Add("गोरखा ");
-            DISTRICTLIST.Add("कास्की");
-            DISTRICTLIST.Add("लमजुङ ");
-            DISTRICTLIST.Add("मनाङ ");
-            DISTRICTLIST.Add("मुस्ताङ ");
-            DISTRICTLIST.Add("म्याग्दी ");
-            DISTRICTLIST.Add("नवलपुर ");
-            DISTRICTLIST.Add("पर्वत ");
-            DISTRICTLIST.Add("स्याङग्जा ");
-            DISTRICTLIST.Add("तनहुँ ");
-            DISTRICTLIST.Add("कपिलवस्तु ");
-            DISTRICTLIST.Add("परासी ");
-            DISTRICTLIST.Add("रुपन्देही ");
-            DISTRICTLIST.Add("अर्घाखाँची ");
-            DISTRICTLIST.Add("गुल्मी ");
-            DISTRICTLIST.Add("पाल्पा");
-            DISTRICTLIST.Add("दाङ देउखुरी");
-            DISTRICTLIST.Add("प्युठान ");
-            DISTRICTLIST.Add("रोल्पा ");
-            DISTRICTLIST.Add("पूर्वी रूकुम");
-            DISTRICTLIST.Add("बाँके");
-            DISTRICTLIST.Add("बर्दिया");
-            ViewBag.District = DISTRICTLIST;
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
 
-            var WARDLIST = new List<string>();
-            WARDLIST.Add("१ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("२ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("३ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("४ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("५ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("६ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("७ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("८ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("९ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("१० नम्बर वडा कार्यालय ");
-            WARDLIST.Add("११ नम्बर वडा कार्यालय ");
-            WARDLIST.Add("१२ नम्बर वडा कार्यालय ");
-            ViewBag.Ward = WARDLIST;
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
 
-            var GHARPRAKARLIST = new List<string>();
-            GHARPRAKARLIST.Add("अन्य फुसको कच्ची घर ");
-            GHARPRAKARLIST.Add("काठको फुसको कच्ची घर ");
-            GHARPRAKARLIST.Add("काठको  भुईतल्ले कच्ची घर  टीन वा टायल्को छाना");
-            GHARPRAKARLIST.Add("काठको ताड घर ,टीन वा टायल्को छाना");
-            GHARPRAKARLIST.Add("पक्की इटाको जोडाईमा टीनको छाना");
-            GHARPRAKARLIST.Add("पक्की छत्को ढलान");
-            GHARPRAKARLIST.Add("माटोको कच्ची घर ");
-            ViewBag.Gharprakar = GHARPRAKARLIST;
-            var loginId = Session["LoginId"].ToString();
-            var lbdService = new Gharsambandhit();
-            var lastList = lbdService.GetSelfList(loginId);
-            return View(lastList.LastOrDefault());
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Gharkoprakaar = e.Gharko_prakaar.Select(c => new SelectListItem
+            {
+                Value = c.Ghar_Id.ToString(),
+                Text = c.Gharkoprakaar
+            }).ToList();
+            ViewBag.Gharkoprakaar = Gharkoprakaar;
+            return View();
+            
         }
 
         [HttpPost]
@@ -310,6 +181,64 @@ namespace Dainikprashashan.Controllers
         [HttpGet]//Ghar Bato Pramanit
         public ActionResult Gharbatopramanit()
         {
+            List<SelectListItem> Karyalaya = e.Karyalayas.Select(c => new SelectListItem
+            {
+                Value = c.Karyalaya_Id.ToString(),
+                Text = c.Karyalaya1
+            }).ToList();
+            ViewBag.Karyalaya = Karyalaya;
+
+
+
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Sabikthegana = e.Sabik_Thegana.Select(c => new SelectListItem
+            {
+                Value = c.Sabik_Id.ToString(),
+                Text = c.Sabikthegana
+            }).ToList();
+            ViewBag.Sabikthegana = Sabikthegana;
+
+            List<SelectListItem> Gharkoprakaar = e.Gharko_prakaar.Select(c => new SelectListItem
+            {
+                Value = c.Ghar_Id.ToString(),
+                Text = c.Gharkoprakaar
+            }).ToList();
+            ViewBag.Gharkoprakaar = Gharkoprakaar;
+
+            List<SelectListItem> Batokoprakaar = e.Batoko_Prakaar.Select(c => new SelectListItem
+            {
+                Value = c.BatoId.ToString(),
+                Text = c.Batokoprakaar
+            }).ToList();
+            ViewBag.Batokoprakaar = Batokoprakaar;
+
             return View();
         }
 
@@ -353,6 +282,26 @@ namespace Dainikprashashan.Controllers
         [HttpGet]
         public ActionResult Gharjagganaamsari()
         {
+            List<SelectListItem> Nata = e.Natas.Select(c => new SelectListItem
+            {
+                Value = c.NataId.ToString(),
+                Text = c.Nata1
+            }).ToList();
+            ViewBag.Nata = Nata;
+
+            List<SelectListItem> Batokoprakaar = e.Batoko_Prakaar.Select(c => new SelectListItem
+            {
+                Value = c.BatoId.ToString(),
+                Text = c.Batokoprakaar
+            }).ToList();
+            ViewBag.Batokoprakaar = Batokoprakaar;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
             return View();
         }
 
@@ -395,6 +344,41 @@ namespace Dainikprashashan.Controllers
         [HttpGet]
         public ActionResult Kittakatsifaris()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+          
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Sabikthegana = e.Sabik_Thegana.Select(c => new SelectListItem
+            {
+                Value = c.Sabik_Id.ToString(),
+                Text = c.Sabikthegana
+            }).ToList();
+            ViewBag.Sabikthegana = Sabikthegana;
             return View();
         }
 
@@ -434,9 +418,43 @@ namespace Dainikprashashan.Controllers
         }
 
         //संस्था/व्यवसाय सम्बन्धित
+        [HttpGet]//Sansthadartacard
+        public ActionResult Sansthadartacard()
+        {
+            return View();
+        }
+
         [HttpGet]//संस्था दर्ता प्रमाणपत्र
         public ActionResult Sansthadartapramanpatra()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
             return View();
         }
 
@@ -478,6 +496,34 @@ namespace Dainikprashashan.Controllers
         [HttpGet]//व्यवसाय दर्ता प्रमाणपत्र
         public ActionResult Byawasyadarta()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
             return View();
         }
 
@@ -519,6 +565,41 @@ namespace Dainikprashashan.Controllers
         //व्यवसाय बन्द बारे
         public ActionResult Byawasayabanda()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Sabikthegana = e.Sabik_Thegana.Select(c => new SelectListItem
+            {
+                Value = c.Sabik_Id.ToString(),
+                Text = c.Sabikthegana
+            }).ToList();
+            ViewBag.Sabikthegana = Sabikthegana;
             return View();
         }
 
@@ -560,6 +641,41 @@ namespace Dainikprashashan.Controllers
         [HttpGet]// संस्था दर्ता सिफारिस
         public ActionResult Sansthadartasifaris()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Sabikthegana = e.Sabik_Thegana.Select(c => new SelectListItem
+            {
+                Value = c.Sabik_Id.ToString(),
+                Text = c.Sabikthegana
+            }).ToList();
+            ViewBag.Sabikthegana = Sabikthegana;
             return View();
         }
         [HttpPost]//संस्था दर्ता सिफारिस
@@ -600,6 +716,41 @@ namespace Dainikprashashan.Controllers
         [HttpGet]// संस्था Nawikaran
         public ActionResult Sansthanawikaran()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Sabikthegana = e.Sabik_Thegana.Select(c => new SelectListItem
+            {
+                Value = c.Sabik_Id.ToString(),
+                Text = c.Sabikthegana
+            }).ToList();
+            ViewBag.Sabikthegana = Sabikthegana;
             return View();
         }
         [HttpPost]//संस्था Nawikaran
@@ -649,6 +800,41 @@ namespace Dainikprashashan.Controllers
 
         public ActionResult Barsikpramanikaran()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Nata = e.Natas.Select(c => new SelectListItem
+            {
+                Value = c.NataId.ToString(),
+                Text = c.Nata1
+            }).ToList();
+            ViewBag.Nata = Nata;
             return View();
         }
 
@@ -690,6 +876,34 @@ namespace Dainikprashashan.Controllers
         [HttpGet]//सम्पत्ति मूल्यांकन
         public ActionResult Sampatimulyankan()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
             return View();
         }
 
@@ -732,6 +946,36 @@ namespace Dainikprashashan.Controllers
         [HttpGet] //कर सावधानी प्रमाणपत्र
         public ActionResult Karsabdhani()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            
             return View();
         }
 
@@ -781,6 +1025,41 @@ namespace Dainikprashashan.Controllers
         [HttpGet]//जग्गाधनी लाल पुर्जा प्रतिलिपि
         public ActionResult Jaggadhanipratilipi()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Sabikthegana = e.Sabik_Thegana.Select(c => new SelectListItem
+            {
+                Value = c.Sabik_Id.ToString(),
+                Text = c.Sabikthegana
+            }).ToList();
+            ViewBag.Sabikthegana = Sabikthegana;
             return View();
         }
 
@@ -823,6 +1102,41 @@ namespace Dainikprashashan.Controllers
         [HttpGet]//बाटो कायम
         public ActionResult Batokayam()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Sabikthegana = e.Sabik_Thegana.Select(c => new SelectListItem
+            {
+                Value = c.Sabik_Id.ToString(),
+                Text = c.Sabikthegana
+            }).ToList();
+            ViewBag.Sabikthegana = Sabikthegana;
             return View();
         }
 
@@ -864,6 +1178,41 @@ namespace Dainikprashashan.Controllers
         [HttpGet]//पुर्जामा घर कामय
         public ActionResult Jaggagharkayam()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Sabikthegana = e.Sabik_Thegana.Select(c => new SelectListItem
+            {
+                Value = c.Sabik_Id.ToString(),
+                Text = c.Sabikthegana
+            }).ToList();
+            ViewBag.Sabikthegana = Sabikthegana;
             return View();
         }
 
@@ -905,6 +1254,48 @@ namespace Dainikprashashan.Controllers
         [HttpGet]//चार किल्ला प्रमाणित
         public ActionResult Charkilla()
         {
+            List<SelectListItem> Karyalaya = e.Karyalayas.Select(c => new SelectListItem
+            {
+                Value = c.Karyalaya_Id.ToString(),
+                Text = c.Karyalaya1
+            }).ToList();
+            ViewBag.Karyalaya = Karyalaya;
+
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Sabikthegana = e.Sabik_Thegana.Select(c => new SelectListItem
+            {
+                Value = c.Sabik_Id.ToString(),
+                Text = c.Sabikthegana
+            }).ToList();
+            ViewBag.Sabikthegana = Sabikthegana;
             return View();
         }
 
@@ -946,6 +1337,41 @@ namespace Dainikprashashan.Controllers
         [HttpGet]//मोही लागत कट्टा
         public ActionResult Mohilagatkatta()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Sabikthegana = e.Sabik_Thegana.Select(c => new SelectListItem
+            {
+                Value = c.Sabik_Id.ToString(),
+                Text = c.Sabikthegana
+            }).ToList();
+            ViewBag.Sabikthegana = Sabikthegana;
             return View();
         }
         [HttpPost]//मोही लागत कट्टा
@@ -995,6 +1421,41 @@ namespace Dainikprashashan.Controllers
         [HttpGet]//Sthayi Basobaas
         public ActionResult Sthayibasobas()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Sabikthegana = e.Sabik_Thegana.Select(c => new SelectListItem
+            {
+                Value = c.Sabik_Id.ToString(),
+                Text = c.Sabikthegana
+            }).ToList();
+            ViewBag.Sabikthegana = Sabikthegana;
             return View();
         }
 
@@ -1036,6 +1497,41 @@ namespace Dainikprashashan.Controllers
         [HttpGet]//Asthayi Basobaas
         public ActionResult Asthayibasobas()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Sabikthegana = e.Sabik_Thegana.Select(c => new SelectListItem
+            {
+                Value = c.Sabik_Id.ToString(),
+                Text = c.Sabikthegana
+            }).ToList();
+            ViewBag.Sabikthegana = Sabikthegana;
             return View();
         }
 
@@ -1077,10 +1573,45 @@ namespace Dainikprashashan.Controllers
         [HttpGet] //Antarik Basobas
         public ActionResult Antarikbasaisarai()
         {
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
+
+            List<SelectListItem> Nata = e.Natas.Select(c => new SelectListItem
+            {
+                Value = c.NataId.ToString(),
+                Text = c.Nata1
+            }).ToList();
+            ViewBag.Nata = Nata;
             return View();
         }
 
-        [HttpPost]//Asthayi Basobaas
+        [HttpPost]//Antarik Basobaas
         public ActionResult Antarikbasaisarai(Antarik_Basai_Sarai ab)
         {
             var lservice = new Basobasservice();
@@ -1126,6 +1657,41 @@ namespace Dainikprashashan.Controllers
         [HttpGet]//Nagarikta_Praman_Patra
         public ActionResult Nagariktapramanpatra()
         {
+            List<SelectListItem> Karyalaya = e.Karyalayas.Select(c => new SelectListItem
+            {
+                Value = c.Karyalaya_Id.ToString(),
+                Text = c.Karyalaya1
+            }).ToList();
+            ViewBag.Karyalaya = Karyalaya;
+
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
             return View();
         }
 
@@ -1166,6 +1732,41 @@ namespace Dainikprashashan.Controllers
         [HttpGet]//Nagarikta_Praman_Patra_Pratilipi
         public ActionResult Nagariktapramanpatrapratilipi()
         {
+            List<SelectListItem> Karyalaya = e.Karyalayas.Select(c => new SelectListItem
+            {
+                Value = c.Karyalaya_Id.ToString(),
+                Text = c.Karyalaya1
+            }).ToList();
+            ViewBag.Karyalaya = Karyalaya;
+
+            List<SelectListItem> Pradesh = e.Pradeshes.Select(c => new SelectListItem
+            {
+                Value = c.Pradesh_Id.ToString(),
+                Text = c.Pradesh1
+            }).ToList();
+            ViewBag.Pradesh = Pradesh;
+
+
+            List<SelectListItem> Jilla = e.Jillas.Select(c => new SelectListItem
+            {
+                Value = c.Jilla_Id.ToString(),
+                Text = c.Jilla1
+            }).ToList();
+            ViewBag.Jilla = Jilla;
+
+            List<SelectListItem> Gabisa = e.Gabisas.Select(c => new SelectListItem
+            {
+                Value = c.Gabisa_Id.ToString(),
+                Text = c.Gabisa1
+            }).ToList();
+            ViewBag.Gabisa = Gabisa;
+
+            List<SelectListItem> Ward = e.Wards.Select(c => new SelectListItem
+            {
+                Value = c.Ward_Id.ToString(),
+                Text = c.Ward1
+            }).ToList();
+            ViewBag.Ward = Ward;
             return View();
         }
 
@@ -1251,6 +1852,30 @@ namespace Dainikprashashan.Controllers
             var dataList = lService.KaryalayaList();
             return View(dataList);
         }
+
+        [HttpGet]//Ghar ko Prakaar
+        public ActionResult Gharkoprakaar()
+        {
+            return View();
+        }
+
+        [HttpPost]//Karyalaya
+        public ActionResult Gharkoprakaar(Gharko_prakaar gp)
+        {
+            var lservice = new Settingservice();
+            var lresponse = lservice.SaveGharkoprakaar(gp);
+            return RedirectToAction("Gharkoprakaarview");
+        }
+
+        //Karyalaya View
+        public ActionResult Gharkoprakaarview()
+        {
+            var lService = new Settingservice();
+            var dataList = lService.GharkoprakaarList();
+            return View(dataList);
+        }
+
+
 
         [HttpGet]//Kagajaat
         public ActionResult Kagajaat()
@@ -1474,11 +2099,7 @@ namespace Dainikprashashan.Controllers
             return View(dataList);
         }
 
-        [HttpGet]//GharKo Prakaar
-        public ActionResult Gharkoprakaar()
-        {
-            return View();
-        }
+        
 
         [HttpGet]//Biwahko Prakaar
         public ActionResult Biwahkoprakaar()
@@ -1486,7 +2107,7 @@ namespace Dainikprashashan.Controllers
             return View();
         }
 
-        
+
 
         [HttpPost]//Biwahko Prakaar
         public ActionResult Biwahkoprakaar(Biwahko_Prakaar ka)

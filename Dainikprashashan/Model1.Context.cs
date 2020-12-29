@@ -13,10 +13,10 @@ namespace Dainikprashashan
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities1 : DbContext
+    public partial class Entities2 : DbContext
     {
-        public Entities1()
-            : base("name=Entities1")
+        public Entities2()
+            : base("name=Entities2")
         {
         }
     
@@ -39,6 +39,7 @@ namespace Dainikprashashan
         public virtual DbSet<Ghar_Bato_Pramanit> Ghar_Bato_Pramanit { get; set; }
         public virtual DbSet<Ghar_Jagga_Naamsari> Ghar_Jagga_Naamsari { get; set; }
         public virtual DbSet<Ghar_kayamko_sifaris> Ghar_kayamko_sifaris { get; set; }
+        public virtual DbSet<Gharko_prakaar> Gharko_prakaar { get; set; }
         public virtual DbSet<Jagga_Ghar_Kayam> Jagga_Ghar_Kayam { get; set; }
         public virtual DbSet<Jaggadhani_Pratilipi> Jaggadhani_Pratilipi { get; set; }
         public virtual DbSet<Jilla> Jillas { get; set; }

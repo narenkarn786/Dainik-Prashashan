@@ -13,7 +13,7 @@ namespace Dainikprashashan.Service
         public string SaveGharkayamkosifaris(Ghar_kayamko_sifaris gks)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Ghar_kayamko_sifaris()
                 {
@@ -47,7 +47,7 @@ namespace Dainikprashashan.Service
 
         public List<GharkayamList> GetSelfList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Ghar_kayamko_sifaris/*.Where(x => x.FormId == lgId)*/.ToList();
@@ -86,7 +86,7 @@ namespace Dainikprashashan.Service
 
             var message = "";
 
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var decId = Convert.ToDecimal(loginId);
                 var dataToUpdate = context.Ghar_kayamko_sifaris.Where(x => x.FormId == decId).FirstOrDefault();
@@ -119,7 +119,7 @@ namespace Dainikprashashan.Service
         public string SaveGharbatopramanit(Ghar_Bato_Pramanit gbp)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Ghar_Bato_Pramanit()
                 {
@@ -156,7 +156,7 @@ namespace Dainikprashashan.Service
         //Ghar Bato Pramanit view
         public List<GharkayamList> GetGharbatopramanitList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Ghar_Bato_Pramanit/*.Where(x => x.FormId == lgId)*/.ToList();
@@ -199,7 +199,7 @@ namespace Dainikprashashan.Service
         public string SaveGharjagganaamsari(Ghar_Jagga_Naamsari gjn)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Ghar_Jagga_Naamsari()
                 {
@@ -236,7 +236,7 @@ namespace Dainikprashashan.Service
         //Ghar Jagga Naamsari /आवेदकको विवरण
         public List<GharkayamList> GetGharjagganaamsariList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Ghar_Jagga_Naamsari/*.Where(x => x.FormId == lgId)*/.ToList();
@@ -281,7 +281,7 @@ namespace Dainikprashashan.Service
         public string SaveKittakatsifaris(Kittakat_Sifaris ks)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Kittakat_Sifaris()
                 {
@@ -319,7 +319,7 @@ namespace Dainikprashashan.Service
         //Kittakat Sifaris /आवेदकको विवरण
         public List<GharkayamList> GetKittakatsifarisList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Kittakat_Sifaris/*.Where(x => x.FormId == lgId)*/.ToList();

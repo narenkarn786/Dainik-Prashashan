@@ -12,7 +12,7 @@ namespace Dainikprashashan.Service
         public string SaveBarsikpramanikaran(Barsik_Pramanikaran bpn)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Barsik_Pramanikaran()
                 {
@@ -41,7 +41,7 @@ namespace Dainikprashashan.Service
         //View Barsik Aaya Pramanikaran
         public List<GharkayamList> GetBarsikpramanikaranList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Barsik_Pramanikaran.Where(x => x.FormId == lgId).ToList();
@@ -75,7 +75,7 @@ namespace Dainikprashashan.Service
         public string SaveSampatimulyankan(Sampati_Muluyankan smn)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Sampati_Muluyankan()
                 {
@@ -108,7 +108,7 @@ namespace Dainikprashashan.Service
         //View Sampati Mulyankan
         public List<GharkayamList> GetSampatimulyankanList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Sampati_Muluyankan.Where(x => x.FormId == lgId).ToList();
@@ -144,7 +144,7 @@ namespace Dainikprashashan.Service
         public string SaveKarsabdhani(Kar_Sambandhi ksi)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Kar_Sambandhi()
                 {
@@ -172,7 +172,7 @@ namespace Dainikprashashan.Service
         //View Kar Sabdhani
         public List<GharkayamList> GetKarsabdhaniList(string loginId)
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var lgId = Convert.ToInt32(loginId);
                 var selfData = context.Kar_Sambandhi.Where(x => x.FormId == lgId).ToList();

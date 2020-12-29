@@ -74,59 +74,57 @@
 
         <label><b>पुरानो ठेगाना  </b></label>
         <div class="row">
-            <div class="col-sm-4">
-                @Html.EditorFor(model => model.Purano_Pradesh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Purano_Pradesh, "", new { @class = "text-danger" })
+            <div class="col-sm-5">
+                @Html.DropDownListFor(m => m.Purano_Pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
             </div>
-            <div class="col-sm-4">
-                @Html.EditorFor(model => model.Purano_Jilla, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Purano_Jilla, "", new { @class = "text-danger" })
-            </div>
-            <div class="col-sm-4">
-                @Html.EditorFor(model => model.Purano_Gabisa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Purano_Gabisa, "", new { @class = "text-danger" })
+            <div class="col-sm-5">
+                @Html.DropDownListFor(m => m.Purano_Jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
             </div>
         </div>
+
         <br />
         <div class="row">
-            <div class="col-sm-6">
-                @Html.EditorFor(model => model.Purano_Ward, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Purano_Ward, "", new { @class = "text-danger" })
+            <div class="col-sm-5">
+                @Html.DropDownListFor(m => m.Purano_Gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
             </div>
-            <div class="col-sm-6">
-                @Html.EditorFor(model => model.Purano_Tole, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Purano_Tole, "", new { @class = "text-danger" })
+            <div class="col-sm-5">
+                @Html.DropDownListFor(m => m.Purano_Ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
             </div>
         </div>
         <br />
 
+        <div class="col-sm-6">
+            @Html.EditorFor(model => model.Purano_Tole, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Purano_Tole, "", new { @class = "text-danger" })
+        </div>
+
+        <br />
+
         <label><b>हालको ठेगाना </b></label>
         <div class="row">
-            <div class="col-sm-4">
-                @Html.EditorFor(model => model.Haal_Pradesh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Haal_Pradesh, "", new { @class = "text-danger" })
+            <div class="col-sm-5">
+                @Html.DropDownListFor(m => m.Haal_Pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
             </div>
-            <div class="col-sm-4">
-                @Html.EditorFor(model => model.Haal_Jilla, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Haal_Jilla, "", new { @class = "text-danger" })
+            <div class="col-sm-5">
+                @Html.DropDownListFor(m => m.Haal_Jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
             </div>
-            <div class="col-sm-4">
-                @Html.EditorFor(model => model.Haal_Gabisa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Haal_Gabisa, "", new { @class = "text-danger" })
+        </div>
+
+        <br />
+        <div class="row">
+            <div class="col-sm-5">
+                @Html.DropDownListFor(m => m.Haal_Gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
             </div>
+            <div class="col-sm-5">
+                @Html.DropDownListFor(m => m.Haal_Ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
             </div>
-            <br />
-            <div class="row">
-                <div class="col-sm-6">
-                    @Html.EditorFor(model => model.Haal_Ward, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Haal_Ward, "", new { @class = "text-danger" })
-                </div>
-                <div class="col-sm-6">
-                    @Html.EditorFor(model => model.Haal_Tole, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Haal_Tole, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <br />
+        </div>
+        <div class="col-sm-6">
+            @Html.EditorFor(model => model.Haal_Tole, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Haal_Tole, "", new { @class = "text-danger" })
+        </div>
+    
+        <br />
         <h4><b>परिवारको विवरण</b></h4>
         <hr />
         <table class="table-responsive table-bordered">
@@ -146,8 +144,7 @@
                     @Html.ValidationMessageFor(model => model.Pariwaarko_naam, "", new { @class = "text-danger" })
                 </td>
                 <td>
-                    @Html.EditorFor(model => model.Nata, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Nata, "", new { @class = "text-danger" })
+                    @Html.DropDownListFor(m => m.Nata, (List<SelectListItem>)ViewBag.Nata, "-- छान्नुहोस्  --", new { @class = "form-control" })
                 </td>
                 <td>
                     @Html.EditorFor(model => model.Nagarikta_janmadarta_no, new { htmlAttributes = new { @class = "form-control" } })

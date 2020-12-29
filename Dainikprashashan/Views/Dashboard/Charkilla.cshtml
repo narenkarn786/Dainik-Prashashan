@@ -62,25 +62,22 @@
         </div>
         <br />
         <label class="control-label col-md-2">ठेगाना </label>
-        <div class="row" style="padding:0px 15px">
+        <div class="row">
             <div class="col-sm-5">
-                @Html.EditorFor(model => model.Pradesh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Pradesh, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-5">
-                @Html.EditorFor(model => model.Jilla, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Jilla, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
             </div>
         </div>
+
         <br />
-        <div class="row" style="padding:0px 15px">
+        <div class="row">
             <div class="col-sm-5">
-                @Html.EditorFor(model => model.Gabisa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Gabisa, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-5">
-                @Html.EditorFor(model => model.Ward, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Ward, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
             </div>
         </div>
         <br />
@@ -116,7 +113,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th class="input_fields_wrap"> @Html.TextBoxFor(m => m.Sabik_gabisa, "", new { @class = "form-control" })</th>
+                       <th> @Html.DropDownListFor(m => m.Sabik_gabisa, (List<SelectListItem>)ViewBag.Sabikthegana, "-- छान्नुहोस्  --", new { @class = "form-control" })</th>
                         <th class="input_fields_wrap"> @Html.TextBoxFor(m => m.Haal_gabisa, "", new { @class = "form-control" })</th>
                         <th class="input_fields_wrap"> @Html.TextBoxFor(m => m.Naksha_sheetno, "", new { @class = "form-control" })</th>
                         <th class="input_fields_wrap"> @Html.TextBoxFor(m => m.Kitta_no, "", new { @class = "form-control" })</th>
@@ -137,6 +134,7 @@
 
                 </tbody>
             </table>
+
             <button class="add_field_button btn-success"><i class="fas fa-plus-square"></i></button>
             <script>
                 function myFunction() {
@@ -152,12 +150,13 @@
                     }
                 }
             </script>
-           
+        </div>
             <div class="form-group" style="padding:10px 0px">
                 <button class="btn btn-success" type="submit">पेश गर्नुहोस् </button>
             </div>
-        </div>
-    }
+
+        }
+    
 </div>
 
 

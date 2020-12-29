@@ -12,7 +12,7 @@ namespace Dainikprashashan.Service
         public string SaveKaryalaya(Karyalaya k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Karyalaya()
                 {
@@ -30,7 +30,7 @@ namespace Dainikprashashan.Service
         //Karyalaya view
         public List<GharkayamList> KaryalayaList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Karyalayas.ToList();
@@ -52,11 +52,55 @@ namespace Dainikprashashan.Service
             }
         }
 
+        //saving Gharkoprakaar
+        public string SaveGharkoprakaar(Gharko_prakaar gkp)
+        {
+            var message = "";
+            using (var context = new Entities2())
+            {
+                var user = new Gharko_prakaar()
+                {
+                    Gharkoprakaar = gkp.Gharkoprakaar
+
+                };
+                context.Gharko_prakaar.Add(user);
+
+                context.SaveChanges();
+                message = "save successfull";
+            }
+            return message;
+        }
+
+        //Karyalaya view
+        public List<GharkayamList> GharkoprakaarList()
+        {
+            using (var context = new Entities2())
+            {
+
+                var data = context.Gharko_prakaar.ToList();
+                GharkayamList dataListObj = null;
+                var dataListInfoList = new List<GharkayamList>();
+
+                foreach (var bd in data)
+                {
+                    dataListObj = new GharkayamList
+                    {
+                        FormId = bd.Ghar_Id,
+                        Gharko_prakaar = bd.Gharkoprakaar
+
+                    };
+                    dataListInfoList.Add(dataListObj);
+                }
+                return dataListInfoList;
+
+            }
+        }
+
         //saving Arthikbarsa
         public string SaveArthikbarsa(Arthik_Barsa k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Arthik_Barsa()
                 {
@@ -74,7 +118,7 @@ namespace Dainikprashashan.Service
         //Arthikbarsa view
         public List<GharkayamList> ArthikbarsaList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Arthik_Barsa.ToList();
@@ -100,7 +144,7 @@ namespace Dainikprashashan.Service
         public string SaveFaat(Faat k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Faat()
                 {
@@ -118,7 +162,7 @@ namespace Dainikprashashan.Service
         //Faat view
         public List<GharkayamList> FaatList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Faats.ToList();
@@ -144,7 +188,7 @@ namespace Dainikprashashan.Service
         public string SaveKagajaat(Kagajaat k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Kagajaat()
                 {
@@ -162,7 +206,7 @@ namespace Dainikprashashan.Service
         //Kagajaat view
         public List<GharkayamList> KagajaatList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Kagajaats.ToList();
@@ -188,7 +232,7 @@ namespace Dainikprashashan.Service
         public string SaveKaam(Kaam k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Kaam()
                 {
@@ -206,7 +250,7 @@ namespace Dainikprashashan.Service
         //Kaamkoprakaar view
         public List<GharkayamList> KaamList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Kaams.ToList();
@@ -232,7 +276,7 @@ namespace Dainikprashashan.Service
         public string SaveSewa(Sewa k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Sewa()
                 {
@@ -250,7 +294,7 @@ namespace Dainikprashashan.Service
         //Sewa view
         public List<GharkayamList> SewaList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Sewas.ToList();
@@ -276,7 +320,7 @@ namespace Dainikprashashan.Service
         public string SavePradesh(Pradesh k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Pradesh()
                 {
@@ -294,7 +338,7 @@ namespace Dainikprashashan.Service
         //Pradesh view
         public List<GharkayamList> PradeshList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Pradeshes.ToList();
@@ -320,7 +364,7 @@ namespace Dainikprashashan.Service
         public string SaveJilla(Jilla k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Jilla()
                 {
@@ -338,7 +382,7 @@ namespace Dainikprashashan.Service
         //Jilla view
         public List<GharkayamList> JillaList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Jillas.ToList();
@@ -364,7 +408,7 @@ namespace Dainikprashashan.Service
         public string SaveGabisa(Gabisa k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Gabisa()
                 {
@@ -382,7 +426,7 @@ namespace Dainikprashashan.Service
         //Gabisa view
         public List<GharkayamList> GabisaList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Gabisas.ToList();
@@ -408,7 +452,7 @@ namespace Dainikprashashan.Service
         public string SaveWard(Ward k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Ward()
                 {
@@ -426,7 +470,7 @@ namespace Dainikprashashan.Service
         //Ward view
         public List<GharkayamList> WardList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Wards.ToList();
@@ -452,7 +496,7 @@ namespace Dainikprashashan.Service
         public string SaveSabikthegana(Sabik_Thegana k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Sabik_Thegana()
                 {
@@ -470,7 +514,7 @@ namespace Dainikprashashan.Service
         //Sabikthegana view
         public List<GharkayamList> SabiktheganaList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Sabik_Thegana.ToList();
@@ -496,7 +540,7 @@ namespace Dainikprashashan.Service
         public string SavePaad(Padd k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Padd()
                 {
@@ -514,7 +558,7 @@ namespace Dainikprashashan.Service
         //Paad view
         public List<GharkayamList> PaadList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Padds.ToList();
@@ -540,7 +584,7 @@ namespace Dainikprashashan.Service
         public string SaveFaatkarmachari(Faat_Karmachari k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Faat_Karmachari()
                 {
@@ -558,7 +602,7 @@ namespace Dainikprashashan.Service
         //FaatKarmachari view
         public List<GharkayamList> FaatkarmachariList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Faat_Karmachari.ToList();
@@ -584,7 +628,7 @@ namespace Dainikprashashan.Service
         public string SaveBiwahkoprakaar(Biwahko_Prakaar k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Biwahko_Prakaar()
                 {
@@ -602,7 +646,7 @@ namespace Dainikprashashan.Service
         //Biwahkoprakaar view
         public List<GharkayamList> BiwahkoprakaarList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Biwahko_Prakaar.ToList();
@@ -628,7 +672,7 @@ namespace Dainikprashashan.Service
         public string SaveNata(Nata k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Nata()
                 {
@@ -646,7 +690,7 @@ namespace Dainikprashashan.Service
         //Nata view
         public List<GharkayamList> NataList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Natas.ToList();
@@ -672,7 +716,7 @@ namespace Dainikprashashan.Service
         public string SaveBatokoprakaar(Batoko_Prakaar k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Batoko_Prakaar()
                 {
@@ -690,7 +734,7 @@ namespace Dainikprashashan.Service
         //Batokoprakaar view
         public List<GharkayamList> BatokoprakaarList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Batoko_Prakaar.ToList();
@@ -716,7 +760,7 @@ namespace Dainikprashashan.Service
         public string SaveApangakokisim(Apangako_Kisim k)
         {
             var message = "";
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
                 var user = new Apangako_Kisim()
                 {
@@ -734,7 +778,7 @@ namespace Dainikprashashan.Service
         //Apangako kisim view
         public List<GharkayamList> ApangakokisimList()
         {
-            using (var context = new Entities1())
+            using (var context = new Entities2())
             {
 
                 var data = context.Apangako_Kisim.ToList();

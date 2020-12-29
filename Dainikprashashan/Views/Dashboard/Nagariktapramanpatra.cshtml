@@ -31,8 +31,8 @@
             <div class="col-sm-5">
                 <label><b>आवेदन गरिएको कार्यालय</b></label>
 
-                @Html.EditorFor(model => model.karyalaya, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Aabedan_miti, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.karyalaya, (List<SelectListItem>)ViewBag.Karyalaya, "-- छान्नुहोस्  --", new { @class = "form-control" })
+
             </div>
         </div>
         <br />
@@ -95,23 +95,22 @@
         <label><b>(In Nepali)</b></label>
         <div class="row">
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Janma_Pradesh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Janma_Pradesh, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Janma_Pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Janma_Jilla, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Janma_Jilla, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Janma_Jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
             </div>
+
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Janma_Gabisa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Janma_Gabisa, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Janma_Gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
             </div>
+
         </div>
         <br />
         <div class="row">
             <div class="col-sm-6">
-                @Html.EditorFor(model => model.Janma_Ward, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Janma_Ward, "", new { @class = "text-danger" })
+
+                @Html.DropDownListFor(m => m.Janma_Ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-6">
                 @Html.EditorFor(model => model.Janma_Tole, new { htmlAttributes = new { @class = "form-control" } })
@@ -125,29 +124,29 @@
         <label class="control-label col-md-2"><b>(In Nepali)</b></label>
         <div class="row">
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Permanent_Pradesh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Permanent_Pradesh, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Permanent_Pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Permanent_Jilla, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Permanent_Jilla, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Permanent_Jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
             </div>
+
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Permanent_Gabisa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Permanent_Gabisa, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Permanent_Gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
             </div>
+
         </div>
         <br />
         <div class="row">
             <div class="col-sm-6">
-                @Html.EditorFor(model => model.Permanent_Ward, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Permanent_Ward, "", new { @class = "text-danger" })
+
+                @Html.DropDownListFor(m => m.Permanent_Ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-6">
                 @Html.EditorFor(model => model.Permanent_Tole, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Permanent_Tole, "", new { @class = "text-danger" })
             </div>
         </div>
+
         <br />
         <h4><b>बुबाको विवरण (Father's Detail)</b></h4>
         <hr />
@@ -171,25 +170,22 @@
         <label><b>(In Nepali)</b></label>
         <div class="row">
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Buwako_Pradesh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Buwako_Pradesh, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Buwako_Pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Buwako_Jilla, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Buwako_Jilla, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Buwako_Jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
             </div>
-
 
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Buwako_Gabisa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Buwako_Gabisa, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Buwako_Gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
             </div>
+
         </div>
         <br />
         <div class="row">
             <div class="col-sm-6">
-                @Html.EditorFor(model => model.Buwako_Ward, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Buwako_Ward, "", new { @class = "text-danger" })
+
+                @Html.DropDownListFor(m => m.Buwako_Ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-6">
                 @Html.EditorFor(model => model.Buwako_Tole, new { htmlAttributes = new { @class = "form-control" } })
@@ -219,23 +215,22 @@
         <label><b>(In Nepali)</b></label>
         <div class="row">
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Amako_Pradesh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Amako_Pradesh, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Amako_Pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Amako_Jilla, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Amako_Jilla, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Amako_Jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
             </div>
+
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Amako_Gabisa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Amako_Gabisa, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Amako_Gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
             </div>
+
         </div>
         <br />
         <div class="row">
             <div class="col-sm-6">
-                @Html.EditorFor(model => model.Amako_Ward, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Amako_Ward, "", new { @class = "text-danger" })
+
+                @Html.DropDownListFor(m => m.Amako_Ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-6">
                 @Html.EditorFor(model => model.Amako_Tole, new { htmlAttributes = new { @class = "form-control" } })
@@ -266,23 +261,22 @@
         <label><b>(In Nepali)</b></label>
         <div class="row">
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Patipatniko_Pradesh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Patipatniko_Pradesh, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Patipatniko_Pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Patipatniko_Jilla, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Patipatniko_Jilla, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Patipatniko_Jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
             </div>
+
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Patipatniko_Gabisa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Patipatniko_Gabisa, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Patipatniko_Gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
             </div>
+
         </div>
         <br />
         <div class="row">
             <div class="col-sm-6">
-                @Html.EditorFor(model => model.Patipatniko_Ward, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Patipatniko_Ward, "", new { @class = "text-danger" })
+
+                @Html.DropDownListFor(m => m.Patipatniko_Ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-6">
                 @Html.EditorFor(model => model.Patipatniko_Tole, new { htmlAttributes = new { @class = "form-control" } })
@@ -305,23 +299,22 @@
         <label class="control-label col-md-2"><b>(In Nepali)</b></label>
         <div class="row">
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Protector_Pradesh, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Protector_Pradesh, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Protector_Pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Protector_Jilla, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Protector_Jilla, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Protector_Jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
             </div>
+
             <div class="col-sm-4">
-                @Html.EditorFor(model => model.Protector_Gabisa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Protector_Gabisa, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(m => m.Protector_Gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
             </div>
+
         </div>
         <br />
         <div class="row">
             <div class="col-sm-6">
-                @Html.EditorFor(model => model.Protector_Ward, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Protector_Ward, "", new { @class = "text-danger" })
+
+                @Html.DropDownListFor(m => m.Protector_Ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
             </div>
             <div class="col-sm-6">
                 @Html.EditorFor(model => model.Protector_Tole, new { htmlAttributes = new { @class = "form-control" } })

@@ -30,12 +30,9 @@
                     @Html.TextBoxFor(m => m.Aabedan_miti, "", new { @id = "nepali-datepicker", @name = "nepali-datepicker", @class = "form-control" })
                 </div>
 
-
-
-
                 <div class="col-sm-4">
                     <label>कार्यलय</label>
-                    @Html.DropDownListFor(m => m.karyalaya, new SelectList(ViewBag.Karyalaya), "-- छान्नुहोस्  --", new { @class = "form-control" })
+                    @Html.DropDownListFor(m => m.karyalaya,(List<SelectListItem>)ViewBag.Karyalaya, "-- छान्नुहोस्  --", new { @class = "form-control" })
 
                 </div>
             </div>
@@ -55,20 +52,20 @@
                 <br />
                 <div class="row">
                     <div class="col-sm-5">
-                        @Html.DropDownListFor(m => m.Pradesh, new SelectList(ViewBag.Pradesh), "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
+                        @Html.DropDownListFor(m => m.Pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
                     </div>
                     <div class="col-sm-5">
-                        @Html.DropDownListFor(m => m.Jilla, new SelectList(ViewBag.District), "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
+                        @Html.DropDownListFor(m => m.Jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
                     </div>
                 </div>
 
                 <br />
                 <div class="row">
                     <div class="col-sm-5">
-                        @Html.DropDownListFor(m => m.Gabisa, new SelectList(ViewBag.Ward), "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
+                        @Html.DropDownListFor(m => m.Gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
                     </div>
                     <div class="col-sm-5">
-                        @Html.DropDownListFor(m => m.Ward, new SelectList(ViewBag.Ward), "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
+                        @Html.DropDownListFor(m => m.Ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --",new { @class = "form-control" })
                     </div>
                 </div>
             </div>
@@ -127,7 +124,7 @@
             <div class="row" style="padding:0px 15px">
                 <div class="col-sm-5">
                     <label><b>घरको प्रकार </b></label>
-                    @Html.DropDownListFor(m => m.Gharko_prakaar, new SelectList(ViewBag.Gharprakar), "-- छान्नुहोस्  --", new { @class = "form-control" })
+                    @Html.DropDownListFor(m => m.Gharko_prakaar, (List<SelectListItem>)ViewBag.Gharkoprakaar, "-- छान्नुहोस्  --", new { @class = "form-control" })
                 </div>
                 <br />
                 <div class="col-sm-5">

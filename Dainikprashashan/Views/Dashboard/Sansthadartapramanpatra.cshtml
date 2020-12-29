@@ -63,25 +63,22 @@
             </div>
             <br />
             <label class="control-label col-md-2">ठेगाना </label>
-            <div class="row" style="padding:0px 15px">
+            <div class="row">
                 <div class="col-sm-5">
-                    @Html.TextBoxFor(m => m.Sanstha_pradesh,  new { @class = "form-control" } )
-                    @Html.ValidationMessageFor(model => model.Sanstha_gabisa, "", new { @class = "text-danger" })
+                    @Html.DropDownListFor(m => m.Sanstha_pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
                 </div>
                 <div class="col-sm-5">
-                    @Html.TextBoxFor(m => m.Sanstha_jilla ,new { @class = "form-control" } )
-                    @Html.ValidationMessageFor(model => model.Sanstha_jilla, "", new { @class = "text-danger" })
+                    @Html.DropDownListFor(m => m.Sanstha_jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
                 </div>
             </div>
+
             <br />
-            <div class="row" style="padding:0px 15px">
+            <div class="row">
                 <div class="col-sm-5">
-                    @Html.TextBoxFor(m => m.Sanstha_gabisa,  new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.Sanstha_gabisa, "", new { @class = "text-danger" })
+                    @Html.DropDownListFor(m => m.Sanstha_gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
                 </div>
                 <div class="col-sm-5">
-                    @Html.TextBoxFor(m => m.Sanstha_ward,  new { @class = "form-control" } )
-                    @Html.ValidationMessageFor(model => model.Sanstha_ward, "", new { @class = "text-danger" })
+                    @Html.DropDownListFor(m => m.Sanstha_ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
                 </div>
             </div>
             <br />
@@ -120,25 +117,22 @@
             </div>
             <br />
             <label class="control-label col-md-2">ठेगाना </label>
-            <div class="row" style="padding:0px 15px">
+            <div class="row">
                 <div class="col-sm-5">
-                    @Html.TextBoxFor(m => m.Sanchalak_pradesh, new { @class = "form-control" } )
-                    @Html.ValidationMessageFor(m => m.Sanchalak_pradesh, "", new { @class = "text-danger" })
+                    @Html.DropDownListFor(m => m.Sanchalak_pradesh, (List<SelectListItem>)ViewBag.Pradesh, "-- प्रदेश छान्नुहोस्  --", new { @class = "form-control" })
                 </div>
                 <div class="col-sm-5">
-                    @Html.TextBoxFor(m => m.Sanchalak_jilla,  new { @class = "form-control" } )
-                    @Html.ValidationMessageFor(model => model.Sanchalak_jilla, "", new { @class = "text-danger" })
+                    @Html.DropDownListFor(m => m.Sanchalak_jilla, (List<SelectListItem>)ViewBag.Jilla, "-- जिल्ला छान्नुहोस्  --", new { @class = "form-control" })
                 </div>
             </div>
+
             <br />
-            <div class="row" style="padding:0px 15px">
+            <div class="row">
                 <div class="col-sm-5">
-                    @Html.TextBoxFor(m => m.Sanchalak_gabisa, new { @class = "form-control" } )
-                    @Html.ValidationMessageFor(model => model.Sanchalak_gabisa, "", new { @class = "text-danger" })
+                    @Html.DropDownListFor(m => m.Sanchalak_gabisa, (List<SelectListItem>)ViewBag.Gabisa, "-- गा.बि.स/न.प. छान्नुहोस्  --", new { @class = "form-control" })
                 </div>
                 <div class="col-sm-5">
-                    @Html.TextBoxFor(m => m.Sanchalak_ward, new { @class = "form-control" } )
-                    @Html.ValidationMessageFor(model => model.Sanchalak_ward, "", new { @class = "text-danger" })
+                    @Html.DropDownListFor(m => m.Sanchalak_ward, (List<SelectListItem>)ViewBag.Ward, "-- वडा छान्नुहोस्  --", new { @class = "form-control" })
                 </div>
             </div>
             <br />
